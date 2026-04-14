@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">
+<style>
+    .frame { fill:white; stroke:black; stroke-width:3; }
+    .box { fill:none; stroke:black; stroke-width:2; rx:8; ry:8; }
+    .label { font-family:Arial, Helvetica, sans-serif; font-size:24px; }
+    .small { font-family:Arial, Helvetica, sans-serif; font-size:18px; }
+    .title { font-family:Arial, Helvetica, sans-serif; font-size:34px; font-weight:bold; }
+    .subtitle { font-family:Arial, Helvetica, sans-serif; font-size:22px; }
+</style>
+<text x="40" y="50" class="title">Music Madness – Genre Page – Desktop Wireframe</text>
+<rect x="150" y="110" width="1100" height="820" class="frame"/>
+<text x="150" y="85" class="subtitle">Desktop layout</text>
+<rect x="180" y="135" width="1040" height="60" class="box"/>
+<text x="194" y="169" class="label">Navbar</text>
+<rect x="180" y="217" width="1040" height="120" class="box"/>
+<text x="194" y="251" class="label">Genre header</text>
+<text x="194" y="277" class="label">Title + description + album/discussion count</text>
+<rect x="180" y="359" width="1040" height="64" class="box"/>
+<text x="194" y="393" class="label">Search + sort controls</text>
+<rect x="180" y="445" width="1040" height="520" class="box"/>
+<text x="194" y="479" class="label">Album grid</text>
+<rect x="180.0" y="500" width="333.3333333333333" height="165" class="box"/>
+<text x="194.0" y="534" class="small">Album card</text>
+<rect x="533.3333333333333" y="500" width="333.3333333333333" height="165" class="box"/>
+<text x="547.3333333333333" y="534" class="small">Album card</text>
+<rect x="886.6666666666666" y="500" width="333.3333333333333" height="165" class="box"/>
+<text x="900.6666666666666" y="534" class="small">Album card</text>
+<rect x="180.0" y="695" width="333.3333333333333" height="165" class="box"/>
+<text x="194.0" y="729" class="small">Album card</text>
+<rect x="533.3333333333333" y="695" width="333.3333333333333" height="165" class="box"/>
+<text x="547.3333333333333" y="729" class="small">Album card</text>
+<rect x="886.6666666666666" y="695" width="333.3333333333333" height="165" class="box"/>
+<text x="900.6666666666666" y="729" class="small">Album card</text>
+
+</svg>

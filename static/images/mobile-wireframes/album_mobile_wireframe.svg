@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1400" viewBox="0 0 800 1400">
+<style>
+    .frame { fill:white; stroke:black; stroke-width:3; }
+    .box { fill:none; stroke:black; stroke-width:2; rx:8; ry:8; }
+    .label { font-family:Arial, Helvetica, sans-serif; font-size:24px; }
+    .small { font-family:Arial, Helvetica, sans-serif; font-size:18px; }
+    .title { font-family:Arial, Helvetica, sans-serif; font-size:34px; font-weight:bold; }
+    .subtitle { font-family:Arial, Helvetica, sans-serif; font-size:22px; }
+</style>
+<text x="40" y="50" class="title">Music Madness – Album Discussion Page – Mobile Wireframe</text>
+<rect x="190" y="120" width="420" height="1120" class="frame"/>
+<text x="190" y="95" class="subtitle">Mobile layout</text>
+<rect x="210" y="140" width="380" height="56" class="box"/>
+<text x="224" y="174" class="label">Navbar</text>
+<rect x="210" y="218" width="380" height="320" class="box"/>
+<text x="224" y="252" class="label">Album header</text>
+<text x="224" y="278" class="label">Cover + title + artist + genre/year + likes/dislikes + buttons</text>
+<rect x="210" y="560" width="380" height="110" class="box"/>
+<text x="224" y="594" class="label">Community reaction</text>
+<rect x="210" y="692" width="380" height="430" class="box"/>
+<text x="224" y="726" class="label">Discussion thread</text>
+<rect x="224" y="748" width="352" height="64" class="box"/>
+<text x="238" y="782" class="small">Comment item</text>
+<rect x="224" y="828" width="352" height="64" class="box"/>
+<text x="238" y="862" class="small">Comment item</text>
+<rect x="224" y="908" width="352" height="64" class="box"/>
+<text x="238" y="942" class="small">Comment item</text>
+<rect x="224" y="988" width="352" height="64" class="box"/>
+<text x="238" y="1022" class="small">Comment item</text>
+<rect x="210" y="1144" width="380" height="140" class="box"/>
+<text x="224" y="1178" class="label">Add comment</text>
+<rect x="210" y="1306" width="380" height="160" class="box"/>
+<text x="224" y="1340" class="label">Related albums</text>
+
+</svg>

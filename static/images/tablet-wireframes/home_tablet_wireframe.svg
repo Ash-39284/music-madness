@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300">
+<style>
+    .frame { fill:white; stroke:black; stroke-width:3; }
+    .box { fill:none; stroke:black; stroke-width:2; rx:8; ry:8; }
+    .label { font-family:Arial, Helvetica, sans-serif; font-size:24px; }
+    .small { font-family:Arial, Helvetica, sans-serif; font-size:18px; }
+    .title { font-family:Arial, Helvetica, sans-serif; font-size:34px; font-weight:bold; }
+    .subtitle { font-family:Arial, Helvetica, sans-serif; font-size:22px; }
+</style>
+<text x="40" y="50" class="title">Music Madness – Homepage / Explore – Tablet Wireframe</text>
+<rect x="150" y="120" width="700" height="1040" class="frame"/>
+<text x="150" y="95" class="subtitle">Tablet layout</text>
+<rect x="175" y="145" width="650" height="60" class="box"/>
+<text x="189" y="179" class="label">Navbar</text>
+<rect x="175" y="227" width="650" height="170" class="box"/>
+<text x="189" y="261" class="label">Hero</text>
+<text x="189" y="287" class="label">Title + intro + CTA</text>
+<rect x="175" y="419" width="650" height="300" class="box"/>
+<text x="189" y="453" class="label">Trending albums section</text>
+<rect x="175.0" y="471" width="315.0" height="90" class="box"/>
+<text x="189.0" y="505" class="small">Album card</text>
+<rect x="510.0" y="471" width="315.0" height="90" class="box"/>
+<text x="524.0" y="505" class="small">Album card</text>
+<rect x="175.0" y="581" width="315.0" height="90" class="box"/>
+<text x="189.0" y="615" class="small">Album card</text>
+<rect x="510.0" y="581" width="315.0" height="90" class="box"/>
+<text x="524.0" y="615" class="small">Album card</text>
+<rect x="175" y="741" width="650" height="130" class="box"/>
+<text x="189" y="775" class="label">Most discussed section</text>
+<rect x="175" y="893" width="650" height="110" class="box"/>
+<text x="189" y="927" class="label">Browse by genre</text>
+<rect x="175" y="1025" width="650" height="60" class="box"/>
+<text x="189" y="1059" class="label">Footer</text>
+
+</svg>

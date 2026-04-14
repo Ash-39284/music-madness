@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # your custom static folder
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,6 +41,7 @@ ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,3 +133,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Jazzmin settings
+JAZZMIN_SETTINGS = {
+    "site_title": "Music Madness Admin",
+    "site_header": "Music Madness",
+    "site_brand": "Metal Control Panel",
+
+    "welcome_sign": "Welcome to the pit 🤘",
+
+    "theme": "darkly",
+
+    "topmenu_links": [
+        {"name": "Home", "url": "/", "new_window": True},
+    ],
+}

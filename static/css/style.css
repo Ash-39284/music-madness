@@ -77,7 +77,7 @@ body {
 .btn-ghost {
   background: none;
   border: none;
-  color: #F7F8F0 !important;
+  color: #F7F8F0;
   font-family: 'Montserrat', sans-serif;
   font-size: .875rem;
   font-weight: 600;
@@ -89,21 +89,21 @@ body {
 .btn-ghost:hover { opacity: 1; }
  
 .btn-primary {
-  background-color: #9CD5FF !important;
-  border-color: #9CD5FF !important;
-  color: #355872 !important;
+  background-color: #9CD5FF;
+  border-color: #9CD5FF;
+  color: #355872;
   font-family: 'Montserrat', sans-serif;
   font-size: .875rem;
   font-weight: 700;
   padding: .375rem 1.1rem;
-  border-radius: 999px !important;
+  border-radius: 999px;
   transition: background-color 180ms ease, border-color 180ms ease;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #b8e0ff !important;
-  border-color: #b8e0ff !important;
-  color: #355872 !important;
+  background-color: #b8e0ff;
+  border-color: #b8e0ff;
+  color: #355872;
 }
 
 /* Mobile — hide links on small screens */
@@ -111,7 +111,38 @@ body {
   .nav__links { display: none; }
 }
 
+/* home.html content */
 
+/*
+Call to action cards
+*/
+
+.react-to{
+    color: #F7F8F0;
+    background-color: #355872;
+    border-radius: 15px;
+    width: 250px;
+    height: 140px;
+    text-align: center;
+}
+
+.discussion{
+    color: #F7F8F0;
+    background-color: #355872;
+    border-radius: 15px;
+    width: 250px;
+    height: 140px;
+    text-align: center; 
+}
+
+.community-opinion{
+    color: #F7F8F0;
+    background-color: #355872;
+    border-radius: 15px;
+    width: 250px;
+    height: 140px;
+    text-align: center; 
+}
 
 
 /* Footer Styles */

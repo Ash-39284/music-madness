@@ -5,8 +5,8 @@ Light blue #9CD5FF rgb(156, 213, 255)
 White #F7F8F0 rgb(247, 248, 240)
 */
 
-/* general styles */
-
+/* ── General ──────────────────────────────── */
+ 
 body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,9 +16,10 @@ body {
   background-color: #F7F8F0;
   color: #355872;
 }
-
-/* Navbar styles */
-
+ 
+ 
+/* ── Navbar ───────────────────────────────── */
+ 
 .nav {
   background-color: #355872;
   padding-block: .75rem;
@@ -30,9 +31,7 @@ body {
   justify-content: space-between;
   gap: 1.5rem;
 }
-
-/* Navbar logo */
-
+ 
 .nav__logo {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
@@ -43,8 +42,7 @@ body {
   transition: opacity 180ms ease;
 }
 .nav__logo:hover { opacity: .85; color: #F7F8F0; }
-
-/* Navbar links */
+ 
 .nav__links {
   display: flex;
   gap: 2rem;
@@ -64,16 +62,14 @@ body {
 }
 .nav__links a:hover,
 .nav__links a.active { opacity: 1; }
-
-/* Actions */
+ 
 .nav__actions {
   display: flex;
   align-items: center;
   gap: .625rem;
   flex-shrink: 0;
 }
-
-/* Nav Buttons  */
+ 
 .btn-ghost {
   background: none;
   border: none;
@@ -105,48 +101,269 @@ body {
   border-color: #b8e0ff;
   color: #355872;
 }
-
-/* Mobile — hide links on small screens */
+ 
 @media (max-width: 768px) {
   .nav__links { display: none; }
 }
-
-/* home.html content */
-
-/*
-Call to action cards
-*/
-
-.react-to{
-    color: #F7F8F0;
-    background-color: #355872;
-    border-radius: 15px;
-    width: 250px;
-    height: 140px;
-    text-align: center;
+ 
+ 
+/* ── Hero ─────────────────────────────────── */
+ 
+.hero-card {
+  background-color: #355872;
+  border-radius: 16px;
+  color: #F7F8F0;
 }
-
-.discussion{
-    color: #F7F8F0;
-    background-color: #355872;
-    border-radius: 15px;
-    width: 250px;
-    height: 140px;
-    text-align: center; 
+ 
+.hero-card__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: .75rem;
 }
-
-.community-opinion{
-    color: #F7F8F0;
-    background-color: #355872;
-    border-radius: 15px;
-    width: 250px;
-    height: 140px;
-    text-align: center; 
+ 
+.hero-card__sub {
+  font-size: .95rem;
+  opacity: .85;
+  max-width: 50ch;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
-
-
-/* Footer Styles */
-
+ 
+.hero-card__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+ 
+.btn-hero {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: .45rem 1.4rem;
+  border-radius: 999px;
+  background-color: #9CD5FF;
+  border: 2px solid #9CD5FF;
+  color: #355872;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+.btn-hero:hover {
+  background-color: #b8e0ff;
+  border-color: #b8e0ff;
+  color: #355872;
+}
+.btn-hero--outline {
+  background-color: transparent;
+  border: 2px solid #9CD5FF;
+  color: #9CD5FF;
+}
+.btn-hero--outline:hover {
+  background-color: #9CD5FF;
+  color: #355872;
+}
+ 
+ 
+/* ── CTA Cards ────────────────────────────── */
+ 
+.cta-card {
+  background-color: #355872;
+  border-radius: 15px;
+  color: #F7F8F0;
+  padding: 1.75rem 1.5rem;
+}
+ 
+.cta-card__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+ 
+.cta-card__text {
+  font-size: .875rem;
+  opacity: .85;
+  line-height: 1.5;
+  margin: 0;
+}
+ 
+ 
+/* ── Inside the Pit ───────────────────────── */
+ 
+.pit-section {
+  background-color: #7AAACE;
+  border-radius: 16px;
+}
+ 
+.pit-section__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #F7F8F0;
+  margin-bottom: .25rem;
+}
+ 
+.pit-section__sub {
+  font-size: .875rem;
+  color: #F7F8F0;
+  opacity: .9;
+  margin-bottom: 0;
+}
+ 
+.album-card {
+  background-color: #7AAACE;
+  border: 2px solid #F7F8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #F7F8F0;
+}
+ 
+.album-card__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+ 
+.album-card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+ 
+.album-card__artist {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  margin-bottom: .1rem;
+  text-align: center;
+}
+ 
+.album-card__album {
+  font-size: .825rem;
+  text-align: center;
+  margin-bottom: .1rem;
+  opacity: .9;
+}
+ 
+.album-card__genre {
+  font-size: .8rem;
+  text-align: center;
+  opacity: .75;
+  margin-bottom: .5rem;
+}
+ 
+.album-card__votes {
+  display: flex;
+  gap: 1rem;
+  font-size: .85rem;
+  justify-content: flex-start;
+}
+ 
+.btn-discussion {
+  background-color: #355872;
+  color: #F7F8F0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  padding: .4rem 1rem;
+  transition: background-color 180ms ease;
+}
+.btn-discussion:hover {
+  background-color: #2a4660;
+  color: #F7F8F0;
+}
+ 
+ 
+/* ── Browse by Genre ──────────────────────── */
+ 
+.genre-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7AAACE;
+}
+ 
+.genre-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+ 
+.btn-genre {
+  background-color: #355872;
+  color: #F7F8F0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .6rem 1.75rem;
+  border-radius: 999px;
+  border: none;
+  min-width: 140px;
+  transition: background-color 180ms ease;
+}
+.btn-genre:hover {
+  background-color: #2a4660;
+  color: #F7F8F0;
+}
+ 
+ 
+/* ── Step Into the Pit ────────────────────── */
+ 
+.step-banner {
+  background-color: #355872;
+  border-radius: 16px;
+  color: #F7F8F0;
+}
+ 
+.step-banner__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: .05em;
+  margin-bottom: 1rem;
+}
+ 
+.step-banner__sub {
+  font-size: .95rem;
+  opacity: .9;
+  max-width: 55ch;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+ 
+.step-banner__actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ 
+.btn-step {
+  background-color: #9CD5FF;
+  border: 2px solid #9CD5FF;
+  color: #355872;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .75rem 2.5rem;
+  border-radius: 12px;
+  min-width: 180px;
+  transition: background-color 180ms ease;
+}
+.btn-step:hover {
+  background-color: #b8e0ff;
+  border-color: #b8e0ff;
+  color: #355872;
+}
+ 
+ 
+/* ── Footer ───────────────────────────────── */
+ 
 .footer {
   background-color: #7AAACE;
   padding-block: 2rem;

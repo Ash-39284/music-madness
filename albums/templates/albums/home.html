@@ -5,56 +5,128 @@
 {% block content %}
 <section class="container py-5">
 
-    <!-- HERO -->
-    <div class="hero-card text-center p-5 mb-5">
-        <h1>Where Metalheads Rate The Riffs.</h1>
-        <p>Discover brutal albums, debate the best releases, and leave your mark on the metal community.</p>
-        <div class="mt-4">
-            <a href="#" class="btn btn-primary me-3">Join the pit</a>
-            <a href="#" class="btn btn-secondary">Explore Albums</a>
-        </div>
+  <!-- HERO -->
+  <section class="container py-5">
+  <div class="hero-card p-4 p-md-5 mb-4">
+    <h1 class="hero-card__title">Where Metalheads Rate The Riffs.</h1>
+    <p class="hero-card__sub">Discover brutal albums, debate the best releases, and leave your mark on the metal community.</p>
+    <div class="hero-card__actions mt-4">
+      <a href="#" class="btn btn-hero">Join the pit</a>
+      <a href="#"                          class="btn btn-hero btn-hero--outline">Explore Albums</a>
     </div>
+  </div>
+</section>
 
-    <!-- CTA boxes -->
-     <div class="container">
-        <div class="row ">
-            <div class="react-to">
-                <h3>React to albums</h3>
-                <p>Like or dislike releases across every genre.</p>
+  <!-- CTA Cards -->
+  <section class="container mb-5">
+    <div class="row g-4">
+    <div class="col-12 col-md-4">
+      <div class="cta-card h-100">
+        <h3 class="cta-card__title">React to albums</h3>
+        <p class="cta-card__text">Like or dislike releases across every genre.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="cta-card h-100">
+        <h3 class="cta-card__title">Join the discussion</h3>
+        <p class="cta-card__text">Leave comments, reviews, and replies.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="cta-card h-100">
+        <h3 class="cta-card__title">Track community opinion</h3>
+        <p class="cta-card__text">See what albums are trending.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Inside the pit -->
+ <section class="container mb-5">
+  <div class="pit-section p-4">
+    <h2 class="pit-section__title">Inside the Pit</h2>
+    <p class="pit-section__sub">See how the community reacts to albums and joins the discussion.</p>
+ 
+    <div class="row g-4 mt-2">
+
+<!--
+Use Reaction model to wire in the accurate reactions data from the users
+-->
+  <div class="col-12 col-md-4">
+        <div class="album-card h-100">
+          <img src="{{ album.cover_image.url }}" alt="Black Sabbath – Paranoid" class="album-card__img">
+          <div class="album-card__body">
+            <p class="album-card__artist">Black Sabbath</p>
+            <p class="album-card__album">Paranoid</p>
+            <p class="album-card__genre">Heavy Metal</p>
+            <div class="album-card__votes">
+              <span>👍 385</span>
+              <span>👎 63</span>
             </div>
-            <div class="discussion">
-                <h3>Join the discussion</h3>
-                <p>Leave comments, reviews, and replies.</p>
-            </div>
-            <div class="community-opinion">
-                <h3>Track community opinion</h3>
-                <p>See what albums are trending.</p>
-            </div>
+            <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
+          </div>
         </div>
-     </div>
-
-    <!-- Inside the pit -->
-     <div class="container">
-        <div class="row">
-            <h2>Inside the pit</h2>
-            <p>See how the community reacts to albums and join the discussion.</p>
-            <div class="container">
-                <div class="row">
-                    <div class="">
-
-                    </div>
-
-                    <div class="">
-
-                    </div>
-
-                    <div class="">
-
-                    </div>
-                </div>
+      </div>
+ 
+      <div class="col-12 col-md-4">
+        <div class="album-card h-100">
+          <img src="#" alt="Metallica – The Black Album" class="album-card__img">
+          <div class="album-card__body">
+            <p class="album-card__artist">Metallica</p>
+            <p class="album-card__album">The Black Album</p>
+            <p class="album-card__genre">Thrash Metal</p>
+            <div class="album-card__votes">
+              <span>👍 297</span>
+              <span>👎 38</span>
             </div>
+            <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
+          </div>
         </div>
-     </div>
+      </div>
+ 
+      <div class="col-12 col-md-4">
+        <div class="album-card h-100">
+          <img src="#" alt="Ozzy Osbourne – Blizzard of Ozz" class="album-card__img">
+          <div class="album-card__body">
+            <p class="album-card__artist">Ozzy Osbourne</p>
+            <p class="album-card__album">Blizzard of Ozz</p>
+            <p class="album-card__genre">Heavy Metal</p>
+            <div class="album-card__votes">
+              <span>👍 185</span>
+              <span>👎 27</span>
+            </div>
+            <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+ </section>
+</section>
 
+<!-- ── BROWSE BY GENRE ────────────────────────────────────────────────── -->
+<section class="container mb-5 text-center">
+  <h2 class="genre-heading mb-4">Browse by genre</h2>
+  <div class="genre-grid">
+    <a href="#" class="btn btn-genre">Rock</a>
+    <a href="#" class="btn btn-genre">Heavy Metal</a>
+    <a href="#" class="btn btn-genre">Alternative Rock</a>
+    <a href="#" class="btn btn-genre">Thrash</a>
+    <a href="#" class="btn btn-genre">Death Metal</a>
+    <a href="#" class="btn btn-genre">Metalcore</a>
+  </div>
+</section>
+
+<!-- ── STEP INTO THE PIT ──────────────────────────────────────────────── -->
+<section class="container mb-5">
+  <div class="step-banner text-center p-5">
+    <h2 class="step-banner__title">STEP INTO THE PIT</h2>
+    <p class="step-banner__sub">Create an account to react to albums, join discussions, and share your thoughts with other metal fans.</p>
+    <div class="step-banner__actions mt-4">
+      <a href="#" class="btn btn-step">JOIN THE PIT</a>
+      <a href="#" class="btn btn-step">EXPLORE ALBUMS</a>
+    </div>
+  </div>
 </section>
 {% endblock %}

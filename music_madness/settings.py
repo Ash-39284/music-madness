@@ -51,9 +51,7 @@ INSTALLED_APPS = [
     'accounts',
     'albums',
     'interactions',
-    'core',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,7 +68,7 @@ ROOT_URLCONF = 'music_madness.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

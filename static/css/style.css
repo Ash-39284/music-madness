@@ -7,8 +7,166 @@ White #F7F8F0 rgb(247, 248, 240)
 
 /* general styles */
 
-body{
-    background-color: #F7F8F0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+.main-bg {
+  background-color: #F7F8F0;
+  color: #355872;
 }
 
+/* Navbar styles */
+
+.nav {
+  background-color: #355872;
+  padding-block: .75rem;
+}
+ 
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Navbar logo */
+
+.nav__logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F7F8F0;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 180ms ease;
+}
+.nav__logo:hover { opacity: .85; color: #F7F8F0; }
+
+/* Navbar links */
+.nav__links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  color: #F7F8F0;
+  text-decoration: none;
+  opacity: .8;
+  transition: opacity 180ms ease;
+}
+.nav__links a:hover,
+.nav__links a.active { opacity: 1; }
+
+/* Actions */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  flex-shrink: 0;
+}
+
+/* Nav Buttons  */
+.btn-ghost {
+  background: none;
+  border: none;
+  color: #F7F8F0 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: .375rem .75rem;
+  opacity: .8;
+  border-radius: 999px;
+  transition: opacity 180ms ease;
+}
+.btn-ghost:hover { opacity: 1; }
+ 
+.btn-primary {
+  background-color: #9CD5FF !important;
+  border-color: #9CD5FF !important;
+  color: #355872 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .375rem 1.1rem;
+  border-radius: 999px !important;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #b8e0ff !important;
+  border-color: #b8e0ff !important;
+  color: #355872 !important;
+}
+
+/* Mobile — hide links on small screens */
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+}
+
+
+
+
+/* Footer Styles */
+
+.footer {
+  background-color: #7AAACE;
+  padding-block: 2rem;
+}
+ 
+.footer__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+ 
+.footer__logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #355872;
+  margin-bottom: .3rem;
+}
+ 
+.footer__text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: .8rem;
+  color: #355872;
+  opacity: .75;
+  max-width: 30ch;
+  line-height: 1.5;
+  margin: 0;
+}
+ 
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer__links a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: .825rem;
+  color: #355872;
+  text-decoration: none;
+  opacity: .8;
+  transition: opacity 180ms ease;
+}
+.footer__links a:hover { opacity: 1; }
+ 
+@media (max-width: 576px) {
+  .footer__inner { flex-direction: column; }
+  .footer__links { align-items: flex-start; }
+}

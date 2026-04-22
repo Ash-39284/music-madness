@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300">
+<style>
+    .frame { fill:white; stroke:black; stroke-width:3; }
+    .box { fill:none; stroke:black; stroke-width:2; rx:8; ry:8; }
+    .label { font-family:Arial, Helvetica, sans-serif; font-size:24px; }
+    .small { font-family:Arial, Helvetica, sans-serif; font-size:18px; }
+    .title { font-family:Arial, Helvetica, sans-serif; font-size:34px; font-weight:bold; }
+    .subtitle { font-family:Arial, Helvetica, sans-serif; font-size:22px; }
+</style>
+<text x="40" y="50" class="title">Music Madness – Sign Up Page – Tablet Wireframe</text>
+<rect x="150" y="120" width="700" height="1040" class="frame"/>
+<text x="150" y="95" class="subtitle">Tablet layout</text>
+<rect x="175" y="145" width="650" height="60" class="box"/>
+<text x="189" y="179" class="label">Navbar</text>
+<rect x="240.0" y="247" width="520.0" height="560" class="box"/>
+<text x="254.0" y="281" class="label">Create account form</text>
+<text x="254.0" y="307" class="label">Heading + intro</text>
+<rect x="258.0" y="327" width="484.0" height="52" class="box"/>
+<text x="272.0" y="361" class="small">Username field</text>
+<rect x="258.0" y="399" width="484.0" height="52" class="box"/>
+<text x="272.0" y="433" class="small">Email field</text>
+<rect x="258.0" y="471" width="484.0" height="52" class="box"/>
+<text x="272.0" y="505" class="small">Password field</text>
+<rect x="258.0" y="543" width="484.0" height="52" class="box"/>
+<text x="272.0" y="577" class="small">Confirm password field</text>
+<rect x="258.0" y="615" width="484.0" height="56" class="box"/>
+<text x="272.0" y="649" class="small">Primary button</text>
+<rect x="258.0" y="691" width="484.0" height="70" class="box"/>
+<text x="272.0" y="725" class="small">Login link</text>
+
+</svg>

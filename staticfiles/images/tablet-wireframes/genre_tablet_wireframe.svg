@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1300" viewBox="0 0 1000 1300">
+<style>
+    .frame { fill:white; stroke:black; stroke-width:3; }
+    .box { fill:none; stroke:black; stroke-width:2; rx:8; ry:8; }
+    .label { font-family:Arial, Helvetica, sans-serif; font-size:24px; }
+    .small { font-family:Arial, Helvetica, sans-serif; font-size:18px; }
+    .title { font-family:Arial, Helvetica, sans-serif; font-size:34px; font-weight:bold; }
+    .subtitle { font-family:Arial, Helvetica, sans-serif; font-size:22px; }
+</style>
+<text x="40" y="50" class="title">Music Madness – Genre Page – Tablet Wireframe</text>
+<rect x="150" y="120" width="700" height="1040" class="frame"/>
+<text x="150" y="95" class="subtitle">Tablet layout</text>
+<rect x="175" y="145" width="650" height="60" class="box"/>
+<text x="189" y="179" class="label">Navbar</text>
+<rect x="175" y="227" width="650" height="140" class="box"/>
+<text x="189" y="261" class="label">Genre header</text>
+<text x="189" y="287" class="label">Title + description + album/discussion count</text>
+<rect x="175" y="389" width="650" height="64" class="box"/>
+<text x="189" y="423" class="label">Search + sort controls</text>
+<rect x="175" y="475" width="650" height="620" class="box"/>
+<text x="189" y="509" class="label">Album grid</text>
+<rect x="175.0" y="530" width="315.0" height="145" class="box"/>
+<text x="189.0" y="564" class="small">Album card</text>
+<rect x="510.0" y="530" width="315.0" height="145" class="box"/>
+<text x="524.0" y="564" class="small">Album card</text>
+<rect x="175.0" y="705" width="315.0" height="145" class="box"/>
+<text x="189.0" y="739" class="small">Album card</text>
+<rect x="510.0" y="705" width="315.0" height="145" class="box"/>
+<text x="524.0" y="739" class="small">Album card</text>
+<rect x="175.0" y="880" width="315.0" height="145" class="box"/>
+<text x="189.0" y="914" class="small">Album card</text>
+<rect x="510.0" y="880" width="315.0" height="145" class="box"/>
+<text x="524.0" y="914" class="small">Album card</text>
+
+</svg>

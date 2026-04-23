@@ -1,6 +1,7 @@
 {% load static %}
 {% url home as home_url %}
 {% url about as about_url %}
+{% url genres as genre_detail_view %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +32,12 @@
                     <li class="nav__dropdown">
                         <a href="#" class="nav__dropdown-toggle">Genres</a>
                         <ul class="nav__dropdown-menu">
-                            <li><a href="#">Rock</a></li>
-                            <li><a href="#">Heavy Metal</a></li>
-                            <li><a href="#">Alternative Rock</a></li>
-                            <li><a href="#">Thrash</a></li>
-                            <li><a href="#">Death Metal</a></li>
-                            <li><a href="#">Metalcore</a></li>
+                            <li><a href="{% url 'genre_detail' 'rock' %}">Rock</a></li>
+                            <li><a href="{% url 'genre_detail' 'heavy-metal' %}">Heavy Metal</a></li>
+                            <li><a href="{% url 'genre_detail' 'alternative-rock' %}">Alternative Rock</a></li>
+                            <li><a href="{% url 'genre_detail' 'thrash' %}">Thrash</a></li>
+                            <li><a href="{% url 'genre_detail' 'death-metal' %}">Death Metal</a></li>
+                            <li><a href="{% url 'genre_detail' 'metalcore' %}">Metalcore</a></li>
                         </ul>
                     </li>
                     <li><a href="{% url 'about' %}">About</a></li>

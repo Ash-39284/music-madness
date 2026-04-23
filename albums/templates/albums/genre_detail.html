@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}{{ genre.name }} | Music Madness{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="container py-5">
+  <div class="genre-hero text-center p-4 p-md-5 mb-4">
+    <h1 class="genre-hero__title">{{ genre.name }}</h1>
+    {% if genre.description %}
+      <p class="genre-hero__sub">{{ genre.description }}</p>
+    {% else %}
+      <p class="genre-hero__sub">Browse classic records, iconic releases, and community discussions.</p>
+    {% endif %}
+    <p class="genre-hero__meta">{{ album_count }} albums • 0 discussions</p>
+  </div>
+</section>
+
+<!-- SEARCH & SORT -->
+<section class="container mb-4">
+  <form method="GET" action="{% url 'genre_detail' genre.slug %}" class="genre-controls">
+    <input
+      type="text"
+      name="q"
+      value="{{ search_query }}"
+      placeholder="Search.........."
+      class="genre-search"
+    >
+    <div class="genre-sort">
+      <label for="sort" class="genre-sort__label">Sort by:</label>
+      <select name="sort" id="sort" class="genre-sort__select" onchange="this.form.submit()">
+        <option value="artist" {% if sort == 'artist' %}selected{% endif %}>Artist</option>
+        <option value="title" {% if sort == 'title' %}selected{% endif %}>Title</option>
+      </select>
+    </div>
+  </form>
+</section>
+
+<!-- ALBUM GRID -->
+<section class="container mb-5">
+  {% if albums %}
+    <div class="row g-4">
+      {% for album in albums %}
+      <div class="col-12 col-md-4">
+        <div class="album-card h-100">
+          <img
+            src="{{ album.cover_image_url }}"
+            alt="{{ album.artist }} – {{ album.title }}"
+            class="album-card__img"
+          >
+          <div class="album-card__body">
+            <p class="album-card__artist">{{ album.artist }}</p>
+            <p class="album-card__album">{{ album.title }}</p>
+            <p class="album-card__genre">{{ album.genre }}</p>
+            <div class="album-card__votes">
+              <span>👍 0</span>
+              <span>👎 0</span>
+            </div>
+            <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center" style="color: #355872; margin-top: 2rem;">
+      {% if search_query %}
+        No albums found for "{{ search_query }}".
+      {% else %}
+        No albums available for this genre yet.
+      {% endif %}
+    </p>
+  {% endif %}
+</section>
+
+{% endblock %}

@@ -28,7 +28,17 @@
 
                 <ul class="nav__links">
                     <li><a href="#">Explore</a></li>
-                    <li><a href="#">Genres</a></li>
+                    <li class="nav__dropdown">
+                        <a href="#" class="nav__dropdown-toggle">Genres</a>
+                        <ul class="nav__dropdown-menu">
+                            <li><a href="#">Rock</a></li>
+                            <li><a href="#">Heavy Metal</a></li>
+                            <li><a href="#">Alternative Rock</a></li>
+                            <li><a href="#">Thrash</a></li>
+                            <li><a href="#">Death Metal</a></li>
+                            <li><a href="#">Metalcore</a></li>
+                        </ul>
+                    </li>
                     <li><a href="{% url 'about' %}">About</a></li>
                 </ul>
 

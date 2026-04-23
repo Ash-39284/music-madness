@@ -5,7 +5,7 @@ Light blue #9CD5FF rgb(156, 213, 255)
 White #F7F8F0 rgb(247, 248, 240)
 */
 
-/* ── General ──────────────────────────────── */
+/*  General */
  
 body {
   font-family: 'Open Sans', sans-serif;
@@ -18,7 +18,7 @@ body {
 }
  
  
-/* ── Navbar ───────────────────────────────── */
+/* Navbar */
  
 .nav {
   background-color: #355872;
@@ -107,7 +107,7 @@ body {
 }
  
  
-/* ── Hero ─────────────────────────────────── */
+/* Home Hero */
  
 .hero-card {
   background-color: #355872;
@@ -163,7 +163,7 @@ body {
 }
  
  
-/* ── CTA Cards ────────────────────────────── */
+/* CTA Cards */
  
 .cta-card {
   background-color: #355872;
@@ -187,7 +187,7 @@ body {
 }
  
  
-/* ── Inside the Pit ───────────────────────── */
+/* Inside the Pit */
  
 .pit-section {
   background-color: #7AAACE;
@@ -278,7 +278,7 @@ body {
 }
  
  
-/* ── Browse by Genre ──────────────────────── */
+/* Browse by Genre */
  
 .genre-heading {
   font-family: 'Montserrat', sans-serif;
@@ -310,9 +310,90 @@ body {
   background-color: #2a4660;
   color: #F7F8F0;
 }
+
+/* About Page */
+ 
+/* About Hero */
+.about-hero {
+  background-color: #355872;
+  border-radius: 16px;
+  color: #F7F8F0;
+}
+ 
+.about-hero__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+ 
+.about-hero__sub {
+  font-size: .95rem;
+  opacity: .85;
+  max-width: 55ch;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+ 
+.about-hero__tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: .9;
+  margin: 0;
+}
+ 
+/* About cards (What is / How it works) */
+.about-card {
+  background-color: #F7F8F0;
+  border: 2px solid #7AAACE;
+  border-radius: 16px;
+  padding: 2rem;
+}
+ 
+.about-card__heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7AAACE;
+  margin-bottom: 1rem;
+}
+ 
+.about-card__text {
+  font-size: .95rem;
+  color: #355872;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: .75rem;
+}
+.about-card__text:last-child { margin-bottom: 0; }
+ 
+/* How it works cards */
+.how-card {
+  background-color: #355872;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  color: #F7F8F0;
+  text-align: center;
+  height: 100%;
+}
+ 
+.how-card__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+ 
+.how-card__text {
+  font-size: .85rem;
+  opacity: .85;
+  line-height: 1.5;
+  margin: 0;
+}
  
  
-/* ── Step Into the Pit ────────────────────── */
+/* Step Into the Pit */
  
 .step-banner {
   background-color: #355872;
@@ -362,7 +443,7 @@ body {
 }
  
  
-/* ── Footer ───────────────────────────────── */
+/* Footer */
  
 .footer {
   background-color: #7AAACE;

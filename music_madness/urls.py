@@ -18,8 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from albums.views import home_view
-from albums.views import about_view
+from albums.views import home_view, about_view, genre_detail_view
 
 
 # from accounts import views as index_views
@@ -28,7 +27,8 @@ from albums.views import about_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
-    path('about/', about_view, name='about')
+    path('about/', about_view, name='about'),
+    path('genres/<slug:slug>/', genre_detail_view, name='genre_detail'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

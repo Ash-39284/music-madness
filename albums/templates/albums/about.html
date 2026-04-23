@@ -1,21 +1,64 @@
 {% extends "base.html" %}
-
+ 
 {% block title %}About | Music Madness{% endblock %}
-
+ 
 {% block content %}
+ 
+<!-- About Hero -->
 <section class="container py-5">
-
-<!-- About HERO -->
-    <div id="about-hero" class="container">
-        <div class="row">
-            <h2>Metal Madness</h2>
-            <p>A community for to react to albums, debate legendary releases, and discover music across every genre.</p>
-            <p>Where metalheads rate the riffs.</p>
-        </div>
-    </div>
-
-
-
-
+  <div class="about-hero text-center p-5 mb-4">
+    <h1 class="about-hero__title">Metal Madness</h1>
+    <p class="about-hero__sub">A community for metal fans to react to albums, debate legendary releases, and discover music across every genre.</p>
+    <h2 class="about-hero__tagline">Where metalheads rate the riffs.</h2>
+  </div>
 </section>
+ 
+<!-- What is Music Madness -->
+<section class="container mb-4">
+  <div class="about-card">
+    <h2 class="about-card__heading">What is Music Madness?</h2>
+    <p class="about-card__text">Music Madness is a community-driven platform where fans can explore albums, react with likes or dislikes, and join discussions about their favourite music.</p>
+    <p class="about-card__text">Instead of passive ratings, Music Madness focuses on conversation and community opinion.</p>
+  </div>
+</section>
+ 
+<!-- How it works -->
+<section class="container mb-4">
+  <div class="about-card">
+    <h2 class="about-card__heading">How it works</h2>
+    <div class="row g-3 mt-2">
+      <div class="col-12 col-md-4">
+        <div class="how-card">
+          <h3 class="how-card__title">React to albums</h3>
+          <p class="how-card__text">Like or dislike releases across every genre.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="how-card">
+          <h3 class="how-card__title">Join the discussion</h3>
+          <p class="how-card__text">Share your thoughts and debate legendary releases.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="how-card">
+          <h3 class="how-card__title">Discover new music</h3>
+          <p class="how-card__text">Explore albums across multiple genres and eras.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Step into the Pit -->
+<section class="container mb-5">
+  <div class="step-banner text-center p-5">
+    <h2 class="step-banner__title">STEP INTO THE PIT</h2>
+    <p class="step-banner__sub">Create an account to react to albums, join discussions, and share your thoughts with other metal fans.</p>
+    <div class="step-banner__actions mt-4">
+      <a href="#" class="btn btn-step">JOIN THE PIT</a>
+      <a href="#" class="btn btn-step">EXPLORE ALBUMS</a>
+    </div>
+  </div>
+</section>
+ 
 {% endblock %}

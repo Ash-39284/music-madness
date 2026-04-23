@@ -19,8 +19,10 @@ class Album(models.Model):
     external_url = models.URLField(blank=True)
     source = models.CharField(max_length=100, blank=True) 
     is_imported = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+  
 
     def __str__(self):
         return f"{self.artist} - {self.title}"

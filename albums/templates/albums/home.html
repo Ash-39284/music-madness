@@ -52,55 +52,24 @@
 <!--
 Use Reaction model to wire in the accurate reactions data from the users
 -->
-  <div class="col-12 col-md-4">
-        <div class="album-card h-100">
-          <img src="{{ album.cover_image.url }}" alt="Black Sabbath – Paranoid" class="album-card__img">
-          <div class="album-card__body">
-            <p class="album-card__artist">Black Sabbath</p>
-            <p class="album-card__album">Paranoid</p>
-            <p class="album-card__genre">Heavy Metal</p>
-            <div class="album-card__votes">
-              <span>👍 385</span>
-              <span>👎 63</span>
-            </div>
-            <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
-          </div>
-        </div>
+ {% for album in albums %}
+<div class="col-12 col-md-4">
+  <div class="album-card h-100">
+    <img src="{{ album.cover_image_url }}" alt="{{ album.artist }} — {{ album.title }}" class="album-card__img">
+    <div class="album-card__body">
+      <p class="album-card__artist">{{ album.artist }}</p>
+      <p class="album-card__album">{{ album.title }}</p>
+      <p class="album-card__genre">{{ album.genre }}</p>
+      <div class="album-card__votes">
+        <span>👍 0</span>
+        <span>👎 0</span>
       </div>
- 
-      <div class="col-12 col-md-4">
-        <div class="album-card h-100">
-          <img src="#" alt="Metallica – The Black Album" class="album-card__img">
-          <div class="album-card__body">
-            <p class="album-card__artist">Metallica</p>
-            <p class="album-card__album">The Black Album</p>
-            <p class="album-card__genre">Thrash Metal</p>
-            <div class="album-card__votes">
-              <span>👍 297</span>
-              <span>👎 38</span>
-            </div>
-            <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
-          </div>
-        </div>
-      </div>
- 
-      <div class="col-12 col-md-4">
-        <div class="album-card h-100">
-          <img src="#" alt="Ozzy Osbourne – Blizzard of Ozz" class="album-card__img">
-          <div class="album-card__body">
-            <p class="album-card__artist">Ozzy Osbourne</p>
-            <p class="album-card__album">Blizzard of Ozz</p>
-            <p class="album-card__genre">Heavy Metal</p>
-            <div class="album-card__votes">
-              <span>👍 185</span>
-              <span>👎 27</span>
-            </div>
-            <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
-          </div>
-        </div>
-      </div>
- 
+      <a href="#" class="btn btn-discussion w-100 mt-3">View discussion</a>
     </div>
+  </div>
+</div>
+{% endfor %}
+ 
   </div>
  </section>
 </section>

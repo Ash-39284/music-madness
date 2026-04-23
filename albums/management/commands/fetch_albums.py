@@ -103,6 +103,11 @@ class Command(BaseCommand):
                     if not album_title or album_title == "(null)":
                         continue
 
+                    keywords = ['remaster', 'deluxe', 'edition', 'anniversary', 'bonus']
+                    if any(kw in album_title.lower() for kw in keywords):
+                         self.stdout.write(f"    Skipping remaster: {album_title}")
+                         continue
+
                     # Get full album info including tracks and better artwork
                     info_response = requests.get(BASE_URL, params={
                         "method": "album.getinfo",

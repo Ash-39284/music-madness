@@ -706,22 +706,43 @@ body {
 
 .btn-reaction {
   background-color: #7AAACE;
-  border: none;
-  color: #F7F8F0;
+  border: 2px solid #7AAACE;
+  color: #355872;
   font-family: 'Montserrat', sans-serif;
   font-size: .875rem;
-  font-weight: 600;
-  padding: .5rem 1.5rem;
+  font-weight: 700;
+  padding: .5rem 1.75rem;
   border-radius: 999px;
   transition: background-color 180ms ease;
-  cursor: not-allowed;
-  opacity: .8;
+  cursor: pointer;
+  opacity: 1;
 }
 .btn-reaction:hover {
-  background-color: #5d8fab;
+  background-color: #9CD5FF;
+  border-color: #9CD5FF;
+  color: #355872;
 }
 .btn-reaction--dislike {
   background-color: #7AAACE;
+  border-color: #7AAACE;
+}
+
+.btn-post {
+  background-color: transparent;
+  border: 2px solid #7AAACE;
+  color: #7AAACE;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .45rem 1.4rem;
+  border-radius: 999px;
+  transition: background-color 180ms ease, color 180ms ease;
+  cursor: pointer;
+  opacity: 1;
+}
+.btn-post:hover {
+  background-color: #7AAACE;
+  color: #F7F8F0;
 }
 
 /* Community reaction bar */
@@ -786,7 +807,7 @@ body {
   border: 2px solid #7AAACE;
   border-radius: 12px;
   padding: 1rem;
-  background-color: #F7F8F0;
+  background-color: #ffffff !important;
   color: #355872;
   font-family: 'Open Sans', sans-serif;
   font-size: .875rem;
@@ -794,6 +815,7 @@ body {
   outline: none;
   transition: border-color 180ms ease;
 }
+
 .discussion__textarea:focus {
   border-color: #355872;
 }

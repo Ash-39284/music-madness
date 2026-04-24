@@ -28,7 +28,7 @@
           {% if album.release_year %} — {{ album.release_year }}{% endif %}
         </p>
         {% if album.description %}
-          <p class="album-detail__desc">{{ album.description|truncatewords:40 }}</p>
+          <p class="album-detail__desc">{{ album.description }}</p>
         {% endif %}
 
         <!-- Like / dislike counts -->
@@ -39,8 +39,8 @@
 
         <!-- Like / dislike buttons -->
         <div class="album-detail__actions">
-          <button class="btn btn-reaction" disabled>👍 Like</button>
-          <button class="btn btn-reaction btn-reaction--dislike" disabled>👎 Dislike</button>
+          <button class="btn btn-reaction">👍 Like</button>
+          <button class="btn btn-reaction btn-reaction--dislike">👎 Dislike</button>
         </div>
 
         <!-- Community reaction bar -->
@@ -72,7 +72,7 @@
       disabled
     ></textarea>
     <div class="text-end mt-2">
-      <button class="btn btn-post" disabled>Post Comment!</button>
+      <button class="btn btn-post">Post Comment!</button>
     </div>
   </div>
 

@@ -21,6 +21,8 @@ ARTISTS_BY_GENRE = {
         "Ozzy Osbourne",
         "Avenged Sevenfold",
         "Volbeat",
+        "Black Label Society",
+        "Skindred",
     ],
     "Thrash": [
         "Metallica",
@@ -29,6 +31,10 @@ ARTISTS_BY_GENRE = {
         "Anthrax",
         "Testament",
         "Exodus",
+        "Pantera",
+        "Machine Head",
+        "Lamb of God",
+        "Suicidal Tendencies",
     ],
     "Death Metal": [
         "Death",
@@ -37,6 +43,7 @@ ARTISTS_BY_GENRE = {
         "Obituary",
         "Carcass",
         "Sepultura",
+        "Gojira"
     ],
     "Rock": [
         "Led Zeppelin",
@@ -47,6 +54,14 @@ ARTISTS_BY_GENRE = {
         "Foo Fighters",
         "Red Hot Chili Peppers",
         "Pearl Jam",
+        "Radiohead",
+        "Paramore",
+        "Linkin Park",
+        "My Chemical Romance",
+        "The Beatles",
+        "Maroon 5",
+        "Panic! at the Disco",
+        "Green Day",
     ],
     "Alternative Rock": [
         "Radiohead",
@@ -57,6 +72,8 @@ ARTISTS_BY_GENRE = {
         "Placebo",
         "Weezer",
         "Black Stone Cherry",
+        "Biffy Clyro",
+        "Royal Blood",
     ],
     "Metalcore": [
         "Killswitch Engage",
@@ -66,6 +83,20 @@ ARTISTS_BY_GENRE = {
         "Architects",
         "Bring Me the Horizon",
         "Lamb of God",
+        "Architects",
+        "Bad Omens",
+        "Avenged Sevenfold",
+        "Motionless in White",
+        "Spiritbox",
+        "Parkway Drive",
+        "I Prevail",
+        "Five Finger Death Punch",
+        "Asking Alexandria",
+        "Artreyu",
+        "In This Moment",
+        "While She Sleeps",
+        "Of Mice & Men",
+        "We Came as Romans",
     ],
 }
 
@@ -87,7 +118,7 @@ class Command(BaseCommand):
                     "artist": artist_name,
                     "api_key": API_KEY,
                     "format": "json",
-                    "limit": 3,  # top 3 albums per artist
+                    "limit": 5,
                 })
 
                 if response.status_code != 200:
@@ -115,6 +146,7 @@ class Command(BaseCommand):
                         "album": album_title,
                         "api_key": API_KEY,
                         "format": "json",
+                        "limit": 10,
                     })
 
                     if info_response.status_code != 200:

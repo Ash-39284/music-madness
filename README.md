@@ -4,41 +4,188 @@
 
 ## Table of Contents
 
-1. UX
-    - Project Goals
-    - User Goals
-    - User Stories
-    - Developer Goals
-    - Design Choices
-2. Features
-    - Existing Features
-    - Features to Implement
-3. Technologies Used
-4. Testing
+1. [UX](#ux)
+    - [Project Goals](#project-goals)
+    - [User Goals](#user-goals)
+    - [User Stories](#user-stories)
+    - [Developer Goals](#developer-goals)
+    - [Design Choices](#design-choices)
+        - [Colour Pallete](#colour-pallete)
+        - [Frontend Design (Canva)](#frontend-design-canva)
+            - [Home Page](#home-page)
+            - [About Page](#about-page)
+            - [Genre Page](#genre-page)
+            - [Explore Page](#explore-page)
+            - [Album Discuss Page](#album-discussion-page)
+            - [Login Page](#login-page)
+            - [Signup Page](#signup-page)
+        - [Wireframes](#wireframes)
+            - [Mobile](#mobile)
+            - [Tablet](#tablet)
+            - [Desktop](#desktop)
+        - [ERD](#erd)
+2. [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features to Implement](#features-to-implement)
+3. [Technologies Used](#technologies-used)
+4. [Testing](#testing)
     - Code Validation
-    - Bugs Discovered
+    - [Bugs Discovered](#bugs-discovered)
     - Manual Testing
     - Automated Testing
-5. Deployment
-    - How To Run The Project Locally
-6. Credits
-    - Content
-    - Code
-    - Images
-    - API
-    - Acknowledgements
+5. [Deployment](#deployment)
+    - [How To Run The Project Locally](#how-to-run-the-project-locally)
+6. [Credits](#credits)
+    - [Content](#content)
+    - [Code](#code)
+    - [Images](#images)
+    - [API](#api)
+    - [Acknowledgements](#acknowledgements)
 
 ## Introduction
 
-This Project is developed for 
+**Music Madness** is a community-driven web application where metal fans can explore albums, react to releases, and join discussions around their favourite music.
 
-## Design Choices
+The platform focuses on conversation over ratings, giving users a space to share opinions, debate iconic records, and discover new music across multiple genres. From classic heavy metal to modern subgenres, Music Madness brings together fans who want more than just a score — they want a voice.
 
-### Colour Pallete
+---
+
+# UX
+
+
+## Project Goals
+
+The goal of **Music Madness** is to build a full-stack web app where users can explore albums, share their opinions, and get involved in discussions around music. The focus is on creating something interactive rather than just a simple rating platform.
+
+The project uses Django and PostgreSQL to handle the backend, with a database designed around albums, genres, users, and interactions. On the frontend, the aim is to bring custom designs to life with a consistent and responsive layout.
+
+Users will be able to create accounts, react to albums, and leave comments, making the experience more personal and community-driven. The project is also structured in a way that makes it easy to expand later on.
+
+---
+
+## User Goals
+
+Users of **Music Madness** should be able to easily discover new albums, revisit favourites, and share their opinions with others who enjoy the same kind of music. The goal is to give people a space where they can do more than just rate an album — they can actually talk about it.
+
+A user should be able to browse albums by genre, view album details, and see how others in the community feel about a release. They should also be able to react to albums and leave comments, making it easy to join ongoing discussions or start their own.
+
+The overall experience should feel simple and intuitive, so users can quickly find what they’re looking for and get involved without any friction.
+
+---
+
+## User Stories
+
+---
+
+## Developer Goals
+
+---
+
+# Design Choices
+
+## Colour Pallete
 
 ![Colour Pallette](./static/images/colour-pallette.png)
 
-# Bugs Discovered
+## Frontend Design (Canva)
+
+### Home Page
+
+![Home Page](./static/images/music-madness-frontend-designs/home-page.png)
+
+### About Page
+
+![About Page](./static/images/music-madness-frontend-designs/about-page.png)
+
+### Genre Page
+
+![Genre Page](./static/images/music-madness-frontend-designs/genre-page.png)
+
+### Explore Page
+
+![Explore Page](./static/images/music-madness-frontend-designs/explore-page.png)
+
+### Album Discussion Page
+
+![Album Discussion Page](./static/images/music-madness-frontend-designs/album-discuss-pge.png)
+
+### Login Page
+
+![Login Page](./static/images/music-madness-frontend-designs/login-page.png)
+
+### Signup Page
+
+![Signup Page](./static/images/music-madness-frontend-designs/signup-page.png)
+
+---
+
+## Wireframes
+
+### Mobile
+
+![Home Page/ Explore page](./static/images/mobile-wireframes/home_mobile_wireframe.svg)
+
+![About Page](./static/images/mobile-wireframes/about_mobile_wireframe.svg)
+
+![Genre Page](./static/images/mobile-wireframes/genre_mobile_wireframe.svg)
+
+![Album Page](./static/images/mobile-wireframes/album_mobile_wireframe.svg)
+
+![Signup Page](./static/images/mobile-wireframes/signup_mobile_wireframe.svg)
+
+![Login Page](./static/images/mobile-wireframes/login_mobile_wireframe.svg)
+
+### Tablet
+![Home Page/ Explore page](./static/images/tablet-wireframes/home_tablet_wireframe.svg)
+
+![About Page](./static/images/tablet-wireframes/about_tablet_wireframe.svg)
+
+![Genre Page](./static/images/tablet-wireframes/genre_tablet_wireframe.svg)
+
+![Album Page](./static/images/tablet-wireframes/album_tablet_wireframe.svg)
+
+![Signup Page](./static/images/tablet-wireframes/signup_tablet_wireframe.svg)
+
+![Login Page](./static/images/tablet-wireframes/login_tablet_wireframe.svg)
+
+
+### Desktop
+
+![Home Page/ Explore page](./static/images/desktop-wireframes/home_desktop_wireframe.svg)
+
+![About Page](./static/images/desktop-wireframes/about_desktop_wireframe.svg)
+
+![Genre Page](./static/images/desktop-wireframes/genre_desktop_wireframe.svg)
+
+![Album Page](./static/images/desktop-wireframes/album_desktop_wireframe.svg)
+
+![Signup Page](./static/images/desktop-wireframes/signup_desktop_wireframe.svg)
+
+![Login Page](./static/images/desktop-wireframes/login_desktop_wireframe.svg)
+
+--- 
+
+## ERD
+
+![ERD Diagram](./static/images/music-madness-erd-diagram.png)
+
+---
+
+# Features
+
+## Existing Features
+
+---
+
+## Features To Implement
+
+---
+
+# Technologies Used
+
+# Testing
+
+## Bugs Discovered
 
 This section documents bugs encountered during the development of Music Madness, including screenshots, descriptions, and how each was resolved.
 
@@ -152,3 +299,28 @@ operations = [
  
 ---
 
+# Deployment
+
+## How To Run The Project Locally
+
+# Credits
+
+## Content
+
+---
+
+## Code
+
+---
+
+## Images
+
+---
+
+## API
+
+---
+
+## Acknowledgements
+
+This project was developed and coded by Ashley Roberts in 2026

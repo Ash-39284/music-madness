@@ -44,3 +44,4 @@ class Track(models.Model):
 
     def __str__(self):
         return f"{self.album.title} - {self.track_number}. {self.title}"
+    

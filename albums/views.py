@@ -59,3 +59,6 @@ def album_detail_view(request, pk):
         'dislike_count': dislike_count,
         'like_percentage': like_percentage,
     })
+
+def explore_view(request):
+    return render(request, 'albums/explore.html')

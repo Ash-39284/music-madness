@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from albums.views import home_view, about_view, genre_detail_view, album_detail_view,
+from albums.views import home_view, about_view, genre_detail_view, album_detail_view
 
 
 # from accounts import views as index_views

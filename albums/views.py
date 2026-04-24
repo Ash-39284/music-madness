@@ -36,3 +36,26 @@ def genre_detail_view(request, slug):
         'search_query': search_query,
         'sort': sort,
     })
+
+def album_detail_view(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    """
+    Related albums from the same genre, excluding this one.
+    """
+    related_albums = Album.object.filter(
+        genre=album.genre
+    ).exclude(pk=album.pk).exclude(cover_image_url='')[:3]
+    """
+    Placeholder counts, will be wired up later.
+    """
+    like_count = 0
+    dislike_count = 0
+    like_percentage = 0
+
+    return render(request, 'albums/album_detail.html', {
+        'album': album,
+        'related_albums': related_albums,
+        'like_count': like_count,
+        'dislike_count': dislike_count,
+        'like_percentage': like_percentage,
+    })

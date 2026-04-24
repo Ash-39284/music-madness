@@ -61,8 +61,8 @@ Use Reaction model to wire in the accurate reactions data from the users
       <p class="album-card__album">{{ album.title }}</p>
       <p class="album-card__genre">{{ album.genre }}</p>
       <div class="album-card__votes">
-        <span>👍 0</span>
-        <span>👎 0</span>
+        <span><i class="fa-solid fa-thumbs-up"></i> 0</span>
+        <span><i class="fa-solid fa-thumbs-down"></i> 0</span>
       </div>
       <a href="{% url 'album_detail' album.pk %}" class="btn btn-discussion w-100 mt-3">View discussion</a>
     </div>

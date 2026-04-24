@@ -500,7 +500,7 @@ body {
   color: #355872;
 }
 
-/* ── Genre Detail Page ────────────────────── */
+/* Genre Detail Page */
  
 .genre-hero {
   background-color: #355872;
@@ -648,4 +648,235 @@ body {
 @media (max-width: 576px) {
   .footer__inner { flex-direction: column; }
   .footer__links { align-items: flex-start; }
+}
+
+/* Album Detail Page */
+
+.album-detail-card {
+  background-color: #355872;
+  border-radius: 16px;
+  color: #F7F8F0;
+}
+
+.album-detail__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.album-detail__artist {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.album-detail__title-italic {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.album-detail__meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+.album-detail__desc {
+  font-size: .9rem;
+  opacity: .85;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.album-detail__counts {
+  display: flex;
+  gap: 1.5rem;
+  font-size: .9rem;
+  opacity: .85;
+}
+
+.album-detail__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-reaction {
+  background-color: #7AAACE;
+  border: 2px solid #7AAACE;
+  color: #355872;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .5rem 1.75rem;
+  border-radius: 999px;
+  transition: background-color 180ms ease;
+  cursor: pointer;
+  opacity: 1;
+}
+.btn-reaction:hover {
+  background-color: #9CD5FF;
+  border-color: #9CD5FF;
+  color: #355872;
+}
+.btn-reaction--dislike {
+  background-color: #7AAACE;
+  border-color: #7AAACE;
+}
+
+.btn-post {
+  background-color: transparent;
+  border: 2px solid #7AAACE;
+  color: #7AAACE;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: .45rem 1.4rem;
+  border-radius: 999px;
+  transition: background-color 180ms ease, color 180ms ease;
+  cursor: pointer;
+  opacity: 1;
+}
+.btn-post:hover {
+  background-color: #7AAACE;
+  color: #F7F8F0;
+}
+
+/* Community reaction bar */
+.album-detail__community {
+  margin-top: 1.5rem;
+}
+
+.album-detail__community-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+
+.album-detail__community-sub {
+  font-size: .85rem;
+  opacity: .85;
+  margin-bottom: .4rem;
+}
+
+.reaction-bar {
+  width: 100%;
+  height: 18px;
+  background-color: #2a4660;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.reaction-bar__fill {
+  height: 100%;
+  background-color: #9CD5FF;
+  border-radius: 999px;
+  transition: width 400ms ease;
+}
+
+
+/* Discussion Section */
+
+.discussion__heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #7AAACE;
+  margin-bottom: 1.5rem;
+}
+
+.discussion__form-wrap {
+  background-color: #F7F8F0;
+  border: 2px solid #7AAACE;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.discussion__form-label {
+  font-size: .9rem;
+  color: #7AAACE;
+  margin-bottom: .75rem;
+}
+
+.discussion__textarea {
+  width: 100%;
+  border: 2px solid #7AAACE;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #ffffff !important;
+  color: #355872;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .875rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 180ms ease;
+}
+
+.discussion__textarea:focus {
+  border-color: #355872;
+}
+
+.btn-post {
+  background-color: #7AAACE;
+  border: none;
+  color: #F7F8F0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: .45rem 1.4rem;
+  border-radius: 999px;
+  transition: background-color 180ms ease;
+  cursor: not-allowed;
+  opacity: .8;
+}
+.btn-post:hover {
+  background-color: #5d8fab;
+}
+
+.discussion__empty {
+  color: #7AAACE;
+  font-size: .9rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+
+/* You Might Also Like */
+
+.related__heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7AAACE;
+  margin-bottom: 1.5rem;
+}
+
+.related-album-link {
+  text-decoration: none;
+  color: #355872;
+  display: block;
+  transition: opacity 180ms ease;
+}
+.related-album-link:hover {
+  opacity: .8;
+}
+
+.related-album__img {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.related-album__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  color: #7AAACE;
+  margin: 0;
 }

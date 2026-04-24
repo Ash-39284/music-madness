@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}{{ album.artist }} — {{ album.title }} | Music Madness{% endblock %}
+
+{% block content %}
+
+<!-- ── ALBUM HEADER ───────────────────────────────────────────────────── -->
+<section class="container py-5">
+  <div class="album-detail-card p-4 p-md-5 mb-4">
+    <div class="row g-4">
+
+      <!-- Cover art -->
+      <div class="col-12 col-md-4">
+        <img
+          src="{{ album.cover_image_url }}"
+          alt="{{ album.artist }} — {{ album.title }}"
+          class="album-detail__img"
+        >
+      </div>
+
+      <!-- Album info -->
+      <div class="col-12 col-md-8">
+        <h1 class="album-detail__artist">
+          {{ album.artist }} <span class="album-detail__title-italic">— {{ album.title }}</span>
+        </h1>
+        <p class="album-detail__meta">
+          {{ album.genre }}
+          {% if album.release_year %} — {{ album.release_year }}{% endif %}
+        </p>
+        {% if album.description %}
+          <p class="album-detail__desc">{{ album.description|truncatewords:40 }}</p>
+        {% endif %}
+
+        <!-- Like / dislike counts -->
+        <div class="album-detail__counts mb-3">
+          <span>👍 {{ like_count }} Likes</span>
+          <span>👎 {{ dislike_count }} Dislikes</span>
+        </div>
+
+        <!-- Like / dislike buttons -->
+        <div class="album-detail__actions">
+          <button class="btn btn-reaction" disabled>👍 Like</button>
+          <button class="btn btn-reaction btn-reaction--dislike" disabled>👎 Dislike</button>
+        </div>
+
+        <!-- Community reaction bar -->
+        <div class="album-detail__community mt-4">
+          <h3 class="album-detail__community-title">Community Reaction</h3>
+          <p class="album-detail__community-sub">{{ like_percentage }}% liked this album</p>
+          <div class="reaction-bar">
+            <div class="reaction-bar__fill" style="width: {{ like_percentage }}%;"></div>
+          </div>
+          <p class="album-detail__community-sub mt-2">{{ like_percentage }}%</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DISCUSSION ─────────────────────────────────────────────────────── -->
+<section class="container mb-5">
+  <h2 class="discussion__heading">Discussion</h2>
+
+  <!-- Comment form -->
+  <div class="discussion__form-wrap mb-4">
+    <p class="discussion__form-label">Share your thoughts on this album:</p>
+    <textarea
+      class="discussion__textarea"
+      rows="5"
+      placeholder=""
+      disabled
+    ></textarea>
+    <div class="text-end mt-2">
+      <button class="btn btn-post" disabled>Post Comment!</button>
+    </div>
+  </div>
+
+  <!-- Comments list — placeholder until interactions are wired up -->
+  <div class="discussion__comments">
+    <p class="discussion__empty">No comments yet. Be the first to share your thoughts!</p>
+  </div>
+</section>
+
+<!-- ── YOU MIGHT ALSO LIKE ────────────────────────────────────────────── -->
+{% if related_albums %}
+<section class="container mb-5">
+  <h2 class="related__heading">You might also like...</h2>
+  <div class="row g-4">
+    {% for related in related_albums %}
+    <div class="col-12 col-md-4 text-center">
+      <a href="{% url 'album_detail' related.pk %}" class="related-album-link">
+        <img
+          src="{{ related.cover_image_url }}"
+          alt="{{ related.artist }} — {{ related.title }}"
+          class="related-album__img"
+        >
+        <p class="related-album__title mt-2">{{ related.title }}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

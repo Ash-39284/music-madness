@@ -42,7 +42,7 @@ def album_detail_view(request, pk):
     """
     Related albums from the same genre, excluding this one.
     """
-    related_albums = Album.object.filter(
+    related_albums = Album.objects.filter(
         genre=album.genre
     ).exclude(pk=album.pk).exclude(cover_image_url='')[:3]
     """

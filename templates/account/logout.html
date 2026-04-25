@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load allauth account %}
+
+{% block title %}Sign Out | Music Madness{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+    <div class="auth-card mx-auto">
+
+        <h1 class="auth-card__title">Logging out</h1>
+        <p class="auth-card__sub" style="text-align: center;">Leaving so soon?</p>
+
+        <button type="submit" class="btn btn-auth-submit">Stayed logged in</button>
+        <button type="submit" class="btn btn-auth-submit">Log out</button>
+
+    </div>
+</section>
+
+{% endblock %}

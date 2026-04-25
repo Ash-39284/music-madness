@@ -75,9 +75,20 @@ The overall experience should feel simple and intuitive, so users can quickly fi
 
 ## User Stories
 
+Users should be able to browse through albums so they can find new music or go back to ones they already like. They should be able to click into an album and see details like the artist, tracklist, and what other people think about it.
+
+Users should be able to sign up and log in so they can take part in the site. Once they’re logged in, they should be able to like or dislike albums and leave comments to share their opinions.
+
+They should also be able to read other people’s comments, so they can see different views and join in on discussions around each album.
+
+It should also be easy to explore albums by genre, so users can quickly find music that matches what they’re into. Overall, the site should feel simple to use and easy to navigate without having to think too much about it.
+
 ---
 
 ## Developer Goals
+
+
+
 
 ---
 

@@ -338,7 +338,34 @@ Removed `flex-wrap: wrap` from the `.most-discussed` rule:
 
 ---
 
+## Bug 8 - "View Discussion" Button Stretching Full Width
 
+**Description:**
+The "View discussion" button in the Most Discussed section was stretching to fill the full width of the `.most-discussed__info` div instead of fitting to its content as shown in the Canva design.
+
+**Cause:**
+The `.most-discussed__info` div uses `display: flex` and `flex-direction: column`, which by default stretches child elements to fill the full width of the container. Bootstrap's `.btn` class was also contributing to the stretching behaviour.
+
+**Fix:**
+Added `align-items: flex-start` to `.most-discussed__info` to prevent children from stretching, and used `!important` to override Bootstrap:
+ 
+```css
+.most-discussed__info {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: flex-start;
+}
+ 
+.most-discussed__info .btn-discussion {
+  display: inline-block !important;
+  width: auto !important;
+}
+```
+ 
+---
 
 
 # Deployment

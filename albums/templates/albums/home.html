@@ -60,7 +60,13 @@ Use Reaction model to wire in the accurate reactions data from the users
  {% for album in albums %}
 <div class="col-12 col-md-4">
   <div class="album-card h-100">
-    <img src="{{ album.cover_image_url }}" alt="{{ album.artist }} — {{ album.title }}" class="album-card__img">
+    <div class="album-card__img-wrap">
+      <img
+        src="{{ album.cover_image_url }}"
+        alt="{{ album.artist }} – {{ album.title }}"
+        class="album-card__img"
+      >
+    </div>
     <div class="album-card__body">
       <p class="album-card__artist">{{ album.artist }}</p>
       <p class="album-card__album">{{ album.title }}</p>

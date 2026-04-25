@@ -25,11 +25,12 @@
 <body class="d-flex flex-column min-vh-100 main-bg">
 
     <!-- NAVBAR -->
-    <header class="nav">
-        <div class="container">
-            <nav class="nav__inner">
-                <a href="{% url 'home' %}" class="nav__logo">Music Madness</a>
+<header class="nav">
+    <div class="container">
+        <nav class="nav__inner">
+            <a href="{% url 'home' %}" class="nav__logo">Music Madness</a>
 
+            <div class="nav__right">
                 <ul class="nav__links">
                     {% if request.resolver_match.url_name != 'home' %}
                     <li><a href="{% url 'home' %}">Home</a></li>
@@ -58,9 +59,11 @@
                         <a href="{% url 'account_signup' %}" class="btn btn-primary">Sign Up</a>
                     {% endif %}
                 </div>
-            </nav>
-        </div>
-    </header>
+            </div>
+
+        </nav>
+    </div>
+</header>
 
     <!-- MAIN CONTENT -->
     <main class="flex-grow-1">

@@ -29,7 +29,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
  
 .nav__logo {
@@ -51,6 +56,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .nav__links a {
   font-family: 'Montserrat', sans-serif;
   font-size: .875rem;

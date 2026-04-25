@@ -54,6 +54,36 @@
                 {% endif %}
             </div>
 
+            <div class="auth-card__field">
+                <label class="auth-card__label" for="id_password1">Password:</label>
+                    <input
+                        type="password"
+                        name="password1"
+                        id="id_password1"
+                        placeholder="Password..."
+                        class="auth-card__input"
+                    >
+                    <p class="auth-card__hint">Must contain 8 characters. Only -, &, ! are allowed.</p>
+                {% if form.password1.errors %}
+                    <p class="auth-card__error-msg">{{ form.password1.errors|join:", " }}</p>
+                {% endif %}
+            </div>
+
+            <div class="auth-card__field">
+                <label class="auth-card__label" for="id_password2">Confirm password:</label>
+                    <input
+                        type="password"
+                        name="password2"
+                        id="id_password2"
+                        placeholder="Confirm password..."
+                        class="auth-card__input"
+                    >
+                {% if form.password2.errors %}
+                    <p class="auth-card__error-msg">{{ form.password2.errors|join:", " }}</p>
+                {% endif %}
+            </div>
+
+            
 
         </form>
 

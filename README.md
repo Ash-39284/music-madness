@@ -314,7 +314,29 @@ Running `python manage.py collectstatic --clear` forced Django to regenerate the
 
 ---
 
+## Bug 7 - Most Discussed Layout Stacking Vertically Instead of Side by Side
 
+**Description:**
+After the CSS loaded correctly, the "Most Discussed" section still displayed the album image and info text stacked vertically rather than side by side as designed. The image took up the full width of the card and pushed the text content below it.
+
+![Most Discussed stacked layout bug](./static/images/bug-7-screenshot.png)
+
+**Cause:**
+The `.most-discussed` CSS rule had `flex-wrap: wrap` set, which caused the flex children to wrap onto a new line when the container was not wide enough. This meant the image took the full row width and the info div dropped below it.
+
+**Fix:**
+Removed `flex-wrap: wrap` from the `.most-discussed` rule:
+ 
+```css
+.most-discussed {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+```
+
+---
 
 
 

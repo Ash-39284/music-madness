@@ -33,16 +33,25 @@
         {% endif %}
 
         <!-- Like / dislike counts -->
-        <div class="album-detail__counts mb-2">
-          <span><i class="fa-solid fa-thumbs-up"></i> {{ like_count }} Likes</span>
-          <span><i class="fa-solid fa-thumbs-down"></i> {{ dislike_count }} Dislikes</span>
-        </div>
-
-        <!-- Like / dislike buttons -->
-        <div class="album-detail__actions mb-3">
-          <button class="btn btn-reaction"><i class="fa-solid fa-thumbs-up"></i> Like</button>
-          <button class="btn btn-reaction btn-reaction--dislike"><i class="fa-solid fa-thumbs-down"></i> Dislike</button>
-        </div>
+       <div class="album-detail__actions mb-3">
+        {% if user.is_authenticated %}
+          <a href="{% url 'react_to_album' album.pk 'like' %}" 
+            class="btn btn-reaction {% if user_reaction == 'like' %}btn-reaction--active{% endif %}">
+            <i class="fa-solid fa-thumbs-up"></i> Like
+          </a>
+          <a href="{% url 'react_to_album' album.pk 'dislike' %}" 
+            class="btn btn-reaction btn-reaction--dislike {% if user_reaction == 'dislike' %}btn-reaction--active{% endif %}">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike
+          </a>
+        {% else %}
+          <a href="{% url 'account_login' %}" class="btn btn-reaction">
+            <i class="fa-solid fa-thumbs-up"></i> Like
+          </a>
+          <a href="{% url 'account_login' %}" class="btn btn-reaction btn-reaction--dislike">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike
+          </a>
+        {% endif %}
+      </div>
 
         <!-- Community reaction bar -->
         <div class="album-detail__community mt-4">

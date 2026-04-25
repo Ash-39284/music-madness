@@ -174,8 +174,6 @@ body {
   .nav__links { display: none; }
 }
 
-
- 
 /* Home Hero */
  
 .hero-card {
@@ -762,6 +760,12 @@ body {
 .btn-post:hover {
   background-color: #7AAACE;
   color: #F7F8F0;
+}
+
+.btn-reaction--active {
+  background-color: #9CD5FF;
+  border-color: #9CD5FF;
+  color: #355872;
 }
 
 /* Community reaction bar */

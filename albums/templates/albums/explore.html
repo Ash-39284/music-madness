@@ -68,5 +68,19 @@
 
 <!-- Browse by genre -->
 
+<section class="container mb-5">
+  <div class="explore-card">
+    <h2 class="explore-card__heading">Browse by Genre...</h2>
+    <div class="genre-grid mt-3">
+      <a href="{% url 'genre_detail' 'rock' %}" class="btn btn-genre">Rock</a>
+      <a href="{% url 'genre_detail' 'heavy-metal' %}" class="btn btn-genre">Heavy Metal</a>
+      <a href="{% url 'genre_detail' 'alternative-rock' %}" class="btn btn-genre">Alternative Rock</a>
+      <a href="{% url 'genre_detail' 'thrash' %}" class="btn btn-genre">Thrash</a>
+      <a href="{% url 'genre_detail' 'death-metal' %}" class="btn btn-genre">Death Metal</a>
+      <a href="{% url 'genre_detail' 'metalcore' %}" class="btn btn-genre">Metalcore</a>
+    </div>
+  </div>
+</section>
+
 
 {% endblock %}

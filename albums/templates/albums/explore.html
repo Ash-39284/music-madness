@@ -8,8 +8,8 @@
 <section class="container py-5">
     <div class="explore-hero text-center p-4 p-md-5 mb-4">
         <h1 class="explore-hero__title">Explore Albums</h1>
-        <p class="explore-hero_sub">Discover legendary releases, trending discussions and albums across various genre's.</p>
-        <p class="explore-hero_meta">{{ album_count }} albums • 0 discussions</p>
+        <p class="explore-hero__sub">Discover legendary releases, trending discussions and albums across various genre's.</p>
+        <p class="explore-hero__meta">{{ album_count }} albums • 0 discussions</p>
     </div>
 </section>
 
@@ -45,6 +45,26 @@
 
 <!-- Most Discussed... -->
 
+<section class="container mb-4">
+  <div class="explore-card">
+    <h2 class="explore-card__heading">Most Discussed...</h2>
+    {% if most_discussed %}
+    <div class="most-discussed">
+      <img
+        src="{{ most_discussed.cover_image_url }}"
+        alt="{{ most_discussed.artist }} — {{ most_discussed.title }}"
+        class="most-discussed__img"
+      >
+      <div class="most-discussed__info">
+        <p class="most-discussed__title">{{ most_discussed.title }} - {{ most_discussed.artist }}</p>
+        <p class="most-discussed__stat"><i class="fa-solid fa-thumbs-up"></i> 0 likes • <i class="fa-solid fa-thumbs-down"></i> 0 dislikes</p>
+        <p class="most-discussed__stat">0 comments</p>
+        <a href="{% url 'album_detail' most_discussed.pk %}" class="btn btn-discussion mt-3">View discussion</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
 
 <!-- Browse by genre -->
 

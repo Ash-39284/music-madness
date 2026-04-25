@@ -929,3 +929,50 @@ body {
   color: #7AAACE;
   margin-bottom: .5rem;
 }
+
+/* Most discussed */
+.most-discussed {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.most-discussed__img {
+  width: 350px;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.most-discussed__info {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: flex-start;
+}
+
+.most-discussed__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #7AAACE;
+  margin-bottom: .25rem;
+}
+
+.most-discussed__stat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #7AAACE;
+  margin-bottom: 0;
+}
+
+.most-discussed__info .btn-discussion {
+  display: inline-block !important;
+  width: auto !important;
+}

@@ -10,6 +10,16 @@ def home_view(request):
 def about_view(request):
     return render(request, 'albums/about.html')
 
+def explore_view(request):
+    album_count = Album.objects.exclude(cover_image_url='').count()
+    trending_albums = Album.objects.filter(featured=True).exclude(cover_image_url='')[:3]
+    most_discussed = Album.objects.filter(featured=True).exclude(cover_image_url='').first()
+ 
+    return render(request, 'albums/explore.html', {
+        'album_count': album_count,
+        'trending_albums': trending_albums,
+        'most_discussed': most_discussed,
+    })
 
 def genre_detail_view(request, slug):
     genre = get_object_or_404(Genre, slug=slug)
@@ -59,8 +69,3 @@ def album_detail_view(request, pk):
         'dislike_count': dislike_count,
         'like_percentage': like_percentage,
     })
-
-def explore_view(request):
-    album_count = Album.objects.filter().exclude(cover_image_url='').count()
-
-    return render(request, 'albums/explore.html', {'album_count': album_count,})

@@ -883,12 +883,14 @@ body {
 
 /* Explore page */
 
-.explore-hero{
+/* Explore Hero*/
+
+.explore-hero {
   background-color: #355872;
   border-radius: 16px;
   color: #F7F8F0;
 }
-
+ 
 .explore-hero__title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
@@ -900,7 +902,7 @@ body {
   font-size: .95rem;
   opacity: .85;
   max-width: 55ch;
-  margin: 0 auto .75rem;
+  margin: 0 auto .5rem;
   line-height: 1.6;
 }
  
@@ -910,4 +912,20 @@ body {
   font-weight: 600;
   opacity: .75;
   margin: 0;
+}
+
+/* Explore section cards */
+.explore-card {
+  background-color: #F7F8F0;
+  border: 2px solid #7AAACE;
+  border-radius: 16px;
+  padding: 2rem;
+}
+ 
+.explore-card__heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7AAACE;
+  margin-bottom: .5rem;
 }

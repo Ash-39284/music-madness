@@ -28,9 +28,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('about/', about_view, name='about'),
+    path('explore/', explore_view, name='explore'),
     path('genres/<slug:slug>/', genre_detail_view, name='genre_detail'),
-    path('albums/<int:pk>/', album_detail_view, name='album_detail'),
-    path('explore/', explore_view, name='explore')
+    path('albums/<int:pk>/', album_detail_view, name='album_detail'),   
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

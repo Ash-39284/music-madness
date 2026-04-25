@@ -14,8 +14,39 @@
 </section>
 
 <!-- Trending in the pit -->
+<section class="container mb-4">
+  <div class="explore-card">
+    <h2 class="explore-card__heading">Trending in the pit...</h2>
+    <div class="row g-4 mt-1">
+      {% for album in trending_albums %}
+      <div class="col-12 col-md-4">
+        <div class="album-card h-100">
+          <img
+            src="{{ album.cover_image_url }}"
+            alt="{{ album.artist }} — {{ album.title }}"
+            class="album-card__img"
+          >
+          <div class="album-card__body">
+            <p class="album-card__artist">{{ album.artist }}</p>
+            <p class="album-card__album">{{ album.title }}</p>
+            <p class="album-card__genre">{{ album.genre }}</p>
+            <div class="album-card__votes">
+              <span><i class="fa-solid fa-thumbs-up"></i> 0</span>
+              <span><i class="fa-solid fa-thumbs-down"></i> 0</span>
+            </div>
+            <a href="{% url 'album_detail' album.pk %}" class="btn btn-discussion w-100 mt-3">View discussion</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Most Discussed... -->
 
 
+<!-- Browse by genre -->
 
 
 {% endblock %}

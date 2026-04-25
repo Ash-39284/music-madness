@@ -11,9 +11,35 @@
         <h1 class="auth-card__title">Create Account</h1>
         <p class="auth-card__sub">Join the community already discovering new music, reacting to albums and sharing their thoughts throughout the metal community.</p>
 
-        <form action="">
+        <form method="POST" action="{% url 'account_signup' %}">
+            {% csrf_token %}
 
+            {% if form.errors %}
+            <div class="auth-card__errors">
+                {% for error in form.non_field_errors %}
+                <p class="auth-card__error-msg">{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
 
+            <div class="auth-card__field">
+                <label class="auth-card__label" for="id_username">Username</label>
+                    <input
+                    type="text"
+                    name="username"
+                    id="id_username"
+                    placeholder="Username..."
+                    class="auth-card__input"
+                    value="{{ form.username.value|default:'' }}"
+                    >
+                <p class="auth-card__hint">Must contain 8 characters. Only -, &, ! are allowed.</p>
+
+                {% if form.username.errors %}
+                     <p class="auth-card__error-msg">{{ form.username.errors|join:", " }}</p>
+                {% endif %}
+            </div>
+
+            
         </form>
 
         <p class="auth-card__footer-text">Already have an account?<a href="{% url 'account_login' %}" 

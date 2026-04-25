@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from albums.views import home_view, about_view, genre_detail_view, album_detail_view, explore_view
+from albums.views import home_view, about_view, explore_view, genre_detail_view, album_detail_view
+
 
 
 # from accounts import views as index_views
@@ -30,8 +31,9 @@ urlpatterns = [
     path('about/', about_view, name='about'),
     path('explore/', explore_view, name='explore'),
     path('genres/<slug:slug>/', genre_detail_view, name='genre_detail'),
-    path('albums/<int:pk>/', album_detail_view, name='album_detail'), 
-    path('accounts/', include('allauth.urls')),  
+    path('albums/<int:pk>/', album_detail_view, name='album_detail'),
+    path('', include('interactions.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

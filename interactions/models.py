@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from albums.models import Album 
+from albums.models import Album
+
 
 class Reaction(models.Model):
     LIKE = 'like'
@@ -13,10 +14,7 @@ class Reaction(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        """
-        One reaction per user per album
-        """
-        unique_together = ('user', 'album')
+        unique_together = ('user', 'album')  # one reaction per user per album
 
-def __str__(self):
+    def __str__(self):
         return f"{self.user} {self.reaction_type}d {self.album}"

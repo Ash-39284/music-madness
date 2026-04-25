@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from albums.models import Album, Genre
+from interactions.models import Reaction
 
 
 def home_view(request):
@@ -56,12 +57,20 @@ def album_detail_view(request, pk):
     related_albums = Album.objects.filter(
         genre=album.genre
     ).exclude(pk=album.pk).exclude(cover_image_url='')[:3]
+    
+    
+    like_count = Reaction.objects.filter(album=album, reaction_type='like').count()
+    dislike_count = Reaction.objects.filter(album=album, reaction_type='dislike').count()
+    total = like_count + dislike_count
+    like_percentage = round((like_count / total) * 100) if total > 0 else 0
     """
-    Placeholder counts, will be wired up later.
+    Check current user's reaction
     """
-    like_count = 0
-    dislike_count = 0
-    like_percentage = 0
+    user_reaction = None
+    if request.user.is_authenticated:
+        existing = Reaction.objects.filter(user=request.user, album=album).first()
+        if existing:
+            user_reaction = existing.reaction_type
 
     return render(request, 'albums/album_detail.html', {
         'album': album,
@@ -70,4 +79,6 @@ def album_detail_view(request, pk):
         'like_count': like_count,
         'dislike_count': dislike_count,
         'like_percentage': like_percentage,
+        'user_reaction': user_reaction,
     })
+

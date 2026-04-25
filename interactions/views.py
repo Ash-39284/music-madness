@@ -9,25 +9,20 @@ def react_to_album(request, pk, reaction_type):
 
     if reaction_type not in ['like', 'dislike']:
         return redirect('album_detail', pk=pk)
-    
+
     existing = Reaction.objects.filter(user=request.user, album=album).first()
 
     if existing:
-        """
-        Same reaction — remove it (toggle off)
-        """
-        existing.delete()
+        if existing.reaction_type == reaction_type:
+            # Same reaction — remove it (toggle off)
+            existing.delete()
+        else:
+            # Different reaction — update it
+            existing.reaction_type = reaction_type
+            existing.save()
     else:
-        """
-        Different reaction — update it
-        """
-        existing.reaction_type = reaction_type
-        existing.save()
-    else:
-    """
-    No existing reaction — create new
-    """
-    Reaction.objects.create(
+        # No existing reaction — create new
+        Reaction.objects.create(
             user=request.user,
             album=album,
             reaction_type=reaction_type

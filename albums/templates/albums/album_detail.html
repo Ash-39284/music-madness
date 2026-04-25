@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load album_filters %}
 
 {% block title %}{{ album.artist }} — {{ album.title }} | Music Madness{% endblock %}
 
@@ -28,7 +29,7 @@
           {% if album.release_year %} — {{ album.release_year }}{% endif %}
         </p>
         {% if album.description %}
-          <p class="album-detail__desc">{{ album.description|striptags|truncatewords:60 }}</p>
+          <p class="album-detail__desc">{{ album.description|clean_description }}</p>
         {% endif %}
 
         <!-- Like / dislike counts -->
@@ -53,8 +54,6 @@
         </div>
 
         <hr class="album-detail__divider">
-        
-        {% load album_filters %}
 
         <!-- Track listing -->
         {% if tracks %}

@@ -39,7 +39,22 @@
                 {% endif %}
             </div>
 
-            
+            <div class="auth-card__field">
+                <label class="auth-card__label" for="id_email">Email address:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="id_email"
+                        placeholder="Email address..."
+                        class="auth-card__input"
+                        value="{{ form.email.value|default:'' }}"
+                    >
+                {% if form.email.errors %}
+                <p class="auth-card__error-msg">{{ form.email.errors|join:", " }}</p>
+                {% endif %}
+            </div>
+
+
         </form>
 
         <p class="auth-card__footer-text">Already have an account?<a href="{% url 'account_login' %}" 

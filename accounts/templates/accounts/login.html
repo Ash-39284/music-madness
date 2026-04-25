@@ -11,7 +11,50 @@
         <h1 class="auth-card__title">Welcome back</h1>
         <p class="auth-card__sub">Sign in to react to albums, join discussions, and connect with other metal fans.</p>
 
-        
+        <form method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+
+            {% if form.errors %}
+            <div class="auth-card__errors">
+            {% for error in form.non_field_errors %}
+            <p class="auth-card__error-msg">{{ error }}</p>
+            {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="auth-card__field">
+                <label class="auth-card__label" for="id_login">Email address:</label>
+                    <input
+                        type="email"
+                        name="login"
+                        id="id_login"
+                        placeholder="Email address..."
+                        class="auth-card__input"
+                        value="{{ form.login.value|default:'' }}"
+                    >
+            {% if form.login.errors %}
+                <p class="auth-card__error-msg">{{ form.login.errors|join:", " }}</p>
+            {% endif %}
+            </div>
+
+            <div class="auth-card__field">
+                <label class="auth-card__label" for="id_password">Password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="id_password"
+                        placeholder="Password..."
+                        class="auth-card__input"
+                    >
+            {% if form.password.errors %}
+                <p class="auth-card__error-msg">{{ form.password.errors|join:", " }}</p>
+            {% endif %}
+            </div>
+
+            <button type="submit" class="btn btn-auth-submit">Log in</button>
+            
+        </form>
+
          <p class="auth-card__footer-text">
             Don't have an account? <a href="{% url 'account_signup' %}" class="auth-card__footer-link">Join the pit</a>
         </p>

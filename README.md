@@ -87,8 +87,15 @@ It should also be easy to explore albums by genre, so users can quickly find mus
 
 ## Developer Goals
 
+The goal for this project is to build a full-stack web app that connects a Django backend with a custom frontend, rather than just following a basic tutorial. I want to get comfortable working with models, views, and templates together so the site actually feels dynamic.
 
+Another aim is to design and implement a relational database based on an ERD, making sure everything is structured properly and makes sense as the project grows. This includes handling relationships between albums, genres, users, and interactions like comments and reactions.
 
+I also want to improve my ability to turn a UI design into a working application, keeping the layout consistent and responsive across different pages.
+
+On top of that, the project is about getting more confident working with external APIs, managing data, and organising the codebase into separate Django apps so it stays clean and scalable.
+
+Overall, the focus is on building something that works end-to-end and feels like a real product, not just a collection of features.
 
 ---
 

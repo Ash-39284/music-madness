@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load allauth account %}
+
+{% block title %}Sign Up | Music Madness{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+    <div class="auth-card mx-auto">
+
+        <h1 class="auth-card__title">Create Account</h1>
+        <p class="auth-card__sub">Join the community already discovering new music, reacting to albums and sharing their thoughts throughout the metal community.</p>
+
+        <form action="">
+
+
+        </form>
+
+        <p class="auth-card__footer-text">Already have an account?<a href="{% url 'account_login' %}" 
+            class="auth-card__footer-link">Step into the pit</a>
+        </p>
+
+    </div>
+</section>
+
+{% endblock %}

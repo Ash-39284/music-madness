@@ -28,17 +28,17 @@
           {% if album.release_year %} — {{ album.release_year }}{% endif %}
         </p>
         {% if album.description %}
-          <p class="album-detail__desc">{{ album.description }}</p>
+          <p class="album-detail__desc">{{ album.description|striptags|truncatewords:60 }}</p>
         {% endif %}
 
         <!-- Like / dislike counts -->
-        <div class="album-detail__counts mb-3">
+        <div class="album-detail__counts mb-2">
           <span><i class="fa-solid fa-thumbs-up"></i> {{ like_count }} Likes</span>
           <span><i class="fa-solid fa-thumbs-down"></i> {{ dislike_count }} Dislikes</span>
         </div>
 
         <!-- Like / dislike buttons -->
-        <div class="album-detail__actions">
+        <div class="album-detail__actions mb-3">
           <button class="btn btn-reaction"><i class="fa-solid fa-thumbs-up"></i> Like</button>
           <button class="btn btn-reaction btn-reaction--dislike"><i class="fa-solid fa-thumbs-down"></i> Dislike</button>
         </div>
@@ -50,14 +50,15 @@
           <div class="reaction-bar">
             <div class="reaction-bar__fill" style="width: {{ like_percentage }}%;"></div>
           </div>
-          <p class="album-detail__community-sub mt-2">{{ like_percentage }}%</p>
         </div>
+
+        <hr class="album-detail__divider">
         
         {% load album_filters %}
 
         <!-- Track listing -->
         {% if tracks %}
-        <div class="album-tracks mt-4">
+        <div class="album-tracks mt-3">
           <button class="btn btn-tracks-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trackList">
             <i class="fa-solid fa-music"></i> View Tracklist
           </button>

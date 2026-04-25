@@ -6,15 +6,23 @@
 {% block content %}
 
 <section class="container py-5">
-    <div class="auth-card mx-auto">
+  <div class="auth-card mx-auto">
 
-        <h1 class="auth-card__title">Logging out</h1>
-        <p class="auth-card__sub" style="text-align: center;">Leaving so soon?</p>
+    <h1 class="auth-card__title">Logging out</h1>
+    <p class="auth-card__sub" style="text-align: center;">Leaving so soon?</p>
 
-        <button type="submit" class="btn btn-auth-submit">Stayed logged in</button>
-        <button type="submit" class="btn btn-auth-submit">Log out</button>
+    <!-- Log out form -->
+    <form method="POST" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-auth-submit">Log out</button>
+    </form>
 
-    </div>
+    <!-- Stay logged in — go back to previous page -->
+    <a href="{{ request.META.HTTP_REFERER|default:'/' }}" class="btn btn-auth-submit mt-2" style="display:block; text-align:center; text-decoration:none;">
+      Stay logged in
+    </a>
+
+  </div>
 </section>
 
 {% endblock %}

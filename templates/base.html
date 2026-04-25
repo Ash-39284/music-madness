@@ -49,10 +49,10 @@
                 <div class="nav__actions">
                     {% if user.is_authenticated %}
                         <span class="text-light me-2">Hi {{ user.username }}</span>
-                        <a href="#" class="btn btn-ghost">Logout</a>
+                        <a href="{% url 'account_logout' %}" class="btn btn-ghost">Logout</a>
                     {% else %}
-                        <a href="#" class="btn btn-ghost">Login</a>
-                        <a href="#" class="btn btn-primary">Sign Up</a>
+                        <a href="{% url 'account_login' %}" class="btn btn-ghost">Login</a>
+                        <a href="{% url 'account_signup' %}" class="btn btn-primary">Sign Up</a>
                     {% endif %}
                 </div>
             </nav>
@@ -79,7 +79,7 @@
                 <ul class="footer__links">
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'explore' %}">Explore</a></li>
-                    <li><a href="#">Login</a></li>
+                    <a href="{% url 'account_login' %}" class="btn btn-ghost">Login</a>
                 </ul>
             </div>
         </div>

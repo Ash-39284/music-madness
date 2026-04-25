@@ -193,6 +193,8 @@ Overall, the focus is on building something that works end-to-end and feels like
 
 ## Existing Features
 
+
+
 ---
 
 ## Features To Implement
@@ -385,7 +387,6 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
  
 ---
 
-
 # Deployment
 
 ## How To Run The Project Locally
@@ -402,9 +403,13 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 
 ## Images
 
+All album artwork images are imported from the Last.FM api key. [Last.FM API KEY](https://www.last.fm/api) [Last.FM](https://www.last.fm/home)
+
 ---
 
 ## API
+
+The API key is intergrated with last.fm developer api key. [Last.FM API KEY](https://www.last.fm/api)
 
 ---
 

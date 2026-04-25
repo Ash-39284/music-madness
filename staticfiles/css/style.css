@@ -778,6 +778,56 @@ body {
   transition: width 400ms ease;
 }
 
+/* Track listing */
+.btn-tracks-toggle {
+  background-color: transparent;
+  border: 2px solid #9CD5FF;
+  color: #9CD5FF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: .5rem 1.25rem;
+  border-radius: 999px;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+.btn-tracks-toggle:hover {
+  background-color: #9CD5FF;
+  color: #355872;
+}
+
+.track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.track-list__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .5rem 0;
+  border-bottom: 1px solid rgba(247, 248, 240, 0.2);
+  font-size: .875rem;
+}
+.track-list__item:last-child {
+  border-bottom: none;
+}
+
+.track-list__number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  opacity: .6;
+  min-width: 1.5rem;
+}
+
+.track-list__title {
+  flex: 1;
+}
+
+.track-list__duration {
+  opacity: .7;
+  font-size: .8rem;
+}
 
 /* Discussion Section */
 

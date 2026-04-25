@@ -49,6 +49,7 @@ def genre_detail_view(request, slug):
 
 def album_detail_view(request, pk):
     album = get_object_or_404(Album, pk=pk)
+    tracks = album.tracks.all().order_by('track_number')
     """
     Related albums from the same genre, excluding this one.
     """
@@ -64,6 +65,7 @@ def album_detail_view(request, pk):
 
     return render(request, 'albums/album_detail.html', {
         'album': album,
+        'tracks': tracks,
         'related_albums': related_albums,
         'like_count': like_count,
         'dislike_count': dislike_count,

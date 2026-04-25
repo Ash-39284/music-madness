@@ -52,6 +52,31 @@
           </div>
           <p class="album-detail__community-sub mt-2">{{ like_percentage }}%</p>
         </div>
+        
+        {% load album_filters %}
+
+        <!-- Track listing -->
+        {% if tracks %}
+        <div class="album-tracks mt-4">
+          <button class="btn btn-tracks-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trackList">
+            <i class="fa-solid fa-music"></i> View Tracklist
+          </button>
+          <div class="collapse mt-2" id="trackList">
+            <ul class="track-list">
+              {% for track in tracks %}
+              <li class="track-list__item">
+                <span class="track-list__number">{{ track.track_number }}</span>
+                <span class="track-list__title">{{ track.title }}</span>
+                {% if track.duration_seconds %}
+                  <span class="track-list__duration">{{ track.duration_seconds|duration }}</span>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+
 
       </div>
     </div>

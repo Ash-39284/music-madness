@@ -976,3 +976,118 @@ body {
   display: inline-block !important;
   width: auto !important;
 }
+
+/* Login & Signup page */
+
+.auth-card {
+  background-color: #F7F8F0;
+  border: 2px solid #7AAACE;
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  max-width: 620px;
+}
+
+.auth-card__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #7AAACE;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.auth-card__sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  color: #7AAACE;
+  margin-bottom: 2rem;
+}
+
+.auth-card__field {
+  margin-bottom: 1.25rem;
+}
+
+.auth-card__label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #7AAACE;
+  display: block;
+  margin-bottom: .4rem;
+}
+
+.auth-card__input {
+  width: 100%;
+  padding: .75rem 1.25rem;
+  border: 2px solid #7AAACE;
+  border-radius: 999px;
+  background-color: #F7F8F0;
+  color: #355872;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .875rem;
+  outline: none;
+  transition: border-color 180ms ease;
+}
+.auth-card__input:focus {
+  border-color: #355872;
+}
+.auth-card__input::placeholder {
+  color: #7AAACE;
+  opacity: .7;
+}
+
+.auth-card__hint {
+  font-size: .775rem;
+  color: #7AAACE;
+  margin-top: .3rem;
+  margin-bottom: 0;
+}
+
+.auth-card__errors {
+  margin-bottom: 1rem;
+}
+
+.auth-card__error-msg {
+  font-size: .825rem;
+  color: #e05a5a;
+  margin-bottom: .25rem;
+}
+
+.btn-auth-submit {
+  width: 100%;
+  padding: .85rem;
+  background-color: #7AAACE;
+  border: none;
+  border-radius: 999px;
+  color: #F7F8F0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 180ms ease;
+  cursor: pointer;
+}
+.btn-auth-submit:hover {
+  background-color: #5d8fab;
+  color: #F7F8F0;
+}
+
+.auth-card__footer-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  color: #7AAACE;
+  margin-bottom: .4rem;
+}
+
+.auth-card__footer-link {
+  font-weight: 700;
+  color: #7AAACE;
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+.auth-card__footer-link:hover {
+  opacity: .75;
+  color: #7AAACE;
+}

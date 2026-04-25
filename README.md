@@ -296,8 +296,28 @@ operations = [
     ),
 ]
 ```
- 
+
 ---
+
+## Bug 6 - Most Discussed Section Info Not Displaying
+
+**Description:**
+After building the explore page, the "Most Discussed" section only showed the album cover image on the left with no title, stats or "View discussion" button appearing beside it. The right side of the card was completely empty despite the correct HTML being in place.
+
+![Most discussed info bug](./static/images/bug-6-screenshot.png)
+
+**Cause:**
+Inspecting the element in Chrome DevTools revealed that the `.most-discussed__info` div was rendering as empty in the DOM. The CSS for `.most-discussed__info` was showing "No matching selector or style" in the Styles panel, meaning the browser was still serving a cached version of `style.css` that did not include the new explore page styles.
+
+**Fix:**
+Running `python manage.py collectstatic --clear` forced Django to regenerate the stylesheet. After a hard browser refresh (`Cmd + Shift + R`) the styles loaded correctly and the info content appeared alongside the image.
+
+---
+
+
+
+
+
 
 # Deployment
 

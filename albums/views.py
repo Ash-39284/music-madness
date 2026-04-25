@@ -61,4 +61,6 @@ def album_detail_view(request, pk):
     })
 
 def explore_view(request):
-    return render(request, 'albums/explore.html')
+    album_count = Album.objects.filter().exclude(cover_image_url='').count()
+
+    return render(request, 'albums/explore.html', {'album_count': album_count,})

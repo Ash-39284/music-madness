@@ -880,3 +880,34 @@ body {
   color: #7AAACE;
   margin: 0;
 }
+
+/* Explore page */
+
+.explore-hero{
+  background-color: #355872;
+  border-radius: 16px;
+  color: #F7F8F0;
+}
+
+.explore-hero__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: .75rem;
+}
+ 
+.explore-hero__sub {
+  font-size: .95rem;
+  opacity: .85;
+  max-width: 55ch;
+  margin: 0 auto .75rem;
+  line-height: 1.6;
+}
+ 
+.explore-hero__meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  opacity: .75;
+  margin: 0;
+}

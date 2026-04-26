@@ -113,66 +113,25 @@ body {
   color: #355872;
 }
 
-/* Navbar Dropdown */
- 
-.nav__dropdown {
-  position: relative;
-}
- 
-.nav__dropdown-toggle {
-  cursor: pointer;
-}
- 
-.nav__dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + .75rem);
-  left: 0;
-  background-color: #2a4660;
-  border-radius: 10px;
-  padding: .5rem 0;
-  padding-top: .5rem;
-  list-style: none;
-  margin: 0;
-  min-width: 160px;
-  z-index: 100;
-  box-shadow: 0 4px 16px rgba(0,0,0,.2);
-}
-
-.nav__dropdown::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: .75rem; /* invisible bridge between toggle and menu */
-}
- 
-.nav__dropdown-menu li a {
-  display: block;
-  padding: .5rem 1.25rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .825rem;
-  font-weight: 600;
-  color: #F7F8F0;
-  text-decoration: none;
-  opacity: .85;
-  transition: opacity 180ms ease, background-color 180ms ease;
-  white-space: nowrap;
-}
- 
-.nav__dropdown-menu li a:hover {
-  opacity: 1;
+.bg-custom {
   background-color: #355872;
 }
- 
-.nav__dropdown:hover .nav__dropdown-menu {
-  display: block;
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
- 
-@media (max-width: 768px) {
-  .nav__links { display: none; }
+
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  opacity: 0.85;
 }
+
+.nav-link:hover {
+  opacity: 1;
+}
+
 
 /* Home Hero */
  

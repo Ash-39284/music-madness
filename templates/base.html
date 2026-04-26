@@ -22,44 +22,73 @@
 <body class="d-flex flex-column min-vh-100 main-bg">
 
     <!-- NAVBAR -->
-<header class="nav">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
     <div class="container">
-        <nav class="nav__inner">
-            <a href="{% url 'home' %}" class="nav__logo">Music Madness</a>
 
-            <div class="nav__right">
-                <ul class="nav__links">
-                    {% if request.resolver_match.url_name != 'home' %}
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    {% endif %}
-                    <li><a href="{% url 'explore' %}">Explore</a></li>
-                    <li class="nav__dropdown">
-                        <a href="#" class="nav__dropdown-toggle">Genres</a>
-                        <ul class="nav__dropdown-menu">
-                            <li><a href="{% url 'genre_detail' 'rock' %}">Rock</a></li>
-                            <li><a href="{% url 'genre_detail' 'heavy-metal' %}">Heavy Metal</a></li>
-                            <li><a href="{% url 'genre_detail' 'alternative-rock' %}">Alternative Rock</a></li>
-                            <li><a href="{% url 'genre_detail' 'thrash' %}">Thrash</a></li>
-                            <li><a href="{% url 'genre_detail' 'death-metal' %}">Death Metal</a></li>
-                            <li><a href="{% url 'genre_detail' 'metalcore' %}">Metalcore</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                </ul>
+      <!-- Logo -->
+      <a class="navbar-brand fw-semibold" href="{% url 'home' %}">
+        Music Madness
+      </a>
 
-                <div class="nav__actions">
-                    {% if user.is_authenticated %}
-                        <span class="text-light me-2">Hi {{ user.username }}</span>
-                        <a href="{% url 'account_logout' %}" class="btn btn-ghost">Logout</a>
-                    {% else %}
-                        <a href="{% url 'account_login' %}" class="btn btn-ghost">Login</a>
-                        <a href="{% url 'account_signup' %}" class="btn btn-primary">Sign Up</a>
-                    {% endif %}
-                </div>
-            </div>
+      <!-- Toggle button (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        </nav>
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          {% if request.resolver_match.url_name != 'home' %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          {% endif %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'explore' %}">Explore</a>
+          </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Genres
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'genre_detail' 'rock' %}">Rock</a></li>
+              <li><a class="dropdown-item" href="{% url 'genre_detail' 'heavy-metal' %}">Heavy Metal</a></li>
+              <li><a class="dropdown-item" href="{% url 'genre_detail' 'alternative-rock' %}">Alternative Rock</a></li>
+              <li><a class="dropdown-item" href="{% url 'genre_detail' 'thrash' %}">Thrash</a></li>
+              <li><a class="dropdown-item" href="{% url 'genre_detail' 'death-metal' %}">Death Metal</a></li>
+              <li><a class="dropdown-item" href="{% url 'genre_detail' 'metalcore' %}">Metalcore</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+
+        </ul>
+
+        <!-- Right actions -->
+        <div class="d-flex align-items-center gap-2">
+
+          {% if user.is_authenticated %}
+            <span class="text-light small">Hi {{ user.username }}</span>
+            <a href="{% url 'account_logout' %}" class="btn btn-outline-light btn-sm">Logout</a>
+          {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-outline-light btn-sm">Login</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-primary btn-sm">Sign Up</a>
+          {% endif %}
+
+        </div>
+
+      </div>
     </div>
+  </nav>
 </header>
 
     <!-- MAIN CONTENT -->

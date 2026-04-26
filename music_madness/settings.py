@@ -22,6 +22,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+WHITENOISE_MIMETYPES = {
+    '.js': 'application/javascript',
+}
 
 
 # Quick-start development settings - unsuitable for production

@@ -72,6 +72,11 @@ def album_detail_view(request, pk):
         if existing:
             user_reaction = existing.reaction_type
 
+    comments = Comment.objects.filter(
+        album=album,
+        parent_comment=None
+    ).order_by('-created_at')
+
     return render(request, 'albums/album_detail.html', {
         'album': album,
         'tracks': tracks,
@@ -80,5 +85,6 @@ def album_detail_view(request, pk):
         'dislike_count': dislike_count,
         'like_percentage': like_percentage,
         'user_reaction': user_reaction,
+        'comments': comments,
     })
 

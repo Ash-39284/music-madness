@@ -917,6 +917,70 @@ body {
   padding: 2rem 0;
 }
 
+/* Comments */
+.comment-card {
+  background-color: #F7F8F0;
+  border: 2px solid #7AAACE;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.comment-card--reply {
+  background-color: #e8f4ff;
+  margin-left: 2rem;
+  border-color: #9CD5FF;
+}
+
+.comment-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+.comment-card__user {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: .875rem;
+  color: #355872;
+}
+
+.comment-card__time {
+  font-size: .775rem;
+  color: #7AAACE;
+}
+
+.comment-card__text {
+  font-size: .875rem;
+  color: #355872;
+  margin-bottom: .5rem;
+  line-height: 1.5;
+}
+
+.btn-reply {
+  background: none;
+  border: none;
+  color: #7AAACE;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .775rem;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 180ms ease;
+}
+.btn-reply:hover { opacity: .7; }
+
+.discussion__login-prompt {
+  font-size: .9rem;
+  color: #7AAACE;
+  text-align: center;
+  padding: 1rem 0;
+}
+.discussion__login-prompt a {
+  color: #355872;
+  font-weight: 700;
+}
+
 
 /* You Might Also Like */
 

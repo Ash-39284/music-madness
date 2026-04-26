@@ -93,26 +93,79 @@
 </section>
 
 <!-- ── DISCUSSION ─────────────────────────────────────────────────────── -->
+<!-- Discussion -->
 <section class="container mb-5">
   <h2 class="discussion__heading">Discussion</h2>
 
   <!-- Comment form -->
   <div class="discussion__form-wrap mb-4">
     <p class="discussion__form-label">Share your thoughts on this album:</p>
-    <textarea
-      class="discussion__textarea"
-      rows="5"
-      placeholder=""
-      disabled
-    ></textarea>
-    <div class="text-end mt-2">
-      <button class="btn btn-post">Post Comment!</button>
-    </div>
+    {% if user.is_authenticated %}
+    <form method="POST" action="{% url 'post_comment' album.pk %}">
+      {% csrf_token %}
+      <textarea
+        name="comment_text"
+        class="discussion__textarea"
+        rows="5"
+        placeholder="Share your thoughts..."
+      ></textarea>
+      <div class="text-end mt-2">
+        <button type="submit" class="btn btn-post">Post Comment!</button>
+      </div>
+    </form>
+    {% else %}
+    <p class="discussion__login-prompt">
+      <a href="{% url 'account_login' %}">Log in</a> to join the discussion.
+    </p>
+    {% endif %}
   </div>
 
-  <!-- Comments list — placeholder until interactions are wired up -->
+  <!-- Comments list -->
   <div class="discussion__comments">
-    <p class="discussion__empty">No comments yet. Be the first to share your thoughts!</p>
+    {% if comments %}
+      {% for comment in comments %}
+      <div class="comment-card mb-3">
+        <div class="comment-card__header">
+          <span class="comment-card__user">{{ comment.user.username }}</span>
+          <span class="comment-card__time">{{ comment.created_at|timesince }} ago</span>
+        </div>
+        <p class="comment-card__text">{{ comment.comment_text }}</p>
+
+        <!-- Reply button -->
+        {% if user.is_authenticated %}
+        <button class="btn btn-reply" onclick="toggleReply('reply-{{ comment.pk }}')">Reply</button>
+        <div id="reply-{{ comment.pk }}" style="display:none;" class="mt-2">
+          <form method="POST" action="{% url 'post_comment' album.pk %}">
+            {% csrf_token %}
+            <input type="hidden" name="parent_comment_id" value="{{ comment.pk }}">
+            <textarea name="comment_text" class="discussion__textarea" rows="3" placeholder="Write a reply..."></textarea>
+            <div class="text-end mt-1">
+              <button type="submit" class="btn btn-post">Reply</button>
+            </div>
+          </form>
+        </div>
+        {% endif %}
+
+        <!-- Replies -->
+        {% if comment.replies.exists %}
+        <div class="comment-replies mt-2">
+          {% for reply in comment.replies.all %}
+          <div class="comment-card comment-card--reply mb-2">
+            <div class="comment-card__header">
+              <span class="comment-card__user">{{ reply.user.username }}</span>
+              <span class="comment-card__time">{{ reply.created_at|timesince }} ago</span>
+            </div>
+            <p class="comment-card__text">{{ reply.comment_text }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+      {% endfor %}
+    {% else %}
+      <p class="discussion__empty">No comments yet. Be the first to share your thoughts!</p>
+    {% endif %}
   </div>
 </section>
 

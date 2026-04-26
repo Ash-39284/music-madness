@@ -32,7 +32,7 @@ def react_to_album(request, pk, reaction_type):
 
 
 @login_required
-def PostComment(request, pk):
+def post_comment(request, pk):
     album = get_object_or_404(Album, pk=pk)
 
     if request.method == 'POST':

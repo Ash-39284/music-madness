@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from albums.models import Album, Genre
-from interactions.models import Reaction
+from interactions.models import Reaction, Comment
 
 
 def home_view(request):

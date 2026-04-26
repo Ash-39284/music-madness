@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from albums.models import Album
-from .models import Reaction
+from .models import Reaction, Comment
 
 @login_required
 def react_to_album(request, pk, reaction_type):
@@ -31,3 +31,24 @@ def react_to_album(request, pk, reaction_type):
     return redirect('album_detail', pk=pk)
 
 
+@login_required
+def PostComment(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+
+    if request.method == 'POST':
+        comment_text = request.POST.get('comment_text', '').strip()
+        parent_id = request.POST.get('parent_comment_id')
+
+        if comment_text:
+            parent = None
+            if parent_id:
+                parent = Comment.objects.filter(pk=parent_id).first()
+
+            Comment.objects.create(
+                user=request.user,
+                album=album,
+                parent_comment=parent,
+                comment_text=comment_text,
+            )
+
+    return redirect('album_detail', pk=pk)

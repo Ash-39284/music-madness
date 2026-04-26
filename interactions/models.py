@@ -18,3 +18,14 @@ class Reaction(models.Model):
 
     def __str__(self):
         return f"{self.user} {self.reaction_type}d {self.album}"
+    
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='comments')
+    parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')
+    comment_text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user} on {self.album.title}"

@@ -389,7 +389,18 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 
 # Deployment
 
+This project was developed using VS code IDE, commited to Git and pushed to GitHub using the terminal git commands. 
+
+This project was deployed on Heroku by connecting to the GitHub repository and deploying from the develop app dashboard.
+
 ## How To Run The Project Locally
+
+To clone this project from GitHub:
+
+1. Follow this link to the [GitHub Repository](https://github.com/Ash-39284/music-madness#project-goals)
+2. Under the repository name select the green 'code' button to reveal a drop down menu
+3. Select the HTTPs tab and copy the url
+4. In your local IDE open Git Bash
 
 # Credits
 

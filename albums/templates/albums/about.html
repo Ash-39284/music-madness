@@ -55,10 +55,12 @@
     <h2 class="step-banner__title">STEP INTO THE PIT</h2>
     <p class="step-banner__sub">Create an account to react to albums, join discussions, and share your thoughts with other metal fans.</p>
     <div class="step-banner__actions mt-4">
-      <a href="#" class="btn btn-step">JOIN THE PIT</a>
-      <a href="#" class="btn btn-step">EXPLORE ALBUMS</a>
+      {% if not user.is_authenticated %}
+      <a href="{% url 'account_signup' %}" class="btn btn-step">JOIN THE PIT</a>
+       {% endif %}
+      <a href="{% url 'explore' %}" class="btn btn-step">EXPLORE ALBUMS</a>
     </div>
   </div>
 </section>
- 
+
 {% endblock %}

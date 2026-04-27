@@ -13,11 +13,13 @@ def about_view(request):
 
 def explore_view(request):
     album_count = Album.objects.exclude(cover_image_url='').count()
+    discussion_count = Comment.objects.filter(parent_comment=None).count()
     trending_albums = Album.objects.filter(featured=True).exclude(cover_image_url='')[:3]
     most_discussed = Album.objects.filter(featured=True).exclude(cover_image_url='').first()
- 
+
     return render(request, 'albums/explore.html', {
         'album_count': album_count,
+        'discussion_count': discussion_count,
         'trending_albums': trending_albums,
         'most_discussed': most_discussed,
     })

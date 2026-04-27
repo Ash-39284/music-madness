@@ -15,3 +15,4 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ('created_at',)
     search_fields = ('user__username', 'album__title', 'comment_text')
     readonly_fields = ('created_at', 'updated_at')
+    actions = ['delete_selected']

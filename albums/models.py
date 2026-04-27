@@ -31,9 +31,17 @@ class Album(models.Model):
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)
 
+    def like_count(self):
+        return self.reactions.filter(reaction_type='like').count()
+
+    def dislike_count(self):
+        return self.reactions.filter(reaction_type='dislike').count()
+
+    def comment_count(self):
+        return self.comments.filter(parent_comment=None).count()
+
     def __str__(self):
         return f"{self.artist} - {self.title}"
-
 
 class Track(models.Model):
     album            = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='tracks')

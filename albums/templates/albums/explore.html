@@ -31,8 +31,8 @@
             <p class="album-card__album">{{ album.title }}</p>
             <p class="album-card__genre">{{ album.genre }}</p>
             <div class="album-card__votes">
-              <span><i class="fa-solid fa-thumbs-up"></i> 0</span>
-              <span><i class="fa-solid fa-thumbs-down"></i> 0</span>
+              <span><i class="fa-solid fa-thumbs-up"></i> {{ album.like_count }}</span>
+              <span><i class="fa-solid fa-thumbs-down"></i> {{ album.dislike_count }}</span>
             </div>
             <a href="{% url 'album_detail' album.pk %}" class="btn btn-discussion w-100 mt-3">View discussion</a>
           </div>
@@ -57,8 +57,8 @@
       >
       <div class="most-discussed__info">
         <p class="most-discussed__title">{{ most_discussed.title }} - {{ most_discussed.artist }}</p>
-        <p class="most-discussed__stat"><i class="fa-solid fa-thumbs-up"></i> 0 likes • <i class="fa-solid fa-thumbs-down"></i> 0 dislikes</p>
-        <p class="most-discussed__stat">0 comments</p>
+        <p class="most-discussed__stat"><i class="fa-solid fa-thumbs-up"></i> {{ most_discussed.like_count }} likes • <i class="fa-solid fa-thumbs-down"></i> {{ most_discussed.dislike_count }} dislikes</p>
+        <p class="most-discussed__stat">{{ most_discussed.comment_count }} comments</p>
         <a href="{% url 'album_detail' most_discussed.pk %}" class="btn btn-discussion mt-3">View discussion</a>
       </div>
     </div>

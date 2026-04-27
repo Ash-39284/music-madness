@@ -940,6 +940,14 @@ body {
   font-weight: 700;
 }
 
+.btn-reply--delete {
+  color: #e05a5a;
+}
+.btn-reply--delete:hover {
+  opacity: .7;
+  color: #e05a5a;
+}
+
 
 /* You Might Also Like */
 

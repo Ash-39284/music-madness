@@ -32,26 +32,26 @@
           <p class="album-detail__desc">{{ album.description|clean_description }}</p>
         {% endif %}
 
-        <!-- Like / dislike counts -->
-       <div class="album-detail__actions mb-3">
-        {% if user.is_authenticated %}
-          <a href="{% url 'react_to_album' album.pk 'like' %}" 
-            class="btn btn-reaction {% if user_reaction == 'like' %}btn-reaction--active{% endif %}">
-            <i class="fa-solid fa-thumbs-up"></i> Like
-          </a>
-          <a href="{% url 'react_to_album' album.pk 'dislike' %}" 
-            class="btn btn-reaction btn-reaction--dislike {% if user_reaction == 'dislike' %}btn-reaction--active{% endif %}">
-            <i class="fa-solid fa-thumbs-down"></i> Dislike
-          </a>
-        {% else %}
-          <a href="{% url 'account_login' %}" class="btn btn-reaction">
-            <i class="fa-solid fa-thumbs-up"></i> Like
-          </a>
-          <a href="{% url 'account_login' %}" class="btn btn-reaction btn-reaction--dislike">
-            <i class="fa-solid fa-thumbs-down"></i> Dislike
-          </a>
-        {% endif %}
-      </div>
+        <!-- Like / dislike buttons -->
+        <div class="album-detail__actions mb-3">
+          {% if user.is_authenticated %}
+            <a href="{% url 'react_to_album' album.pk 'like' %}"
+              class="btn btn-reaction {% if user_reaction == 'like' %}btn-reaction--active{% endif %}">
+              <i class="fa-solid fa-thumbs-up"></i> Like
+            </a>
+            <a href="{% url 'react_to_album' album.pk 'dislike' %}"
+              class="btn btn-reaction btn-reaction--dislike {% if user_reaction == 'dislike' %}btn-reaction--active{% endif %}">
+              <i class="fa-solid fa-thumbs-down"></i> Dislike
+            </a>
+          {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-reaction">
+              <i class="fa-solid fa-thumbs-up"></i> Like
+            </a>
+            <a href="{% url 'account_login' %}" class="btn btn-reaction btn-reaction--dislike">
+              <i class="fa-solid fa-thumbs-down"></i> Dislike
+            </a>
+          {% endif %}
+        </div>
 
         <!-- Community reaction bar -->
         <div class="album-detail__community mt-4">
@@ -86,13 +86,12 @@
         </div>
         {% endif %}
 
-
       </div>
     </div>
   </div>
 </section>
 
-<!-- Discussion -->
+<!-- ── DISCUSSION ─────────────────────────────────────────────────────── -->
 <section class="container mb-5">
   <h2 class="discussion__heading">Discussion</h2>
 
@@ -124,15 +123,50 @@
     {% if comments %}
       {% for comment in comments %}
       <div class="comment-card mb-3">
+
         <div class="comment-card__header">
           <span class="comment-card__user">{{ comment.user.username }}</span>
           <span class="comment-card__time">{{ comment.created_at|timesince }} ago</span>
         </div>
+
+        <!-- Inline edit form (hidden by default) -->
+        {% if user == comment.user %}
+        <div id="edit-{{ comment.pk }}" style="display:none;">
+          <form method="POST" action="{% url 'edit_comment' comment.pk %}">
+            {% csrf_token %}
+            <textarea name="comment_text" class="discussion__textarea" rows="3">{{ comment.comment_text }}</textarea>
+            <div class="text-end mt-1">
+              <button type="button" class="btn btn-reply me-2" onclick="toggleReply('edit-{{ comment.pk }}')">Cancel</button>
+              <button type="submit" class="btn btn-post">Save</button>
+            </div>
+          </form>
+        </div>
+        {% endif %}
+
         <p class="comment-card__text">{{ comment.comment_text }}</p>
 
-        <!-- Reply button -->
+        <!-- Comment actions -->
+        <div class="comment-card__actions">
+          {% if user.is_authenticated %}
+          <button class="btn btn-reply" onclick="toggleReply('reply-{{ comment.pk }}')">
+            <i class="fa-solid fa-reply"></i> Reply
+          </button>
+          {% endif %}
+          {% if user == comment.user %}
+          <button class="btn btn-reply" onclick="toggleReply('edit-{{ comment.pk }}')">
+            <i class="fa-solid fa-pen"></i> Edit
+          </button>
+          <form method="POST" action="{% url 'delete_comment' comment.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-reply btn-reply--delete" onclick="return confirm('Delete this comment?')">
+              <i class="fa-solid fa-trash"></i> Delete
+            </button>
+          </form>
+          {% endif %}
+        </div>
+
+        <!-- Reply form (hidden by default) -->
         {% if user.is_authenticated %}
-        <button class="btn btn-reply" onclick="toggleReply('reply-{{ comment.pk }}')">Reply</button>
         <div id="reply-{{ comment.pk }}" style="display:none;" class="mt-2">
           <form method="POST" action="{% url 'post_comment' album.pk %}">
             {% csrf_token %}
@@ -155,6 +189,16 @@
               <span class="comment-card__time">{{ reply.created_at|timesince }} ago</span>
             </div>
             <p class="comment-card__text">{{ reply.comment_text }}</p>
+            <div class="comment-card__actions">
+              {% if user == reply.user %}
+              <form method="POST" action="{% url 'delete_comment' reply.pk %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-reply btn-reply--delete" onclick="return confirm('Delete this reply?')">
+                  <i class="fa-solid fa-trash"></i> Delete
+                </button>
+              </form>
+              {% endif %}
+            </div>
           </div>
           {% endfor %}
         </div>

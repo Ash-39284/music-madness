@@ -1,7 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 from albums.models import Album
 from .models import Reaction, Comment
+
 
 @login_required
 def react_to_album(request, pk, reaction_type):
@@ -14,20 +16,17 @@ def react_to_album(request, pk, reaction_type):
 
     if existing:
         if existing.reaction_type == reaction_type:
-            # Same reaction — remove it (toggle off)
             existing.delete()
         else:
-            # Different reaction — update it
             existing.reaction_type = reaction_type
             existing.save()
     else:
-        # No existing reaction — create new
         Reaction.objects.create(
             user=request.user,
             album=album,
             reaction_type=reaction_type
         )
-    
+
     return redirect('album_detail', pk=pk)
 
 
@@ -52,3 +51,33 @@ def post_comment(request, pk):
             )
 
     return redirect('album_detail', pk=pk)
+
+
+@login_required
+def edit_comment(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    # Only the comment owner can edit
+    if comment.user != request.user:
+        return HttpResponseForbidden()
+
+    if request.method == 'POST':
+        comment_text = request.POST.get('comment_text', '').strip()
+        if comment_text:
+            comment.comment_text = comment_text
+            comment.save()
+
+    return redirect('album_detail', pk=comment.album.pk)
+
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    # Only the comment owner can delete
+    if comment.user != request.user:
+        return HttpResponseForbidden()
+
+    album_pk = comment.album.pk
+    comment.delete()
+    return redirect('album_detail', pk=album_pk)

@@ -253,6 +253,44 @@ The footer sits at the bottom of every page with the Music Madness logo, the sit
 
 ## Features To Implement
 
+These are features that were considered during the planning phase of Music Madness but were ultimately outside the scope of this project. They are logged as "Won't have" issues on the GitHub board and could be revisited in a future version of the site.
+
+---
+
+## User Profiles
+
+It would be good to give each user their own profile page showing their activity on the site — which albums they've liked or disliked, comments they've left, and maybe some stats about their taste in music. For now users just have a username that shows up on their comments, but a proper profile page would make the community feel more personal and give people a reason to engage more.
+
+---
+
+## Following Other Users
+
+Linked to profiles, the idea of following other users was something that came up early on. If you could follow someone whose taste you rate, you'd be able to see what they've been reacting to or commenting on. It's a nice social feature but it adds a fair amount of complexity and wasn't essential for the core experience of the site.
+
+---
+
+## Album Rating with Stars
+
+A star rating system on top of the existing like/dislike reactions was considered as a way to give users more nuance in how they express their opinion. A five star scale would let someone say "this is decent" without committing to a full like, or give a legendary album the credit it deserves. It was left out because the like/dislike system covers the basics well enough for now, and adding stars would have needed more thought around how to display and aggregate the scores.
+
+---
+
+## Playlist Creation
+
+The ability to build your own playlists from albums on the site was an idea that would have added a personal collection element to Music Madness. Users could group their favourite albums together and share them with the community. It's a solid feature for a future version but would require a decent amount of extra data modelling and UI work to do properly.
+
+---
+
+## Music Playback Integration
+
+Integrating a music playback feature — for example connecting to the Spotify or Last.fm API to let users preview tracks directly on the album page — was considered but ruled out early. Spotify's API restrictions for playback require a premium account and additional OAuth setup that was beyond the scope of this project. It would be a great addition in the future if the right API access was available.
+
+---
+
+## Vinyl or CD Wishlist
+
+A wishlist feature where users could mark albums they want to own on vinyl or CD was a fun idea that came out of the metal community theme of the site. It would give users another way to interact with the album catalogue beyond just reacting and commenting. It was left out as a "nice to have" given the other priorities, but it would fit well with the collector mentality of a lot of metal fans.
+
 ---
 
 # Technologies Used

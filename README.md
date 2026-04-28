@@ -295,6 +295,68 @@ A wishlist feature where users could mark albums they want to own on vinyl or CD
 
 # Technologies Used
 
+## Languages
+
+**Python** was used for all backend logic, views, models and management commands. It's the language Django is built on and handles everything from database queries to API calls.
+
+**HTML** makes up the structure of every page on the site, written as Django templates which allow dynamic content to be injected from the backend.
+
+**CSS** handles all the styling across the site. A single custom stylesheet was written from scratch using the project's colour palette to give Music Madness its own consistent look and feel.
+
+**JavaScript** was used for small interactive elements on the frontend, specifically the reply toggle functionality in the comments section and the mobile navbar behaviour.
+
+---
+
+## Frameworks and Libraries
+
+**Django 4.2** is the main web framework the project is built on. It handles URL routing, views, templates, the ORM, authentication and the admin panel.
+
+**Bootstrap 5** was used for the responsive grid layout and utility classes. It handles the column structure across the site and powers the collapsible navbar on mobile.
+
+**django-allauth** handles all user authentication including sign up, login and logout. It was chosen because it's well maintained, secure and easy to customise with custom templates.
+
+**Whitenoise** is used to serve static files in production on Heroku. It compresses and caches static assets so they load efficiently without needing a separate CDN.
+
+**dj-database-url** is used to parse the database connection URL provided by Heroku, allowing the same settings file to work both locally and in production.
+
+**Font Awesome** provides the icons used throughout the site, including the thumbs up and down icons on album cards and the music icon on the tracklist toggle.
+
+**Google Fonts** provides the two typefaces used across the site — Montserrat for headings and navigation, and Open Sans for body text.
+
+---
+
+## Database
+
+**PostgreSQL** is used as the database in both local development and production. It was set up on Heroku using their managed PostgreSQL add-on, and connected locally using the same database URL to keep both environments in sync.
+
+---
+
+## Admin
+
+**Jazzmin** is a custom Django admin theme that replaces the default admin interface with a more polished dark-themed UI. It was configured with Music Madness branding, a custom welcome message and a dark colour scheme.
+
+---
+
+## External APIs
+
+**Last.fm API** was used to import all the album and track data into the database. A custom Django management command called `fetch_albums` queries the Last.fm API by artist name and pulls in album titles, descriptions, cover artwork URLs and full tracklists. The API key is stored as an environment variable and never committed to the codebase.
+
+---
+
+## Hosting and Deployment
+
+**Heroku** is used to host the live version of the application. The project is deployed directly from GitHub using the Heroku CLI, and environment variables including the secret key, database URL and API keys are managed through Heroku's config vars.
+
+**GitHub** is used for version control throughout the project. Code was committed regularly with descriptive messages, and the repository is used as the source for Heroku deployments.
+
+---
+
+## Design and Planning
+
+**Canva** was used to create the frontend designs and wireframes for the site before any code was written. All page layouts including the home page, genre pages, album detail page, explore page, about page, login and signup pages were designed in Canva first and used as a reference throughout development.
+
+**Lucidchart** was used to design the Entity Relationship Diagram (ERD) for the database. The ERD was created during the planning phase and used as a reference when building the Django models, ensuring the database structure was thought through before implementation.
+
 # Testing
 
 ## Bugs Discovered

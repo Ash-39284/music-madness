@@ -193,6 +193,60 @@ Overall, the focus is on building something that works end-to-end and feels like
 
 ## Existing Features
 
+## Navigation
+
+The navbar keeps things simple across every page. The Music Madness logo on the left takes you back to the home page, and the links on the right give you access to Explore, Genres, About and the login options. The Genres link opens a dropdown where you can jump straight to any of the six genre pages. A Home link shows up in the navbar on every page except the home page itself — no need to show it when you're already there. If you're not logged in you'll see Login and Sign Up buttons. Once you're in, those are replaced with your username and a Logout button. On mobile the links tuck away behind a hamburger menu so everything stays accessible without crowding the screen.
+
+---
+
+## Home Page
+
+The home page is the first thing visitors see, so it's designed to get people interested quickly. There's a hero section at the top with the site tagline and a couple of buttons to get started. The "Join the pit" and "Explore Albums" buttons only show up if you're not logged in — no point showing them to someone who's already a member. Below that, three cards explain what the site is about: reacting to albums, joining discussions and seeing what the community thinks. The "Inside the Pit" section shows three albums chosen by the admin, each with the cover art, artist, title, genre, current like and dislike counts, and a link to the discussion. There's also a "Browse by Genre" section with buttons for each genre, and a "Step into the Pit" banner at the bottom encouraging new visitors to sign up. That banner disappears once you're logged in.
+
+---
+
+## Explore Page
+
+The Explore page is a good starting point if you're not sure where to go. It shows you how many albums are in the database and how many discussions have happened across the site. The "Trending in the Pit" section shows three featured albums, and "Most Discussed" highlights one album in a bigger format with its like count, dislike count and number of comments. At the bottom there are genre buttons to take you wherever you want to go next.
+
+---
+
+## Genre Pages
+
+Each genre has its own page with a full list of albums. The hero at the top shows the genre name, a short description, and how many albums are in there. You can search for a specific album or artist using the search bar, and sort the results by artist or title. Every album in the genre shows up as a card with the cover art, artist, title, genre tag, like and dislike counts, and a button to go to the discussion page.
+
+---
+
+## Album Detail Page
+
+This is the main page of the site where everything comes together. At the top you get the full album info — cover art, artist, title, genre, release year if we have it, and a description pulled from Last.fm. If you're logged in you can like or dislike the album. The button you've picked stays highlighted so you always know where you stand. Clicking the same one again removes your reaction, and clicking the other one switches it. The Community Reaction bar underneath shows what percentage of people have liked the album based on all the reactions so far. There's also a tracklist you can expand to see all the tracks with their durations.
+
+Below all of that is the discussion section. Logged in users can post a comment and reply to other people's comments. If it's your comment you can edit it right there on the page without going anywhere, or delete it if you want. Logged out users just see a prompt to log in. At the very bottom there are three related albums from the same genre in case you want to keep exploring.
+
+---
+
+## User Authentication
+
+Authentication is handled by django-allauth. Signing up just needs a username, email and password. Logging in uses your email and password. There's a logout confirmation page so you don't accidentally sign yourself out. Once you're logged in your username shows up in the navbar and you get access to all the interactive parts of the site — reacting to albums, posting comments, editing and deleting your own contributions.
+
+---
+
+## Music Data
+
+The site has over 300 albums across six genres, all pulled in from the Last.fm API. Each album has a title, artist, genre, cover artwork, description and a tracklist with track durations. The data comes in through a custom management command called `fetch_albums` which queries Last.fm by artist and grabs their top albums. Admins can mark albums as featured from the admin panel to control what shows up in the "Inside the Pit" and "Trending" sections.
+
+---
+
+## Admin Panel
+
+The admin panel uses the Jazzmin theme so it looks a bit more presentable than the Django default. From there you can manage everything — genres, albums, tracks, reactions and comments. Albums have a featured checkbox you can toggle straight from the list without having to open each one. Comments can be searched by username, album or content, and you can delete them individually or in bulk if needed.
+
+---
+
+## Footer
+
+The footer sits at the bottom of every page with the Music Madness logo, the site tagline, and quick links to About, Explore and Login.
+
 
 
 ---

@@ -288,6 +288,24 @@ The ERD was designed in Lucidchart during the planning phase and used as the blu
 **COMMENT** is the most structurally interesting table because it has a self-referential foreign key: `parent_comment` points back to the COMMENT table itself using Django's `'self'` syntax. A top-level comment has `parent_comment` set to `None`, while a reply has it set to the comment it is responding to. This single field is what enabled the threaded reply system on the album detail page without needing a separate replies table. The `CASCADE` delete behaviour means that deleting a parent comment also removes all its replies, keeping the discussion thread clean. The `updated_at` field sits alongside `created_at` to support the inline edit feature — the template can use this to indicate when a comment has been edited. Every COMMENT also holds foreign keys to both USER and ALBUM, meaning every comment is always traceable to both the person who wrote it and the album it belongs to.
 
 ---
+ 
+# Agile Development
+ 
+Music Madness was planned and built using an Agile approach throughout. GitHub Projects was used as the Kanban board to manage all work, tracking issues from backlog through to completion across five development phases.
+
+---
+
+## GitHub Projects Board
+ 
+All user stories, features and tasks were logged as GitHub Issues and managed on a Kanban board with three columns: **To Do**, **In Progress** and **Done**. Issues were moved across the board as work progressed, giving a clear view of what was being worked on at any point.
+ 
+Each issue was tagged with a MoSCoW label and assigned to the relevant development phase, making it easy to prioritise work and stay focused on what mattered most for that stage of the project.
+ 
+![GitHub Projects Board](./static/images/github-project-board.png)
+ 
+The board shows three columns — **Todo**, **In Progress** and **Done** — with 15 issues completed and 6 Won't Have items remaining in the backlog as deliberate out-of-scope features. Each issue card carries a MoSCoW label (Must have, Should have, Could have, Won't have) and a phase tag (Design Phase, Coding Phase) so it is always clear what priority an issue is and where it sits in the project lifecycle.
+
+
 
 # Features
 

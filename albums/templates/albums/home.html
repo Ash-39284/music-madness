@@ -3,89 +3,82 @@
 {% block title %}Home | Music Madness{% endblock %}
 
 {% block content %}
-<section class="container py-5">
 
   <!-- HERO -->
   <section class="container py-5">
-  <div class="hero-card p-4 p-md-5 mb-4">
-    <h1 class="hero-card__title">Where Metalheads Rate The Riffs.</h1>
-    <p class="hero-card__sub">Discover brutal albums, debate the best releases, and leave your mark on the metal community.</p>
-    <div class="hero-card__actions mt-4">
-      {% if not user.is_authenticated %}
-      <a href="{% url 'account_signup' %}" class="btn btn-hero">Join the pit</a>
-      <a href="{% url 'explore' %}" class="btn btn-hero btn-hero--outline">Explore Albums</a>
-      {% else %}
-      <a href="{% url 'explore' %}" class="btn btn-hero">Explore Albums</a>
-      {% endif %}
-
+    <div class="hero-card p-4 p-md-5 mb-4">
+      <h1 class="hero-card__title">Where Metalheads Rate The Riffs.</h1>
+      <p class="hero-card__sub">Discover brutal albums, debate the best releases, and leave your mark on the metal community.</p>
+      <div class="hero-card__actions mt-4">
+        {% if not user.is_authenticated %}
+        <a href="{% url 'account_signup' %}" class="btn btn-hero">Join the pit</a>
+        <a href="{% url 'explore' %}" class="btn btn-hero btn-hero--outline">Explore Albums</a>
+        {% else %}
+        <a href="{% url 'explore' %}" class="btn btn-hero">Explore Albums</a>
+        {% endif %}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- CTA Cards -->
-  <section class="container mb-5">
+  <div class="container mb-5">
     <div class="row g-4">
-    <div class="col-12 col-md-4">
-      <div class="cta-card h-100">
-        <h3 class="cta-card__title">React to albums</h3>
-        <p class="cta-card__text">Like or dislike releases across every genre.</p>
+      <div class="col-12 col-md-4">
+        <div class="cta-card h-100">
+          <h2 class="cta-card__title">React to albums</h2>
+          <p class="cta-card__text">Like or dislike releases across every genre.</p>
+        </div>
       </div>
-    </div>
-    <div class="col-12 col-md-4">
-      <div class="cta-card h-100">
-        <h3 class="cta-card__title">Join the discussion</h3>
-        <p class="cta-card__text">Leave comments, reviews, and replies.</p>
+      <div class="col-12 col-md-4">
+        <div class="cta-card h-100">
+          <h2 class="cta-card__title">Join the discussion</h2>
+          <p class="cta-card__text">Leave comments, reviews, and replies.</p>
+        </div>
       </div>
-    </div>
-    <div class="col-12 col-md-4">
-      <div class="cta-card h-100">
-        <h3 class="cta-card__title">Track community opinion</h3>
-        <p class="cta-card__text">See what albums are trending.</p>
+      <div class="col-12 col-md-4">
+        <div class="cta-card h-100">
+          <h2 class="cta-card__title">Track community opinion</h2>
+          <p class="cta-card__text">See what albums are trending.</p>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-  <!-- Inside the pit -->
- <section class="container mb-5">
-  <div class="pit-section p-4">
-    <h2 class="pit-section__title">Inside the Pit</h2>
-    <p class="pit-section__sub">See how the community reacts to albums and joins the discussion.</p>
- 
-    <div class="row g-4 mt-2">
+  <!-- Inside the Pit -->
+  <section class="container mb-5">
+    <div class="pit-section p-4">
+      <h2 class="pit-section__title">Inside the Pit</h2>
+      <p class="pit-section__sub">See how the community reacts to albums and joins the discussion.</p>
 
-<!--
-Use Reaction model to wire in the accurate reactions data from the users
--->
- {% for album in albums %}
-<div class="col-12 col-md-4">
-  <div class="album-card h-100">
-    <div class="album-card__img-wrap">
-      <img
-        src="{{ album.cover_image_url }}"
-        alt="{{ album.artist }} – {{ album.title }}"
-        class="album-card__img"
-      >
-    </div>
-    <div class="album-card__body">
-      <p class="album-card__artist">{{ album.artist }}</p>
-      <p class="album-card__album">{{ album.title }}</p>
-      <p class="album-card__genre">{{ album.genre }}</p>
-      <div class="album-card__votes">
-        <span><i class="fa-solid fa-thumbs-up"></i> {{ album.like_count }}</span>
-        <span><i class="fa-solid fa-thumbs-down"></i> {{ album.dislike_count }}</span>
+      <div class="row g-4 mt-2">
+        {% for album in albums %}
+        <div class="col-12 col-md-4">
+          <div class="album-card h-100">
+            <div class="album-card__img-wrap">
+              <img
+                src="{{ album.cover_image_url }}"
+                alt="{{ album.artist }} – {{ album.title }}"
+                class="album-card__img"
+              >
+            </div>
+            <div class="album-card__body">
+              <p class="album-card__artist">{{ album.artist }}</p>
+              <p class="album-card__album">{{ album.title }}</p>
+              <p class="album-card__genre">{{ album.genre }}</p>
+              <div class="album-card__votes">
+                <span><i class="fa-solid fa-thumbs-up"></i> {{ album.like_count }}</span>
+                <span><i class="fa-solid fa-thumbs-down"></i> {{ album.dislike_count }}</span>
+              </div>
+              <a href="{% url 'album_detail' album.pk %}" class="btn btn-discussion w-100 mt-3">View discussion</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
       </div>
-      <a href="{% url 'album_detail' album.pk %}" class="btn btn-discussion w-100 mt-3">View discussion</a>
     </div>
-  </div>
-</div>
-{% endfor %}
- 
-  </div>
- </section>
-</section>
+  </section>
 
-<!-- ── BROWSE BY GENRE ────────────────────────────────────────────────── -->
+<!-- BROWSE BY GENRE -->
 <section class="container mb-5 text-center">
   <h2 class="genre-heading mb-4">Browse by genre</h2>
   <div class="genre-grid">
@@ -98,8 +91,8 @@ Use Reaction model to wire in the accurate reactions data from the users
   </div>
 </section>
 
-<!-- ── STEP INTO THE PIT ──────────────────────────────────────────────── -->
- {% if not user.is_authenticated %}
+<!-- STEP INTO THE PIT -->
+{% if not user.is_authenticated %}
 <section class="container mb-5">
   <div class="step-banner text-center p-5">
     <h2 class="step-banner__title">STEP INTO THE PIT</h2>
@@ -111,4 +104,5 @@ Use Reaction model to wire in the accurate reactions data from the users
   </div>
 </section>
 {% endif %}
+
 {% endblock %}

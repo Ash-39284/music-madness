@@ -116,12 +116,12 @@ All pages were designed in Canva before development began. Having a finished vis
 ![Home Page](./static/images/music-madness-frontend-designs/home-page.png)
 
 The home page design opens with a dark navy hero card containing the tagline "Where Metalheads Rate The Riffs." and a short subheading, with two pill-shaped buttons — "Join the pit" and "Explore Albums" — side by side. The hero was designed to immediately communicate what the site is and give the user two clear options: join or browse. These buttons only show to logged-out users, which was a deliberate choice to avoid presenting existing members with actions they've already taken.
-
+ 
 Below the hero, three dark feature cards — "React to albums", "Join the discussion", and "Track community opinion" — sit in a row, each with a short one-line description. These were designed to quickly communicate the three core things the platform offers without requiring the user to read anything long. Keeping them as cards with bold headings means users can scan the value proposition in seconds.
-
+ 
 The "Inside the Pit" section follows, showing three real album cards — Black Sabbath's Paranoid, Metallica's The Black Album, and Ozzy Osbourne's Blizzard of Ozz — each with cover art, artist name, album title, genre tag, live like and dislike counts, and a "View discussion" button. Showing real albums and real community numbers here rather than placeholder content was an intentional design decision to make the site feel active and lived-in from the very first visit.
-
-A "Browse by genre" section with six rounded pill buttons — Rock, Heavy Metal, Alternative Rock, Thrash, Death Metal, Metalcore — provides direct routes to each genre page. At the bottom, a large "STEP INTO THE PIT" banner with two wide CTA buttons encourages non-members to sign up, and disappears once a user is logged in. The footer sits beneath with the logo, tagline and quick links on the right.
+ 
+A "Browse by genre" section with six rounded pill buttons — Heavy Metal, Thrash, Death Metal, Metalcore, Alternative Rock, Rock — provides direct routes to each genre page. At the bottom, a large "STEP INTO THE PIT" banner with two wide CTA buttons encourages non-members to sign up, and disappears once a user is logged in. The footer sits beneath with the logo, tagline and quick links on the right.
 
 ### About Page
 
@@ -712,7 +712,7 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 | Explore — stats | View page | Album and discussion counts display | Pass |
 | Explore — Trending section | View page | Three featured albums displayed | Pass |
 | Explore — Most Discussed | View page | Album with most comments displayed | Pass |
-| Genre page — album count | View page | Correct number of albums shown | Pass |
+| Genre page — album count | View Heavy Metal page | Correct number of albums shown | Pass |
 | Genre page — search bar | Enter artist or album name | Results filter correctly | Pass |
 | Genre page — sort by artist | Select sort | Albums reorder alphabetically by artist | Pass |
 | Genre page — sort by title | Select sort | Albums reorder alphabetically by title | Pass |

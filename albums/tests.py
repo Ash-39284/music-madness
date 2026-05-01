@@ -76,3 +76,25 @@ class AlbumModelTest(TestCase):
  
     def test_album_is_imported_default_false(self):
         self.assertFalse(self.album.is_imported)
+
+class TrackModelTest(TestCase):
+ 
+    def setUp(self):
+        self.genre = Genre.objects.create(name='Heavy Metal')
+        self.album = Album.objects.create(
+            title='Paranoid',
+            artist='Black Sabbath',
+            genre=self.genre,
+        )
+        self.track = Track.objects.create(
+            album=self.album,
+            title='War Pigs',
+            track_number=1,
+            duration_seconds=478,
+        )
+ 
+    def test_track_str(self):
+        self.assertEqual(str(self.track), 'Paranoid - 1. War Pigs')
+ 
+    def test_track_belongs_to_album(self):
+        self.assertEqual(self.track.album, self.album)

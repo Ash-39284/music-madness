@@ -748,27 +748,85 @@ To run the tests:
 python manage.py test
 ```
 
-
-### Testing table
-
-
-
 # Deployment
 
-This project was developed using VS code IDE, commited to Git and pushed to GitHub using the terminal git commands. 
+This project was developed using VS Code, committed to Git and pushed to GitHub using terminal git commands.
 
-This project was deployed on Heroku by connecting to the GitHub repository and deploying from the develop app dashboard.
+## Deploying to Heroku
+ 
+The project was deployed to Heroku by connecting the GitHub repository through the Heroku dashboard. The following steps were followed:
+ 
+1. Log in to [Heroku](https://www.heroku.com/) and click **New → Create new app**
+2. Give the app a unique name and select your region, then click **Create app**
+3. In the **Resources** tab, search for **Heroku Postgres** and add it as an add-on to provision the database
+4. In the **Settings** tab, click **Reveal Config Vars** and add the following environment variables:
+| Key | Value |
+|-----|-------|
+| `DATABASE_URL` | Your Heroku PostgreSQL URL (added automatically) |
+| `SECRET_KEY` | Your Django secret key |
+| `LASTFM_API_KEY` | Your Last.fm API key |
+| `DEBUG` | `False` |
+ 
+5. In the **Deploy** tab, select **GitHub** as the deployment method
+6. Search for your repository name and click **Connect**
+7. Scroll down to **Manual Deploy**, select the `main` branch and click **Deploy Branch**
+8. Once the build completes, click **Open App** to view the live site
+
+---
 
 ## How To Run The Project Locally
-
+ 
 To clone this project from GitHub:
-
+ 
 1. Follow this link to the [GitHub Repository](https://github.com/Ash-39284/music-madness#project-goals)
-2. Under the repository name select the green 'code' button to reveal a drop down menu
-3. Select the HTTPs tab and copy the url
-4. In your local IDE open Git Bash
+2. Under the repository name, click the green **Code** button to reveal a dropdown menu
+3. Select the **HTTPS** tab and copy the URL
+4. In your local IDE open **Git Bash**
+5. Change the current working directory to the location where you want the cloned directory
+6. Type `git clone` followed by the URL you copied, then press **Enter**:
+    ```bash
+    git clone https://github.com/Ash-39284/music-madness.git
+    ```
+7. Navigate into the cloned directory:
+    ```bash
+    cd music-madness
+    ```
+8. Create and activate a virtual environment:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+9. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+10. Create an `env.py` file in the root directory and add your environment variables:
+    ```python
+    import os
+    os.environ["SECRET_KEY"] = "your-secret-key"
+    os.environ["DATABASE_URL"] = "your-database-url"
+    os.environ["LASTFM_API_KEY"] = "your-lastfm-api-key"
+    os.environ["DEBUG"] = "True"
+    ```
+11. Run the database migrations:
+    ```bash
+    python manage.py migrate
+    ```
+12. Create a superuser to access the admin panel:
+    ```bash
+    python manage.py createsuperuser
+    ```
+13. Start the development server:
+    ```bash
+    python manage.py runserver
+    ```
+14. Open your browser and navigate to `http://127.0.0.1:8000/`
+
+---
 
 # Credits
+
+
 
 ## Content
 

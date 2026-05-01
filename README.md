@@ -1,6 +1,6 @@
 # Music Madness
 
-
+![Website Mockup](./static/images/mockup-all-framed.png)
 
 ## Table of Contents
 
@@ -10,13 +10,13 @@
     - [User Stories](#user-stories)
     - [Developer Goals](#developer-goals)
     - [Design Choices](#design-choices)
-        - [Colour Pallete](#colour-pallete)
+        - [Colour Palette](#colour-palette)
         - [Frontend Design (Canva)](#frontend-design-canva)
             - [Home Page](#home-page)
             - [About Page](#about-page)
             - [Genre Page](#genre-page)
             - [Explore Page](#explore-page)
-            - [Album Discuss Page](#album-discussion-page)
+            - [Album Discussion Page](#album-discussion-page)
             - [Login Page](#login-page)
             - [Signup Page](#signup-page)
         - [Wireframes](#wireframes)
@@ -37,7 +37,10 @@
     - [Bugs Discovered](#bugs-discovered)
     - [Manual Testing](#manual-testing)
     - [Automated Testing](#automated-testing)
+    - [Lighthouse Testing](#lighthouse-testing)
 6. [Deployment](#deployment)
+    - [Prerequisites](#prerequisites)
+    - [Deploying to Heroku](#deploying-to-heroku)
     - [How To Run The Project Locally](#how-to-run-the-project-locally)
 7. [Credits](#credits)
     - [Content](#content)
@@ -51,6 +54,10 @@
 **Music Madness** is a community-driven web application where metal fans can explore albums, react to releases, and join discussions around their favourite music.
 
 The platform focuses on conversation over ratings, giving users a space to share opinions, debate iconic records, and discover new music across multiple genres. From classic heavy metal to modern subgenres, Music Madness brings together fans who want more than just a score — they want a voice.
+
+## View live site
+
+[View Live Site](https://music-madness-2cbf8fe667b1.herokuapp.com/)
 
 ---
 
@@ -883,6 +890,25 @@ After both fixes were applied and deployed, Lighthouse was re-run and all four s
 # Deployment
 
 This project was developed using VS Code, committed to Git and pushed to GitHub using terminal git commands.
+
+## Prerequisites
+ 
+The following files are required in the project root before deploying:
+ 
+**`Procfile`** — tells Heroku how to run the application. This project uses:
+```
+web: gunicorn music_madness.wsgi
+```
+ 
+**`requirements.txt`** — lists all Python dependencies. Keep this up to date by running:
+```bash
+pip freeze > requirements.txt
+```
+ 
+**`runtime.txt`** (optional) — specifies the Python version for Heroku. For example:
+```
+python-3.12.0
+```
 
 ## Deploying to Heroku
 

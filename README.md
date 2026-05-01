@@ -245,15 +245,27 @@ The login form on tablet behaves the same as signup — a centred card that is n
 
 ![Home Page/ Explore page](./static/images/desktop-wireframes/home_desktop_wireframe.svg)
 
+The desktop home page uses the full width to show all three featured album cards side by side in a three-column grid. The hero section spans the full width with the title, intro and CTA buttons centred, creating a strong visual anchor at the top of the page. The most discussed section and browse by genre section follow as full-width blocks, and the footer sits at the bottom. The three-column card grid is the signature desktop layout of the site, used consistently across home, explore and genre pages so the pattern feels familiar.
+
 ![About Page](./static/images/desktop-wireframes/about_desktop_wireframe.svg)
+
+On desktop, the three feature cards sit side by side in a single row, which is the most efficient use of the wider screen and creates a clean, balanced layout. The "What is Music Madness?" and "How it works" sections sit in a full-width block below, giving the content room to breathe at this size. The call-to-action banner at the bottom spans the full width, making it prominent and hard to miss.
 
 ![Genre Page](./static/images/desktop-wireframes/genre_desktop_wireframe.svg)
 
+The desktop genre page uses a three-column album grid, showing six albums in two rows before requiring a scroll. This was chosen to give a strong sense of the breadth of the genre immediately on page load, without the user needing to scroll to understand how much content is there. The search and sort controls sit as a full-width bar below the genre hero, keeping filtering tools visible and accessible above the grid.
+
 ![Album Page](./static/images/desktop-wireframes/album_desktop_wireframe.svg)
+
+The desktop album detail page gives the album header generous vertical space to accommodate the cover art, title, artist, genre, year, like and dislike buttons all at once. Having all of this information above the fold on desktop means users get the full picture before they scroll into the discussion. The discussion thread shows three comment items in clear rows, each with enough width to display a full comment comfortably. The add comment field and related albums section sit beneath the thread, keeping the full journey — discovery, reading, participating, exploring more — on a single page.
 
 ![Signup Page](./static/images/desktop-wireframes/signup_desktop_wireframe.svg)
 
+On desktop, the signup form card is wider than on tablet but still stops well short of the full page width, keeping the form contained and focused rather than stretching awkwardly across a large screen. The four fields remain in a clean vertical stack with the submit button and login link below. The dark background remains visible on both sides of the card, maintaining the site's visual identity even on an authentication page.
+
 ![Login Page](./static/images/desktop-wireframes/login_desktop_wireframe.svg)
+
+The desktop login page follows the same principle as signup — a centred form card that is wide enough to feel proportional but not so wide that it loses its sense of being a focused, self-contained form. Email field, password field, primary button and sign-up link all sit in a single vertical column. Keeping login and signup visually consistent across all three breakpoints means users always know where they are and what to do, regardless of what device they are using.
 
 --- 
 

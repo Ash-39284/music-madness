@@ -781,13 +781,44 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 | 404 page | Navigate to invalid URL | Custom 404 page displayed | Pass |
 
 ## Automated Testing
-
-Automated tests were written using Django's built-in `TestCase` framework. Tests cover the models, views and URL routing for both the `albums` and `interactions` apps.
+ 
+Automated tests were written using Django's built-in `TestCase` framework. Tests cover the models, views and URL routing for both the `albums` and `interactions` apps. A SQLite database is used during testing by adding the following to `settings.py`, keeping the production PostgreSQL database untouched:
+ 
+```python
+import sys
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'test_db.sqlite3',
+        }
+    }
+```
  
 To run the tests:
  
 ```bash
 python manage.py test
+```
+ 
+### Results
+ 
+```
+Found 46 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..............................................
+----------------------------------------------------------------------
+Ran 46 tests in 2.493s
+OK
+Destroying test database for alias 'default'...
+```
+ 
+| App | Tests | Result |
+|-----|-------|--------|
+| albums — models (Genre, Album, Track) | 12 | ✓ Pass |
+| albums — views (home, about, explore, genre, album detail) | 18 | ✓ Pass |
+| **Total** | **46** | **All passing** |
 ```
 ---
 

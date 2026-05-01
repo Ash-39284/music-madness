@@ -1,2 +1,20 @@
 .venv
 env.py
+# Database
+*.sqlite3
+test_db.sqlite3
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+
+# Node
+node_modules/
+.jshintrc
+
+# OS
+.DS_Store

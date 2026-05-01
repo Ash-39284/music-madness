@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
+  <style>
+    .bg { fill: #1a1a2e; }
+    .card { fill: #16213e; rx: 8; }
+    .bar { fill: #2d5a8e; }
+    .bar-wont { fill: #4a4a4a; }
+    .phase-label { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #e0e0e0; }
+    .phase-sub { font-family: Arial, sans-serif; font-size: 11px; fill: #a0a0b0; }
+    .bar-text { font-family: Arial, sans-serif; font-size: 12px; fill: #b8d4f0; font-weight: bold; }
+    .ticket { font-family: Arial, sans-serif; font-size: 10px; }
+    .must-bg { fill: #0c3a6b; }
+    .must-text { fill: #7ab8f5; }
+    .should-bg { fill: #0a3d2e; }
+    .should-text { fill: #5dd4a8; }
+    .could-bg { fill: #5a3200; }
+    .could-text { fill: #f0a830; }
+    .wont-bg { fill: #3a3a3a; }
+    .wont-text { fill: #b0b0b0; }
+    .legend-text { font-family: Arial, sans-serif; font-size: 11px; fill: #c0c0c0; }
+    .title-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #ffffff; }
+    .stat-num { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; }
+    .stat-label { font-family: Arial, sans-serif; font-size: 10px; fill: #a0a0b0; }
+    .connector { stroke: #3a3a5c; stroke-width: 1; }
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="620" fill="#1a1a2e" rx="12"/>
+
+  <!-- Title -->
+  <text x="30" y="35" class="title-text">Music Madness — Agile Development Timeline</text>
+
+  <!-- Legend -->
+  <rect x="30" y="50" width="12" height="12" fill="#2d5a8e" rx="2"/>
+  <text x="46" y="61" class="legend-text">Must Have</text>
+  <rect x="130" y="50" width="12" height="12" fill="#0a3d2e" rx="2"/>
+  <text x="146" y="61" class="legend-text">Should Have</text>
+  <rect x="240" y="50" width="12" height="12" fill="#5a3200" rx="2"/>
+  <text x="256" y="61" class="legend-text">Could Have</text>
+  <rect x="340" y="50" width="12" height="12" fill="#3a3a3a" rx="2"/>
+  <text x="356" y="61" class="legend-text">Won't Have</text>
+
+  <!-- Stat boxes -->
+  <rect x="600" y="40" width="90" height="50" fill="#16213e" rx="6"/>
+  <text x="645" y="62" class="stat-num" fill="#5dd4a8" text-anchor="middle">15</text>
+  <text x="645" y="78" class="stat-label" text-anchor="middle">Done</text>
+
+  <rect x="700" y="40" width="90" height="50" fill="#16213e" rx="6"/>
+  <text x="745" y="62" class="stat-num" fill="#f0a830" text-anchor="middle">0</text>
+  <text x="745" y="78" class="stat-label" text-anchor="middle">In Progress</text>
+
+  <rect x="800" y="40" width="90" height="50" fill="#16213e" rx="6"/>
+  <text x="845" y="62" class="stat-num" fill="#b0b0b0" text-anchor="middle">6</text>
+  <text x="845" y="78" class="stat-label" text-anchor="middle">Won't Have</text>
+
+  <!-- Divider -->
+  <line x1="30" y1="100" x2="870" y2="100" stroke="#2a2a4a" stroke-width="1"/>
+
+  <!-- ── DESIGN PHASE ── -->
+  <text x="30" y="130" class="phase-label">Design Phase</text>
+  <text x="30" y="145" class="phase-sub">Week 1 · #1 done</text>
+  <rect x="160" y="115" width="690" height="28" fill="#2d5a8e" rx="5"/>
+  <text x="172" y="134" class="bar-text">Planning &amp; Design</text>
+  <!-- tickets -->
+  <rect x="160" y="148" width="88" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="204" y="161" class="ticket must-text" text-anchor="middle">#1 Frontend design ✓</text>
+  <rect x="254" y="148" width="72" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="290" y="161" class="ticket must-text" text-anchor="middle">ERD diagram ✓</text>
+  <rect x="332" y="148" width="68" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="366" y="161" class="ticket must-text" text-anchor="middle">Wireframes ✓</text>
+  <rect x="406" y="148" width="94" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="453" y="161" class="ticket must-text" text-anchor="middle">GitHub board setup ✓</text>
+  <rect x="506" y="148" width="100" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="556" y="161" class="ticket must-text" text-anchor="middle">PostgreSQL setup ✓</text>
+
+  <!-- connector -->
+  <line x1="90" y1="170" x2="90" y2="190" class="connector"/>
+
+  <!-- ── CODING PHASE ── -->
+  <text x="30" y="210" class="phase-label">Coding Phase</text>
+  <text x="30" y="225" class="phase-sub">Weeks 2–4 · #13–16 done</text>
+  <rect x="160" y="195" width="690" height="28" fill="#2d5a8e" rx="5"/>
+  <text x="172" y="214" class="bar-text">Backend, Frontend &amp; Interactions</text>
+  <!-- row 1 tickets -->
+  <rect x="160" y="228" width="100" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="210" y="241" class="ticket must-text" text-anchor="middle">#13 Post a comment ✓</text>
+  <rect x="266" y="228" width="92" height="18" fill="#0a3d2e" rx="3"/>
+  <text x="312" y="241" class="ticket should-text" text-anchor="middle">#14 Like an album ✓</text>
+  <rect x="364" y="228" width="96" height="18" fill="#0a3d2e" rx="3"/>
+  <text x="412" y="241" class="ticket should-text" text-anchor="middle">#15 Dislike an album ✓</text>
+  <rect x="466" y="228" width="104" height="18" fill="#0a3d2e" rx="3"/>
+  <text x="518" y="241" class="ticket should-text" text-anchor="middle">#16 Reply to comment ✓</text>
+  <rect x="576" y="228" width="112" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="632" y="241" class="ticket must-text" text-anchor="middle">Album &amp; Genre models ✓</text>
+  <!-- row 2 tickets -->
+  <rect x="160" y="251" width="118" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="219" y="264" class="ticket must-text" text-anchor="middle">fetch_albums command ✓</text>
+  <rect x="284" y="251" width="112" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="340" y="264" class="ticket must-text" text-anchor="middle">User auth (allauth) ✓</text>
+  <rect x="402" y="251" width="110" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="457" y="264" class="ticket must-text" text-anchor="middle">Album detail page ✓</text>
+  <rect x="518" y="251" width="82" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="559" y="264" class="ticket must-text" text-anchor="middle">Genre pages ✓</text>
+  <rect x="606" y="251" width="86" height="18" fill="#0a3d2e" rx="3"/>
+  <text x="649" y="264" class="ticket should-text" text-anchor="middle">Search &amp; sort ✓</text>
+
+  <!-- connector -->
+  <line x1="90" y1="275" x2="90" y2="295" class="connector"/>
+
+  <!-- ── TESTING PHASE ── -->
+  <text x="30" y="315" class="phase-label">Testing Phase</text>
+  <text x="30" y="330" class="phase-sub">Week 5</text>
+  <rect x="160" y="300" width="690" height="28" fill="#2d5a8e" rx="5"/>
+  <text x="172" y="319" class="bar-text">Validation &amp; Bug Fixes</text>
+  <!-- tickets -->
+  <rect x="160" y="333" width="88" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="204" y="346" class="ticket must-text" text-anchor="middle">HTML validation ✓</text>
+  <rect x="254" y="333" width="80" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="294" y="346" class="ticket must-text" text-anchor="middle">CSS validation ✓</text>
+  <rect x="340" y="333" width="92" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="386" y="346" class="ticket must-text" text-anchor="middle">Python linting ✓</text>
+  <rect x="438" y="333" width="92" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="484" y="346" class="ticket must-text" text-anchor="middle">Manual testing ✓</text>
+  <rect x="536" y="333" width="108" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="590" y="346" class="ticket must-text" text-anchor="middle">77 automated tests ✓</text>
+  <rect x="650" y="333" width="100" height="18" fill="#0a3d2e" rx="3"/>
+  <text x="700" y="346" class="ticket should-text" text-anchor="middle">JSHint + Jest ✓</text>
+
+  <!-- connector -->
+  <line x1="90" y1="357" x2="90" y2="377" class="connector"/>
+
+  <!-- ── DEPLOYMENT PHASE ── -->
+  <text x="30" y="397" class="phase-label">Deployment Phase</text>
+  <text x="30" y="412" class="phase-sub">Week 6</text>
+  <rect x="160" y="382" width="690" height="28" fill="#2d5a8e" rx="5"/>
+  <text x="172" y="401" class="bar-text">Heroku &amp; README</text>
+  <!-- tickets -->
+  <rect x="160" y="415" width="102" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="211" y="428" class="ticket must-text" text-anchor="middle">Heroku app setup ✓</text>
+  <rect x="268" y="415" width="106" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="321" y="428" class="ticket must-text" text-anchor="middle">Config vars &amp; env ✓</text>
+  <rect x="380" y="415" width="118" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="439" y="428" class="ticket must-text" text-anchor="middle">Static files (Whitenoise) ✓</text>
+  <rect x="504" y="415" width="120" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="564" y="428" class="ticket must-text" text-anchor="middle">Production deployment ✓</text>
+  <rect x="630" y="415" width="110" height="18" fill="#0c3a6b" rx="3"/>
+  <text x="685" y="428" class="ticket must-text" text-anchor="middle">README completion ✓</text>
+
+  <!-- connector -->
+  <line x1="90" y1="438" x2="90" y2="458" class="connector"/>
+
+  <!-- ── WON'T HAVE ── -->
+  <text x="30" y="478" class="phase-label">Won't Have Backlog</text>
+  <text x="30" y="493" class="phase-sub">Issues #19–#24</text>
+  <rect x="160" y="463" width="690" height="28" fill="#4a4a4a" rx="5"/>
+  <text x="172" y="482" class="bar-text" fill="#c0c0c0">Out of Scope — Future Versions</text>
+  <!-- tickets -->
+  <rect x="160" y="496" width="82" height="18" fill="#3a3a3a" rx="3"/>
+  <text x="201" y="509" class="ticket wont-text" text-anchor="middle">#19 User profiles</text>
+  <rect x="248" y="496" width="96" height="18" fill="#3a3a3a" rx="3"/>
+  <text x="296" y="509" class="ticket wont-text" text-anchor="middle">#20 Following users</text>
+  <rect x="350" y="496" width="110" height="18" fill="#3a3a3a" rx="3"/>
+  <text x="405" y="509" class="ticket wont-text" text-anchor="middle">#21 Star ratings</text>
+  <rect x="466" y="496" width="104" height="18" fill="#3a3a3a" rx="3"/>
+  <text x="518" y="509" class="ticket wont-text" text-anchor="middle">#22 Playlist creation</text>
+  <rect x="576" y="496" width="106" height="18" fill="#3a3a3a" rx="3"/>
+  <text x="629" y="509" class="ticket wont-text" text-anchor="middle">#23 Music playback</text>
+  <rect x="688" y="496" width="90" height="18" fill="#3a3a3a" rx="3"/>
+  <text x="733" y="509" class="ticket wont-text" text-anchor="middle">#24 Vinyl wishlist</text>
+
+  <!-- Bottom border -->
+  <line x1="30" y1="530" x2="870" y2="530" stroke="#2a2a4a" stroke-width="1"/>
+  <text x="30" y="550" class="legend-text">Music Madness · GitHub Projects Board · 2026</text>
+</svg>

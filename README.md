@@ -24,18 +24,22 @@
             - [Tablet](#tablet)
             - [Desktop](#desktop)
         - [ERD](#erd)
-2. [Features](#features)
+2. [Agile Development](#agile-development)
+    - [GitHub Projects Board](#github-projects-board)
+    - [MoSCoW Prioritisation](#moscow-prioritisation)
+    - [Development Phases](#development-phases)
+3. [Features](#features)
     - [Existing Features](#existing-features)
     - [Features to Implement](#features-to-implement)
-3. [Technologies Used](#technologies-used)
-4. [Testing](#testing)
-    - Code Validation
+4. [Technologies Used](#technologies-used)
+5. [Testing](#testing)
+    - [Code Validation](#code-validation)
     - [Bugs Discovered](#bugs-discovered)
-    - Manual Testing
-    - Automated Testing
-5. [Deployment](#deployment)
+    - [Manual Testing](#manual-testing)
+    - [Automated Testing](#automated-testing)
+6. [Deployment](#deployment)
     - [How To Run The Project Locally](#how-to-run-the-project-locally)
-6. [Credits](#credits)
+7. [Credits](#credits)
     - [Content](#content)
     - [Code](#code)
     - [Images](#images)
@@ -69,7 +73,7 @@ Users of **Music Madness** should be able to easily discover new albums, revisit
 
 A user should be able to browse albums by genre, view album details, and see how others in the community feel about a release. They should also be able to react to albums and leave comments, making it easy to join ongoing discussions or start their own.
 
-The overall experience should feel simple and intuitive, so users can quickly find what they’re looking for and get involved without any friction.
+The overall experience should feel simple and intuitive, so users can quickly find what they're looking for and get involved without any friction.
 
 ---
 
@@ -77,11 +81,11 @@ The overall experience should feel simple and intuitive, so users can quickly fi
 
 Users should be able to browse through albums so they can find new music or go back to ones they already like. They should be able to click into an album and see details like the artist, tracklist, and what other people think about it.
 
-Users should be able to sign up and log in so they can take part in the site. Once they’re logged in, they should be able to like or dislike albums and leave comments to share their opinions.
+Users should be able to sign up and log in so they can take part in the site. Once they're logged in, they should be able to like or dislike albums and leave comments to share their opinions.
 
-They should also be able to read other people’s comments, so they can see different views and join in on discussions around each album.
+They should also be able to read other people's comments, so they can see different views and join in on discussions around each album.
 
-It should also be easy to explore albums by genre, so users can quickly find music that matches what they’re into. Overall, the site should feel simple to use and easy to navigate without having to think too much about it.
+It should also be easy to explore albums by genre, so users can quickly find music that matches what they're into. Overall, the site should feel simple to use and easy to navigate without having to think too much about it.
 
 ---
 
@@ -101,11 +105,17 @@ Overall, the focus is on building something that works end-to-end and feels like
 
 # Design Choices
 
-## Colour Pallete
+The overall design of Music Madness was driven by two equally important goals: building something that felt authentic to the metal community it was made for, and keeping the experience intuitive enough that any user could pick it up without friction. A dark colour scheme, bold typography and high-contrast cards give the site a heavy, underground feel that matches the music. At the same time, consistent layout patterns, clear navigation and familiar UI conventions keep it approachable for anyone who's never used the site before. Every design decision was made in Canva before a single line of code was written, so the visual direction was locked in and used as a reference throughout the entire build.
+
+---
+
+## Colour Palette
+
+![Colour Pallette](./static/images/colour-pallette.png)
 
 The colour palette was chosen to reflect the aesthetic of metal music — dark, bold and high contrast. A deep navy background gives the site its heavy, underground feel while keeping everything readable. Bright accent colours are used sparingly to draw attention to the most important interactive elements like buttons, reaction counts and call-to-action banners, so users always know where to focus. The palette stays consistent across every page so the site feels like a cohesive product rather than a collection of separate screens.
 
-![Colour Pallette](./static/images/colour-pallette.png)
+---
 
 ## Frontend Design (Canva)
 
@@ -116,17 +126,16 @@ All pages were designed in Canva before development began. Having a finished vis
 ![Home Page](./static/images/music-madness-frontend-designs/home-page.png)
 
 The home page design opens with a dark navy hero card containing the tagline "Where Metalheads Rate The Riffs." and a short subheading, with two pill-shaped buttons — "Join the pit" and "Explore Albums" — side by side. The hero was designed to immediately communicate what the site is and give the user two clear options: join or browse. These buttons only show to logged-out users, which was a deliberate choice to avoid presenting existing members with actions they've already taken.
- 
+
 Below the hero, three dark feature cards — "React to albums", "Join the discussion", and "Track community opinion" — sit in a row, each with a short one-line description. These were designed to quickly communicate the three core things the platform offers without requiring the user to read anything long. Keeping them as cards with bold headings means users can scan the value proposition in seconds.
- 
+
 The "Inside the Pit" section follows, showing three real album cards — Black Sabbath's Paranoid, Metallica's The Black Album, and Ozzy Osbourne's Blizzard of Ozz — each with cover art, artist name, album title, genre tag, live like and dislike counts, and a "View discussion" button. Showing real albums and real community numbers here rather than placeholder content was an intentional design decision to make the site feel active and lived-in from the very first visit.
- 
+
 A "Browse by genre" section with six rounded pill buttons — Heavy Metal, Thrash, Death Metal, Metalcore, Alternative Rock, Rock — provides direct routes to each genre page. At the bottom, a large "STEP INTO THE PIT" banner with two wide CTA buttons encourages non-members to sign up, and disappears once a user is logged in. The footer sits beneath with the logo, tagline and quick links on the right.
 
 ### About Page
 
 ![About Page](./static/images/music-madness-frontend-designs/about-page.png)
-
 
 The about page was designed with the same card-based structure as the rest of the site to keep it visually consistent even on a page that is mostly text. The hero card at the top carries the site name, a two-sentence description of the platform, and the tagline "Where metalheads rate the riffs." as a bold centred line. This repetition of the tagline was intentional — it reinforces the site's identity for anyone who arrives on the about page without having seen the home page.
 
@@ -149,9 +158,9 @@ The album grid uses three columns at desktop width, showing six albums per scree
 ![Explore Page](./static/images/music-madness-frontend-designs/explore-page.png)
 
 The explore page was designed as the site's discovery hub for users who are not sure where to start. The hero card at the top shows "Explore Albums" as the page heading with a short description and the site-wide stats — "124 albums • 562 discussions" — displayed as a single line. Showing live numbers here rather than just a heading was a deliberate decision to reinforce the sense of an active, growing community.
- 
+
 The "Trending in the pit..." section below shows three album cards in the same format as the home page, surfacing featured content for users who want a recommendation rather than browsing by genre. Directly below that, the "Most Discussed..." section gives one album — Blizzard of Ozz by Ozzy Osbourne — a larger treatment: the cover art sits large on the left, with the title, artist, likes, dislikes and comment count displayed in bold text to the right, plus a "View discussion" button. This bigger format was chosen to give the most active album on the site the prominence it earns, and to give users a different visual rhythm from the three-column card grid above.
- 
+
 A "Browse by Genre..." section at the bottom provides the same six genre pill buttons as the home page, completing the page's role as a central navigation point for users who want to explore in any direction.
 
 ### Album Discussion Page
@@ -159,11 +168,11 @@ A "Browse by Genre..." section at the bottom provides the same six genre pill bu
 ![Album Discussion Page](./static/images/music-madness-frontend-designs/album-discuss-pge.png)
 
 The album detail page design is the most information-dense page on the site and was structured to give users everything they need in a logical reading order. The header section at the top is a dark card combining the album cover art on the left with the key metadata on the right: artist name, album title, genre, release year, a description pulled from Last.fm, live like and dislike counts, and a "Like" and "Dislike" button. Grouping all of this together in a single card means users immediately have the full picture before scrolling into the discussion below.
- 
+
 Directly beneath the header, still within the same card, is the "Community Reaction" section: a percentage bar showing "80% liked this album" with the filled and unfilled segments clearly visible, and a line showing the most mentioned tracks. This bar was designed to give an instant visual summary of community sentiment that requires no reading — a user can see at a glance whether an album is well-regarded or divisive, which is one of the key pieces of social information the site exists to provide.
- 
+
 Below the header card, the "Discussion" section opens with a prominent text area — "Share your thoughts on this album:" — and a "Post Comment!" button. Placing the comment form above the existing comments was a deliberate design choice to encourage participation before reading, since users who see an empty-looking form above a list of comments are more likely to contribute than users who scroll past a long thread first.
- 
+
 Comment cards below each show the username, timestamp, comment text and a like count with a reply link. The consistent card styling with a cream background and a rounded border keeps each comment visually contained and easy to read. A "You might also like..." section at the bottom shows three related album covers from the same genre, keeping users engaged with the site rather than leaving once the discussion ends.
 
 ### Login Page
@@ -171,7 +180,7 @@ Comment cards below each show the username, timestamp, comment text and a like c
 ![Login Page](./static/images/music-madness-frontend-designs/login-page.png)
 
 The login page design centres a single off-white card on a light background, with "Welcome back" as the heading and a short line explaining what logging in unlocks — "Sign in to react to albums, join discussions, and connect with other metal fans." The heading and the reminder of what awaits were chosen to make the login feel warm and purposeful rather than purely transactional.
- 
+
 The form itself has just two fields: an email address input and a password input, both with rounded styling that matches the pill aesthetic used across the site. A full-width "Log in" button in the site's muted blue sits below the fields, making it impossible to miss. Two helper links follow — "Don't have an account? Join the pit" and "Forgot Password?" — both using the site's blue accent colour so they are visible without competing with the primary button. The phrase "Join the pit" was used intentionally to keep the site's tone consistent even on a utility page. The light footer with the Music Madness logo and navigation links completes the page.
 
 ### Signup Page
@@ -179,7 +188,7 @@ The form itself has just two fields: an email address input and a password input
 ![Signup Page](./static/images/music-madness-frontend-designs/signup-page.png)
 
 The signup page mirrors the login layout with the same centred off-white card, keeping the two pages visually consistent so users moving between them always feel oriented. The heading "Create your account" is followed by a motivational subheading — "Join the community already discovering new music, reacting to albums and sharing their thoughts throughout the metal community." — which was designed to frame account creation as joining something rather than filling in a form.
- 
+
 The form has four fields: Username, Email address, Password, and Confirm password. Inline helper text appears below the username and password fields — "Must contain 8 characters. Only -, &, ! are allowed." — which was included in the design to surface validation requirements before submission rather than after an error, reducing frustration. A full-width "Create Account" button sits below the fields, and a final link — "Already have an account? Step into the pit" — provides a route back to login. The use of "Step into the pit" rather than plain "Log in" keeps the community-first language consistent even at the point of account creation.
 
 ---
@@ -214,6 +223,8 @@ The signup form on mobile takes up the full width of the screen with comfortable
 
 The mobile login page mirrors the signup layout: a centred form card with the email and password fields stacked vertically, followed by the primary button and the sign-up link. The simplicity of the layout means there is no visual noise competing with the form, which is especially important on a small screen where space is limited.
 
+---
+
 ### Tablet
 
 ![Home Page/ Explore page](./static/images/tablet-wireframes/home_tablet_wireframe.svg)
@@ -240,6 +251,7 @@ On tablet, the signup form card narrows slightly relative to the screen width so
 
 The login form on tablet behaves the same as signup — a centred card that is narrower than the full screen width, with the email field, password field, primary button and sign-up link in a clean vertical stack. The consistent treatment of both auth pages across breakpoints means users moving between login and signup always see a familiar layout.
 
+---
 
 ### Desktop
 
@@ -274,65 +286,69 @@ The desktop login page follows the same principle as signup — a centred form c
 ![ERD Diagram](./static/images/music-madness-erd-diagram.png)
 
 The ERD was designed in Lucidchart during the planning phase and used as the blueprint for every Django model in the project. The structure was deliberately built around the album as the central entity — everything on the site either belongs to an album or happens because of one, so ALBUM sits at the heart of the diagram with relationships branching out from it in every direction. The final models stayed very close to the ERD, with a small number of fields added during development as requirements became clearer.
- 
+
 **ALBUM** is the most field-heavy table in the database, and intentionally so. As well as the core data (`title`, `artist`, `release_year`, `description`, `cover_image_url`), it carries `external_id`, `external_url`, `source` and `is_imported` fields that were planned from the start to support the Last.fm API import workflow. Knowing the site would be seeded with over 300 albums via the `fetch_albums` management command, these fields were included upfront so the import process could track where each record came from and avoid duplicates. One field added during development that does not appear in the ERD is `featured` — a boolean that allows admins to mark specific albums from the admin panel. This field is what powers the "Inside the Pit" section on the home page and the "Trending in the Pit" section on the explore page. The `genre` foreign key uses `SET_NULL` so that deleting a genre does not cascade and wipe out all its associated albums, protecting the data integrity of the catalogue.
- 
+
 **GENRE** is deliberately simple, holding just a `name`, `description` and a `slug`. The slug field was not in the original ERD but was added during development to enable clean URL routing — `/genres/heavy-metal/` rather than `/genres/1/`. The one-to-many relationship between GENRE and ALBUM maps directly to the genre page design, where the hero card shows the genre name and description from this table and the album grid below is populated by filtering albums on the `genre` foreign key.
- 
+
 **TRACK** has a many-to-one relationship with ALBUM, meaning each album can have many tracks but each track belongs to exactly one album. The `track_number`, `title` and `duration_seconds` fields populate the expandable tracklist on the album detail page. The `external_id` field was included for the same reason as on ALBUM — to tie each track back to its Last.fm source and prevent duplicate imports when the `fetch_albums` command is run.
- 
+
 **USER** is Django's built-in `auth.User` model rather than a custom table. The ERD shows it with `username`, `email` and `password_hash` fields to illustrate the relationships, but in practice these are handled entirely by Django's authentication system and django-allauth. The USER sits at the top of the ERD because it has relationships going in two directions — a user can leave many reactions and many comments — and those relationships are what ties every piece of community activity back to the person who created it. This is what allows the navbar to display the logged-in user's username and what enables the edit and delete controls to appear only on a user's own comments.
- 
+
 **REACTION** links USER and ALBUM with a `reaction_type` field that stores either `like` or `dislike`. A `unique_together` constraint on `(user, album)` enforces one reaction per user per album at the database level — this is the constraint that makes the toggle behaviour on the album detail page work correctly. Because reactions are stored as individual records rather than simple counters on the ALBUM table, the `like_count()` and `dislike_count()` methods on the Album model can calculate totals dynamically, and the community reaction percentage bar always reflects the current state of the data. It also means a user's existing reaction can be retrieved to highlight the correct button when they revisit a page.
- 
+
 **COMMENT** is the most structurally interesting table because it has a self-referential foreign key: `parent_comment` points back to the COMMENT table itself using Django's `'self'` syntax. A top-level comment has `parent_comment` set to `None`, while a reply has it set to the comment it is responding to. This single field is what enabled the threaded reply system on the album detail page without needing a separate replies table. The `CASCADE` delete behaviour means that deleting a parent comment also removes all its replies, keeping the discussion thread clean. The `updated_at` field sits alongside `created_at` to support the inline edit feature — the template can use this to indicate when a comment has been edited. Every COMMENT also holds foreign keys to both USER and ALBUM, meaning every comment is always traceable to both the person who wrote it and the album it belongs to.
 
 ---
- 
+
 # Agile Development
- 
+
 Music Madness was planned and built using an Agile approach throughout. GitHub Projects was used as the Kanban board to manage all work, tracking issues from backlog through to completion across five development phases.
 
 ---
 
 ## GitHub Projects Board
- 
+
 All user stories, features and tasks were logged as GitHub Issues and managed on a Kanban board with three columns: **To Do**, **In Progress** and **Done**. Issues were moved across the board as work progressed, giving a clear view of what was being worked on at any point.
- 
+
 Each issue was tagged with a MoSCoW label and assigned to the relevant development phase, making it easy to prioritise work and stay focused on what mattered most for that stage of the project.
- 
+
 ![GitHub Projects Board](./static/images/github-project-board.png)
- 
+
 The board shows three columns — **Todo**, **In Progress** and **Done** — with 15 issues completed and 6 Won't Have items remaining in the backlog as deliberate out-of-scope features. Each issue card carries a MoSCoW label (Must have, Should have, Could have, Won't have) and a phase tag (Design Phase, Coding Phase) so it is always clear what priority an issue is and where it sits in the project lifecycle.
 
 ---
 
 ## MoSCoW Prioritisation
- 
+
 Issues were prioritised using the MoSCoW method to keep development focused and avoid scope creep. Each issue was assigned one of four labels:
- 
+
 **Must Have** — core features required for the project to function. These were non-negotiable and completed first in each phase.
- 
+
 **Should Have** — important features that add real value but are not critical for the initial release. These were completed where time allowed within each phase.
- 
+
 **Could Have** — nice-to-have features that would improve the experience but have minimal impact if left out. These were tackled only when all Must Have and Should Have issues were complete.
- 
+
 **Won't Have** — features considered during planning but deliberately excluded from this version. These are logged on the board and documented in the [Features to Implement](#features-to-implement) section.
- 
+
 ---
 
 ## Development Phases
- 
+
 The project was broken into two phases on the GitHub board — **Design Phase** and **Coding Phase** — with Won't Have items held in the backlog as a deliberate record of out-of-scope features.
- 
+
 **Design Phase**
 All planning and design work before any code was written. This included creating the ERD in Lucidchart, designing all page layouts and wireframes in Canva, setting up the GitHub Projects board with MoSCoW labels and phase tags, initialising the Django project, and configuring the PostgreSQL database. Issue #1 (Frontend design) was the first issue closed on the board.
- 
+
 **Coding Phase**
 All backend and frontend development work. This covered the Genre, Album, Track, Reaction and Comment models, the `fetch_albums` management command for the Last.fm API integration, URL routing, django-allauth authentication, the Jazzmin admin theme, and all page templates and styling. Interaction issues completed in this phase included #13 (Post a comment), #14 (Like an album), #15 (Dislike an album) and #16 (Reply to comment). Should Have features such as search and sort on genre pages, the tracklist toggle, and the Community Reaction bar were also completed during this phase.
- 
+
 **Won't Have Backlog**
 Six issues (#19–#24) were logged and labelled Won't Have at the start of the project and deliberately left in the Todo column. These represent features that were considered during planning but fell outside the project scope — user profiles, following other users, album star ratings, playlist creation, music playback integration, and a vinyl/CD wishlist. They are documented in full in the [Features to Implement](#features-to-implement) section.
+
+I asked [Claude ai](https://claude.ai/login) to build me an accurate representation of my use of agile development.
+
+![Agile development timeline](./static/images/agile-timeline-music-madness.svg)
 
 ---
 
@@ -491,7 +507,7 @@ A wishlist feature where users could mark albums they want to own on vinyl or CD
 
 ## Hosting and Deployment
 
-**Heroku** is used to host the live version of the application. The project is deployed directly from GitHub using the Heroku CLI, and environment variables including the secret key, database URL and API keys are managed through Heroku's config vars.
+**Heroku** is used to host the live version of the application. The project is deployed directly from GitHub using the Heroku dashboard, and environment variables including the secret key, database URL and API keys are managed through Heroku's config vars.
 
 **GitHub** is used for version control throughout the project. Code was committed regularly with descriptive messages, and the repository is used as the source for Heroku deployments.
 
@@ -503,38 +519,33 @@ A wishlist feature where users could mark albums they want to own on vinyl or CD
 
 **Lucidchart** was used to design the Entity Relationship Diagram (ERD) for the database. The ERD was created during the planning phase and used as a reference when building the Django models, ensuring the database structure was thought through before implementation.
 
+---
+
 # Testing
 
 ## Code Validation
 
-All pages were validated using the [W3C HTML Validator](https://validator.w3.org/#validate_by_uri) by entering each page's live Heroku URL directly into the validator. This method was used because it allows the validator to check the fully rendered HTML that the server returns, rather than raw template source which contains Django template tags the validator cannot parse.
-
----
-
 ### HTML Validation
- 
-All HTML was validated using the [W3C HTML Validator](https://validator.w3.org/#validate_by_uri) by entering the live Heroku URL directly into the validator. This checks the fully rendered HTML returned by the server, which correctly handles Django template tags that would cause false errors if the raw template source were pasted in directly.
- 
-| URL Tested | Result |
-|------------|--------|
-| `https://music-madness-2cbf8fe667b1.herokuapp.com/` | No errors or warnings |
 
-![HTML Validation](./static/images/html-validation.png)
+All HTML was validated using the [W3C HTML Validator](https://validator.w3.org/#validate_by_uri) by entering the live Heroku URL directly into the validator. This checks the fully rendered HTML returned by the server, which correctly handles Django template tags that would cause false errors if the raw template source were pasted in directly.
+
+
+![HTML validation](./static/images/html-validation.png)
 
 ---
 
 ### CSS Validation
- 
+
 The stylesheet was validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) by direct input.
- 
-![CSS Validation](./static/images/css-validation.png)
- 
+
+![CSS validation](./static/images/css-validation.png)
+
 ---
 
 ### JavaScript Unit Tests (Jest)
- 
+
 Unit tests for `script.js` were written using [Jest](https://jestjs.io/) with the `jest-environment-jsdom` package to simulate a browser DOM environment. Tests were run from the project root using `npm test`.
- 
+
 | Test | Result |
 |------|--------|
 | Shows a hidden element by setting display to block | ✓ Pass |
@@ -543,10 +554,32 @@ Unit tests for `script.js` were written using [Jest](https://jestjs.io/) with th
 | Toggles back and forth correctly | ✓ Pass |
 | Works independently on multiple elements | ✓ Pass |
 
-![JavaScript Jest validation](./static/images/jest-validation.png)
- 
 **Test Suites: 1 passed — Tests: 5 passed — Time: 0.472s**
- 
+
+![Jest tests](./static/images/jest-validation.png)
+
+---
+
+### Python Validation
+
+All Python files were validated using the [CI Python Linter](https://pep8ci.herokuapp.com/) to check for PEP8 compliance.
+
+| File | Result |
+|------|--------|
+| music_madness/settings.py | No errors |
+| music_madness/urls.py | No errors |
+| albums/models.py | No errors |
+| albums/views.py | No errors |
+| albums/urls.py | No errors |
+| albums/admin.py | No errors |
+| albums/management/commands/fetch_albums.py | No errors |
+| interactions/models.py | No errors |
+| interactions/views.py | No errors |
+| interactions/urls.py | No errors |
+| interactions/admin.py | No errors |
+
+![Python test](./static/images/test-py.png)
+
 ---
 
 ## Bugs Discovered
@@ -780,10 +813,12 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 | Footer links | Click About / Explore / Login | Navigate to correct pages | Pass |
 | 404 page | Navigate to invalid URL | Custom 404 page displayed | Pass |
 
+---
+
 ## Automated Testing
- 
+
 Automated tests were written using Django's built-in `TestCase` framework. Tests cover the models, views and URL routing for both the `albums` and `interactions` apps. A SQLite database is used during testing by adding the following to `settings.py`, keeping the production PostgreSQL database untouched:
- 
+
 ```python
 import sys
 if 'test' in sys.argv:
@@ -794,55 +829,57 @@ if 'test' in sys.argv:
         }
     }
 ```
- 
+
 To run the tests:
- 
+
 ```bash
 python manage.py test
 ```
- 
+
 ### Results
- 
+
 ```
-Found 46 test(s).
+Found 77 test(s).
 Creating test database for alias 'default'...
 System check identified no issues (0 silenced).
-..............................................
+.............................................................................
 ----------------------------------------------------------------------
-Ran 46 tests in 2.493s
+Ran 77 tests in 10.838s
 OK
 Destroying test database for alias 'default'...
 ```
- 
+
 | App | Tests | Result |
 |-----|-------|--------|
 | albums — models (Genre, Album, Track) | 12 | ✓ Pass |
 | albums — views (home, about, explore, genre, album detail) | 18 | ✓ Pass |
-| **Total** | **46** | **All passing** |
-```
+| interactions — models (Reaction, Comment) | 8 | ✓ Pass |
+| interactions — views (react, post, edit, delete comment) | 18 | ✓ Pass |
+| javascript — toggleReply (Jest) | 5 | ✓ Pass |
+| **Total** | **77** | **All passing** |
+
 ---
-
-
 
 # Deployment
 
 This project was developed using VS Code, committed to Git and pushed to GitHub using terminal git commands.
 
 ## Deploying to Heroku
- 
+
 The project was deployed to Heroku by connecting the GitHub repository through the Heroku dashboard. The following steps were followed:
- 
+
 1. Log in to [Heroku](https://www.heroku.com/) and click **New → Create new app**
 2. Give the app a unique name and select your region, then click **Create app**
 3. In the **Resources** tab, search for **Heroku Postgres** and add it as an add-on to provision the database
 4. In the **Settings** tab, click **Reveal Config Vars** and add the following environment variables:
+
 | Key | Value |
 |-----|-------|
 | `DATABASE_URL` | Your Heroku PostgreSQL URL (added automatically) |
 | `SECRET_KEY` | Your Django secret key |
 | `LASTFM_API_KEY` | Your Last.fm API key |
 | `DEBUG` | `False` |
- 
+
 5. In the **Deploy** tab, select **GitHub** as the deployment method
 6. Search for your repository name and click **Connect**
 7. Scroll down to **Manual Deploy**, select the `main` branch and click **Deploy Branch**
@@ -851,9 +888,9 @@ The project was deployed to Heroku by connecting the GitHub repository through t
 ---
 
 ## How To Run The Project Locally
- 
+
 To clone this project from GitHub:
- 
+
 1. Follow this link to the [GitHub Repository](https://github.com/Ash-39284/music-madness#project-goals)
 2. Under the repository name, click the green **Code** button to reveal a dropdown menu
 3. Select the **HTTPS** tab and copy the URL
@@ -882,7 +919,6 @@ To clone this project from GitHub:
     os.environ["SECRET_KEY"] = "your-secret-key"
     os.environ["DATABASE_URL"] = "your-database-url"
     os.environ["LASTFM_API_KEY"] = "your-lastfm-api-key"
-    os.environ["DEBUG"] = "True"
     ```
 11. Run the database migrations:
     ```bash
@@ -903,33 +939,34 @@ To clone this project from GitHub:
 # Credits
 
 ## Content
- 
+
 All album descriptions and track data were imported from the [Last.fm API](https://www.last.fm/api). Genre descriptions were written by the developer.
- 
+
 ---
- 
+
 ## Code
- 
+
 The following official documentation was referenced throughout the project:
- 
+
 - [Django Documentation](https://docs.djangoproject.com/en/4.2/) — models, views, URL routing, ORM queries, template tags, management commands and the authentication system
 - [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) — grid system, utility classes, navbar and responsive layout components
 - [django-allauth Documentation](https://django-allauth.readthedocs.io/en/latest/) — user authentication setup and custom template configuration
 - [Whitenoise Documentation](https://whitenoise.readthedocs.io/en/latest/) — static file serving configuration for Heroku deployment
+
 ---
- 
+
 ## Images
- 
+
 All album artwork is sourced from the [Last.fm API](https://www.last.fm/api) and is displayed in accordance with Last.fm's API terms of use. The Music Madness logo and colour palette were created by the developer using [Canva](https://www.canva.com/).
- 
+
 ---
- 
+
 ## API
- 
+
 Music and album data is provided by the [Last.fm API](https://www.last.fm/api). An API key is required and can be obtained free of charge from the Last.fm developer portal.
- 
+
 ---
- 
+
 ## Acknowledgements
- 
+
 This project was developed and coded by Ashley Roberts in 2026.

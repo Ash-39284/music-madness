@@ -826,28 +826,34 @@ To clone this project from GitHub:
 
 # Credits
 
-
-
 ## Content
-
+ 
+All album descriptions and track data were imported from the [Last.fm API](https://www.last.fm/api). Genre descriptions were written by the developer.
+ 
 ---
-
+ 
 ## Code
-
+ 
+The following official documentation was referenced throughout the project:
+ 
+- [Django Documentation](https://docs.djangoproject.com/en/4.2/) — models, views, URL routing, ORM queries, template tags, management commands and the authentication system
+- [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) — grid system, utility classes, navbar and responsive layout components
+- [django-allauth Documentation](https://django-allauth.readthedocs.io/en/latest/) — user authentication setup and custom template configuration
+- [Whitenoise Documentation](https://whitenoise.readthedocs.io/en/latest/) — static file serving configuration for Heroku deployment
 ---
-
+ 
 ## Images
-
-All album artwork images are imported from the Last.FM api key. [Last.FM API KEY](https://www.last.fm/api) [Last.FM](https://www.last.fm/home)
-
+ 
+All album artwork is sourced from the [Last.fm API](https://www.last.fm/api) and is displayed in accordance with Last.fm's API terms of use. The Music Madness logo and colour palette were created by the developer using [Canva](https://www.canva.com/).
+ 
 ---
-
+ 
 ## API
-
-The API key is intergrated with last.fm developer api key. [Last.FM API KEY](https://www.last.fm/api)
-
+ 
+Music and album data is provided by the [Last.fm API](https://www.last.fm/api). An API key is required and can be obtained free of charge from the Last.fm developer portal.
+ 
 ---
-
+ 
 ## Acknowledgements
-
-This project was developed and coded by Ashley Roberts in 2026
+ 
+This project was developed and coded by Ashley Roberts in 2026.

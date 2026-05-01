@@ -305,6 +305,36 @@ Each issue was tagged with a MoSCoW label and assigned to the relevant developme
  
 The board shows three columns — **Todo**, **In Progress** and **Done** — with 15 issues completed and 6 Won't Have items remaining in the backlog as deliberate out-of-scope features. Each issue card carries a MoSCoW label (Must have, Should have, Could have, Won't have) and a phase tag (Design Phase, Coding Phase) so it is always clear what priority an issue is and where it sits in the project lifecycle.
 
+---
+
+## MoSCoW Prioritisation
+ 
+Issues were prioritised using the MoSCoW method to keep development focused and avoid scope creep. Each issue was assigned one of four labels:
+ 
+**Must Have** — core features required for the project to function. These were non-negotiable and completed first in each phase.
+ 
+**Should Have** — important features that add real value but are not critical for the initial release. These were completed where time allowed within each phase.
+ 
+**Could Have** — nice-to-have features that would improve the experience but have minimal impact if left out. These were tackled only when all Must Have and Should Have issues were complete.
+ 
+**Won't Have** — features considered during planning but deliberately excluded from this version. These are logged on the board and documented in the [Features to Implement](#features-to-implement) section.
+ 
+---
+
+## Development Phases
+ 
+The project was broken into two phases on the GitHub board — **Design Phase** and **Coding Phase** — with Won't Have items held in the backlog as a deliberate record of out-of-scope features.
+ 
+**Design Phase**
+All planning and design work before any code was written. This included creating the ERD in Lucidchart, designing all page layouts and wireframes in Canva, setting up the GitHub Projects board with MoSCoW labels and phase tags, initialising the Django project, and configuring the PostgreSQL database. Issue #1 (Frontend design) was the first issue closed on the board.
+ 
+**Coding Phase**
+All backend and frontend development work. This covered the Genre, Album, Track, Reaction and Comment models, the `fetch_albums` management command for the Last.fm API integration, URL routing, django-allauth authentication, the Jazzmin admin theme, and all page templates and styling. Interaction issues completed in this phase included #13 (Post a comment), #14 (Like an album), #15 (Dislike an album) and #16 (Reply to comment). Should Have features such as search and sort on genre pages, the tracklist toggle, and the Community Reaction bar were also completed during this phase.
+ 
+**Won't Have Backlog**
+Six issues (#19–#24) were logged and labelled Won't Have at the start of the project and deliberately left in the Todo column. These represent features that were considered during planning but fell outside the project scope — user profiles, following other users, album star ratings, playlist creation, music playback integration, and a vinyl/CD wishlist. They are documented in full in the [Features to Implement](#features-to-implement) section.
+
+---
 
 
 # Features

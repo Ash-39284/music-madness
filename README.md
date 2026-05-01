@@ -336,7 +336,6 @@ Six issues (#19–#24) were logged and labelled Won't Have at the start of the p
 
 ---
 
-
 # Features
 
 ## Existing Features
@@ -692,15 +691,62 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 
 ## Manual Testing
 
+| Feature | Action | Expected Result | Pass/Fail |
+|---------|--------|-----------------|-----------|
+| Navbar logo | Click logo | Redirects to home page | Pass |
+| Navbar — Genres dropdown | Click Genres | Dropdown opens with six genre links | Pass |
+| Navbar — genre link | Click a genre from dropdown | Navigates to correct genre page | Pass |
+| Navbar — Login (logged out) | Click Login | Redirects to login page | Pass |
+| Navbar — Sign Up (logged out) | Click Sign Up | Redirects to signup page | Pass |
+| Navbar — username (logged in) | View navbar | Username replaces Login/Sign Up | Pass |
+| Navbar — Logout (logged in) | Click Logout | Redirects to logout confirmation | Pass |
+| Navbar — Home link | View any non-home page | Home link appears in navbar | Pass |
+| Mobile navbar | Click hamburger | Menu expands with all nav links | Pass |
+| Home — Join the pit button | View logged out | Button is visible | Pass |
+| Home — Join the pit button | View logged in | Button is hidden | Pass |
+| Home — Inside the Pit | View | Three featured albums displayed | Pass |
+| Home — album card link | Click View Discussion | Navigates to correct album page | Pass |
+| Home — Browse by Genre buttons | Click a genre | Navigates to correct genre page | Pass |
+| Home — Step into the Pit banner | View logged out | Banner is visible | Pass |
+| Home — Step into the Pit banner | View logged in | Banner is hidden | Pass |
+| Explore — stats | View page | Album and discussion counts display | Pass |
+| Explore — Trending section | View page | Three featured albums displayed | Pass |
+| Explore — Most Discussed | View page | Album with most comments displayed | Pass |
+| Genre page — album count | View page | Correct number of albums shown | Pass |
+| Genre page — search bar | Enter artist or album name | Results filter correctly | Pass |
+| Genre page — sort by artist | Select sort | Albums reorder alphabetically by artist | Pass |
+| Genre page — sort by title | Select sort | Albums reorder alphabetically by title | Pass |
+| Album detail — like button (logged in) | Click like | Like count increases, button highlights | Pass |
+| Album detail — like button (logged in) | Click like again | Reaction removed, count decreases | Pass |
+| Album detail — dislike button (logged in) | Click dislike | Dislike count increases, button highlights | Pass |
+| Album detail — switch reaction | Click opposite reaction | Previous reaction removed, new one applied | Pass |
+| Album detail — like/dislike (logged out) | View page | Buttons display but are not interactive | Pass |
+| Album detail — Community Reaction bar | View after reactions | Percentage updates correctly | Pass |
+| Album detail — tracklist toggle | Click toggle | Track list expands/collapses | Pass |
+| Album detail — post comment (logged in) | Submit comment | Comment appears in discussion | Pass |
+| Album detail — post comment (logged out) | View page | Login prompt shown instead of form | Pass |
+| Album detail — edit comment | Click edit on own comment | Inline edit form appears | Pass |
+| Album detail — save edited comment | Submit edit | Updated comment displayed | Pass |
+| Album detail — delete comment | Click delete on own comment | Comment removed from discussion | Pass |
+| Album detail — reply to comment (logged in) | Click reply | Reply form appears | Pass |
+| Album detail — related albums | View page | Three albums from same genre shown | Pass |
+| Sign up | Submit valid form | Account created, user logged in | Pass |
+| Sign up — duplicate username | Submit existing username | Error message displayed | Pass |
+| Login | Submit correct credentials | User logged in, redirected to home | Pass |
+| Login — wrong credentials | Submit incorrect password | Error message displayed | Pass |
+| Logout | Click Logout, confirm | User logged out, redirected | Pass |
+| Footer links | Click About / Explore / Login | Navigate to correct pages | Pass |
+| 404 page | Navigate to invalid URL | Custom 404 page displayed | Pass |
+
 ## Automated Testing
 
-### HTML Validator
-
-### CSS Validator
-
-### JavaScript Validator
-
-### Python Validator
+Automated tests were written using Django's built-in `TestCase` framework. Tests cover the models, views and URL routing for both the `albums` and `interactions` apps.
+ 
+To run the tests:
+ 
+```bash
+python manage.py test
+```
 
 
 ### Testing table

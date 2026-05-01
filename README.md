@@ -192,15 +192,27 @@ Each page was wireframed across mobile, tablet and desktop breakpoints before th
 
 ![Home Page/ Explore page](./static/images/mobile-wireframes/home_mobile_wireframe.svg)
 
+The mobile home page stacks all sections into a single-column layout. The hero sits at the top with the title, intro and CTA buttons. Below it, the trending albums section shows each album card as a full-width row rather than a grid, so cover art and details remain readable on a small screen. The most discussed section and browse by genre buttons follow in sequence, with the footer at the bottom. The navbar collapses to a hamburger menu to preserve space at the top of the screen.
+
 ![About Page](./static/images/mobile-wireframes/about_mobile_wireframe.svg)
+
+On mobile, the about page stacks the hero, three feature cards, the "What is Music Madness?" block, and the call-to-action vertically. The feature cards that appear side by side on larger screens become individual full-width rows on mobile, keeping each card readable without shrinking the text. This ensures the page communicates the same information regardless of device.
 
 ![Genre Page](./static/images/mobile-wireframes/genre_mobile_wireframe.svg)
 
+The mobile genre page keeps the hero header at the top with the genre name and album count. The search bar and sort controls sit directly below as a full-width bar, keeping them accessible without scrolling past content. Album cards switch from a grid to a single-column list, with each card taking up the full screen width so the cover art, title, artist and reaction counts stay legible.
+
 ![Album Page](./static/images/mobile-wireframes/album_mobile_wireframe.svg)
+
+The album detail page on mobile gives the album header section more vertical space than on desktop, since the cover art, title, buttons and metadata all need to stack rather than sitting side by side. The community reaction bar, discussion thread and add comment field all follow in a single column below. Related albums appear at the very bottom as a scrollable list. The layout prioritises the core content — the album information and the discussion — keeping both easily reachable with a short scroll.
 
 ![Signup Page](./static/images/mobile-wireframes/signup_mobile_wireframe.svg)
 
+The signup form on mobile takes up the full width of the screen with comfortable padding around each field. All four fields — username, email, password and confirm password — stack vertically with the submit button and login link below. The form card sits centrally within the phone frame, keeping the focus entirely on completing the form.
+
 ![Login Page](./static/images/mobile-wireframes/login_mobile_wireframe.svg)
+
+The mobile login page mirrors the signup layout: a centred form card with the email and password fields stacked vertically, followed by the primary button and the sign-up link. The simplicity of the layout means there is no visual noise competing with the form, which is especially important on a small screen where space is limited.
 
 ### Tablet
 ![Home Page/ Explore page](./static/images/tablet-wireframes/home_tablet_wireframe.svg)

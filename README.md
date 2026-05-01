@@ -215,17 +215,30 @@ The signup form on mobile takes up the full width of the screen with comfortable
 The mobile login page mirrors the signup layout: a centred form card with the email and password fields stacked vertically, followed by the primary button and the sign-up link. The simplicity of the layout means there is no visual noise competing with the form, which is especially important on a small screen where space is limited.
 
 ### Tablet
+
 ![Home Page/ Explore page](./static/images/tablet-wireframes/home_tablet_wireframe.svg)
+
+On tablet, the home page introduces a two-column grid for the trending albums section, showing two cards side by side before wrapping to the next row. This makes better use of the wider screen without going to the full three-column desktop layout, which would make cards too small at this size. The hero, most discussed section, browse by genre buttons and footer all remain full-width, keeping the page feeling balanced rather than stretched.
 
 ![About Page](./static/images/tablet-wireframes/about_tablet_wireframe.svg)
 
+The tablet about page moves the three feature cards into a two-column layout, with two cards side by side in the first row and the third sitting full-width below. This makes more efficient use of the screen width than the mobile single-column layout while avoiding the slight squeeze that would come from forcing three cards into a narrower container.
+
 ![Genre Page](./static/images/tablet-wireframes/genre_tablet_wireframe.svg)
+
+The genre page on tablet switches the album list to a two-column grid. The genre hero header remains full-width with the search and sort controls directly beneath it, keeping the filtering tools easy to reach. The two-column grid means more albums are visible per screen, which suits the browsing behaviour of someone exploring a genre.
 
 ![Album Page](./static/images/tablet-wireframes/album_tablet_wireframe.svg)
 
+The album detail page on tablet gives slightly more horizontal space to the album header, allowing the cover art and metadata to sit more comfortably than on mobile. The discussion thread, community reaction bar and add comment section all remain full-width, keeping the conversation easy to read and participate in. Related albums sit at the bottom as on mobile but benefit from the extra width.
+
 ![Signup Page](./static/images/tablet-wireframes/signup_tablet_wireframe.svg)
 
+On tablet, the signup form card narrows slightly relative to the screen width so it does not stretch uncomfortably wide. The four fields, submit button and login link maintain the same vertical order as on mobile. Centring the form card with visible background on either side gives the page a more composed feel at this size.
+
 ![Login Page](./static/images/tablet-wireframes/login_tablet_wireframe.svg)
+
+The login form on tablet behaves the same as signup — a centred card that is narrower than the full screen width, with the email field, password field, primary button and sign-up link in a clean vertical stack. The consistent treatment of both auth pages across breakpoints means users moving between login and signup always see a familiar layout.
 
 
 ### Desktop

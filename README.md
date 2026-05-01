@@ -860,6 +860,26 @@ Destroying test database for alias 'default'...
 
 ---
 
+## Lighthouse Testing
+ 
+Pages were tested using Chrome DevTools Lighthouse in desktop mode against the live Heroku deployment. Two accessibility issues were identified and fixed before the final scores were recorded:
+ 
+**Fix 1 — Buttons do not have an accessible name**
+The navbar toggler button contained only an icon with no text, making it inaccessible to screen readers. An `aria-label="Toggle navigation"` attribute was added to the button in `base.html`.
+ 
+**Fix 2 — Background and foreground colors do not have a sufficient contrast ratio**
+Several text elements had insufficient contrast against their background colour. The affected colours were updated in `style.css` to meet the WCAG AA contrast ratio requirement of 4.5:1.
+ 
+After both fixes were applied and deployed, Lighthouse was re-run and all four scores came back in the green range.
+ 
+| Page | Performance | Accessibility | Best Practices | SEO |
+|------|-------------|---------------|----------------|-----|
+| Home | 99 | 95 | 100 | 91 |
+ 
+![Lighthouse Results](./static/images/lighthouse-report-music-madness.png)
+ 
+---
+
 # Deployment
 
 This project was developed using VS Code, committed to Git and pushed to GitHub using terminal git commands.

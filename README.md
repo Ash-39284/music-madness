@@ -103,41 +103,90 @@ Overall, the focus is on building something that works end-to-end and feels like
 
 ## Colour Pallete
 
+The colour palette was chosen to reflect the aesthetic of metal music — dark, bold and high contrast. A deep navy background gives the site its heavy, underground feel while keeping everything readable. Bright accent colours are used sparingly to draw attention to the most important interactive elements like buttons, reaction counts and call-to-action banners, so users always know where to focus. The palette stays consistent across every page so the site feels like a cohesive product rather than a collection of separate screens.
+
 ![Colour Pallette](./static/images/colour-pallette.png)
 
 ## Frontend Design (Canva)
+
+All pages were designed in Canva before development began. Having a finished visual reference for each page meant design decisions were made upfront rather than during coding, which kept the build focused and consistent.
 
 ### Home Page
 
 ![Home Page](./static/images/music-madness-frontend-designs/home-page.png)
 
+The home page design opens with a dark navy hero card containing the tagline "Where Metalheads Rate The Riffs." and a short subheading, with two pill-shaped buttons — "Join the pit" and "Explore Albums" — side by side. The hero was designed to immediately communicate what the site is and give the user two clear options: join or browse. These buttons only show to logged-out users, which was a deliberate choice to avoid presenting existing members with actions they've already taken.
+
+Below the hero, three dark feature cards — "React to albums", "Join the discussion", and "Track community opinion" — sit in a row, each with a short one-line description. These were designed to quickly communicate the three core things the platform offers without requiring the user to read anything long. Keeping them as cards with bold headings means users can scan the value proposition in seconds.
+
+The "Inside the Pit" section follows, showing three real album cards — Black Sabbath's Paranoid, Metallica's The Black Album, and Ozzy Osbourne's Blizzard of Ozz — each with cover art, artist name, album title, genre tag, live like and dislike counts, and a "View discussion" button. Showing real albums and real community numbers here rather than placeholder content was an intentional design decision to make the site feel active and lived-in from the very first visit.
+
+A "Browse by genre" section with six rounded pill buttons — Rock, Heavy Metal, Alternative Rock, Thrash, Death Metal, Metalcore — provides direct routes to each genre page. At the bottom, a large "STEP INTO THE PIT" banner with two wide CTA buttons encourages non-members to sign up, and disappears once a user is logged in. The footer sits beneath with the logo, tagline and quick links on the right.
+
 ### About Page
 
 ![About Page](./static/images/music-madness-frontend-designs/about-page.png)
+
+
+The about page was designed with the same card-based structure as the rest of the site to keep it visually consistent even on a page that is mostly text. The hero card at the top carries the site name, a two-sentence description of the platform, and the tagline "Where metalheads rate the riffs." as a bold centred line. This repetition of the tagline was intentional — it reinforces the site's identity for anyone who arrives on the about page without having seen the home page.
+
+Below the hero, a "What is Music Madness?" card uses a cream/off-white background to visually separate it from the hero, with two short paragraphs explaining the platform's purpose in plain language. The deliberate use of a lighter background card here breaks up the page visually and signals a shift from branding to information.
+
+A "How it works" card follows with three dark inner cards — "React to albums", "Join the discussion", and "Discover new music" — mirroring the structure used on the home page. Using the same three-card pattern here reinforces the message and feels familiar rather than repetitive. A "STEP INTO THE PIT" call-to-action banner at the bottom rounds off the page with the same two CTAs as the home page, keeping the conversion opportunity consistent across the site.
 
 ### Genre Page
 
 ![Genre Page](./static/images/music-madness-frontend-designs/genre-page.png)
 
+The genre page design gives each genre a strong identity through a dedicated dark hero card at the top showing the genre name as a large centred heading — "Heavy Metal" in this case — with a one-line description and a live count of albums and discussions ("24 albums • 132 discussions"). This count was included by design to give the page an immediate sense of scale and activity before the user starts scrolling.
+
+Below the hero, a search bar on the left and a "Sort by: Most Discussed" dropdown on the right sit on the same row, keeping the filtering tools visible and accessible without any extra clicks. Placing them directly above the album grid means a user can filter or sort without losing their place in the page.
+
+The album grid uses three columns at desktop width, showing six albums per screen — Black Sabbath, Ozzy Osbourne, Judas Priest, Iron Maiden, Dio, and Motörhead in the design. Each card shows the album cover art prominently at the top, followed by the artist name in bold, the album title, genre tag, like and dislike counts with thumbs icons, and a rounded "View discussion" button. The card design was kept consistent with the featured album cards on the home page so the pattern is immediately familiar, reducing the learning curve for returning users.
+
 ### Explore Page
 
 ![Explore Page](./static/images/music-madness-frontend-designs/explore-page.png)
+
+The explore page was designed as the site's discovery hub for users who are not sure where to start. The hero card at the top shows "Explore Albums" as the page heading with a short description and the site-wide stats — "124 albums • 562 discussions" — displayed as a single line. Showing live numbers here rather than just a heading was a deliberate decision to reinforce the sense of an active, growing community.
+ 
+The "Trending in the pit..." section below shows three album cards in the same format as the home page, surfacing featured content for users who want a recommendation rather than browsing by genre. Directly below that, the "Most Discussed..." section gives one album — Blizzard of Ozz by Ozzy Osbourne — a larger treatment: the cover art sits large on the left, with the title, artist, likes, dislikes and comment count displayed in bold text to the right, plus a "View discussion" button. This bigger format was chosen to give the most active album on the site the prominence it earns, and to give users a different visual rhythm from the three-column card grid above.
+ 
+A "Browse by Genre..." section at the bottom provides the same six genre pill buttons as the home page, completing the page's role as a central navigation point for users who want to explore in any direction.
 
 ### Album Discussion Page
 
 ![Album Discussion Page](./static/images/music-madness-frontend-designs/album-discuss-pge.png)
 
+The album detail page design is the most information-dense page on the site and was structured to give users everything they need in a logical reading order. The header section at the top is a dark card combining the album cover art on the left with the key metadata on the right: artist name, album title, genre, release year, a description pulled from Last.fm, live like and dislike counts, and a "Like" and "Dislike" button. Grouping all of this together in a single card means users immediately have the full picture before scrolling into the discussion below.
+ 
+Directly beneath the header, still within the same card, is the "Community Reaction" section: a percentage bar showing "80% liked this album" with the filled and unfilled segments clearly visible, and a line showing the most mentioned tracks. This bar was designed to give an instant visual summary of community sentiment that requires no reading — a user can see at a glance whether an album is well-regarded or divisive, which is one of the key pieces of social information the site exists to provide.
+ 
+Below the header card, the "Discussion" section opens with a prominent text area — "Share your thoughts on this album:" — and a "Post Comment!" button. Placing the comment form above the existing comments was a deliberate design choice to encourage participation before reading, since users who see an empty-looking form above a list of comments are more likely to contribute than users who scroll past a long thread first.
+ 
+Comment cards below each show the username, timestamp, comment text and a like count with a reply link. The consistent card styling with a cream background and a rounded border keeps each comment visually contained and easy to read. A "You might also like..." section at the bottom shows three related album covers from the same genre, keeping users engaged with the site rather than leaving once the discussion ends.
+
 ### Login Page
 
 ![Login Page](./static/images/music-madness-frontend-designs/login-page.png)
+
+The login page design centres a single off-white card on a light background, with "Welcome back" as the heading and a short line explaining what logging in unlocks — "Sign in to react to albums, join discussions, and connect with other metal fans." The heading and the reminder of what awaits were chosen to make the login feel warm and purposeful rather than purely transactional.
+ 
+The form itself has just two fields: an email address input and a password input, both with rounded styling that matches the pill aesthetic used across the site. A full-width "Log in" button in the site's muted blue sits below the fields, making it impossible to miss. Two helper links follow — "Don't have an account? Join the pit" and "Forgot Password?" — both using the site's blue accent colour so they are visible without competing with the primary button. The phrase "Join the pit" was used intentionally to keep the site's tone consistent even on a utility page. The light footer with the Music Madness logo and navigation links completes the page.
 
 ### Signup Page
 
 ![Signup Page](./static/images/music-madness-frontend-designs/signup-page.png)
 
+The signup page mirrors the login layout with the same centred off-white card, keeping the two pages visually consistent so users moving between them always feel oriented. The heading "Create your account" is followed by a motivational subheading — "Join the community already discovering new music, reacting to albums and sharing their thoughts throughout the metal community." — which was designed to frame account creation as joining something rather than filling in a form.
+ 
+The form has four fields: Username, Email address, Password, and Confirm password. Inline helper text appears below the username and password fields — "Must contain 8 characters. Only -, &, ! are allowed." — which was included in the design to surface validation requirements before submission rather than after an error, reducing frustration. A full-width "Create Account" button sits below the fields, and a final link — "Already have an account? Step into the pit" — provides a route back to login. The use of "Step into the pit" rather than plain "Log in" keeps the community-first language consistent even at the point of account creation.
+
 ---
 
 ## Wireframes
+
+Each page was wireframed across mobile, tablet and desktop breakpoints before the Canva designs were created. The wireframes focused purely on layout and content hierarchy — where each section sits, how much space it takes up, and how that structure changes at different screen sizes. Working through all three breakpoints at the wireframe stage meant responsive behaviour was planned from the start rather than retrofitted after the fact.
 
 ### Mobile
 
@@ -246,7 +295,6 @@ The admin panel uses the Jazzmin theme so it looks a bit more presentable than t
 ## Footer
 
 The footer sits at the bottom of every page with the Music Madness logo, the site tagline, and quick links to About, Explore and Login.
-
 
 
 ---
@@ -358,6 +406,8 @@ A wishlist feature where users could mark albums they want to own on vinyl or CD
 **Lucidchart** was used to design the Entity Relationship Diagram (ERD) for the database. The ERD was created during the planning phase and used as a reference when building the Django models, ensuring the database structure was thought through before implementation.
 
 # Testing
+
+## Code Validation
 
 ## Bugs Discovered
 
@@ -540,6 +590,23 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 ```
  
 ---
+
+## Manual Testing
+
+## Automated Testing
+
+### HTML Validator
+
+### CSS Validator
+
+### JavaScript Validator
+
+### Python Validator
+
+
+### Testing table
+
+
 
 # Deployment
 

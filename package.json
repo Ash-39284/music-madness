@@ -1,0 +1,27 @@
+{
+  "name": "music-madness",
+  "version": "1.0.0",
+  "description": "1. [UX](#ux)     - [Project Goals](#project-goals)     - [User Goals](#user-goals)     - [User Stories](#user-stories)     - [Developer Goals](#developer-goals)     - [Design Choices](#design-choices)         - [Colour Pallete](#colour-pallete)         - [Frontend Design (Canva)](#frontend-design-canva)             - [Home Page](#home-page)             - [About Page](#about-page)             - [Genre Page](#genre-page)             - [Explore Page](#explore-page)             - [Album Discuss Page](#album-discussion-page)             - [Login Page](#login-page)             - [Signup Page](#signup-page)         - [Wireframes](#wireframes)             - [Mobile](#mobile)             - [Tablet](#tablet)             - [Desktop](#desktop)         - [ERD](#erd) 2. [Features](#features)     - [Existing Features](#existing-features)     - [Features to Implement](#features-to-implement) 3. [Technologies Used](#technologies-used) 4. [Testing](#testing)     - Code Validation     - [Bugs Discovered](#bugs-discovered)     - Manual Testing     - Automated Testing 5. [Deployment](#deployment)     - [How To Run The Project Locally](#how-to-run-the-project-locally) 6. [Credits](#credits)     - [Content](#content)     - [Code](#code)     - [Images](#images)     - [API](#api)     - [Acknowledgements](#acknowledgements)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ash-39284/music-madness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ash-39284/music-madness/issues"
+  },
+  "homepage": "https://github.com/Ash-39284/music-madness#readme",
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

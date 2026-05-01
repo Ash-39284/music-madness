@@ -507,6 +507,48 @@ A wishlist feature where users could mark albums they want to own on vinyl or CD
 
 ## Code Validation
 
+All pages were validated using the [W3C HTML Validator](https://validator.w3.org/#validate_by_uri) by entering each page's live Heroku URL directly into the validator. This method was used because it allows the validator to check the fully rendered HTML that the server returns, rather than raw template source which contains Django template tags the validator cannot parse.
+
+---
+
+### HTML Validation
+ 
+All HTML was validated using the [W3C HTML Validator](https://validator.w3.org/#validate_by_uri) by entering the live Heroku URL directly into the validator. This checks the fully rendered HTML returned by the server, which correctly handles Django template tags that would cause false errors if the raw template source were pasted in directly.
+ 
+| URL Tested | Result |
+|------------|--------|
+| `https://music-madness-2cbf8fe667b1.herokuapp.com/` | No errors or warnings |
+
+![HTML Validation](./static/images/html-validation.png)
+
+---
+
+### CSS Validation
+ 
+The stylesheet was validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) by direct input.
+ 
+![CSS Validation](./static/images/css-validation.png)
+ 
+---
+
+### JavaScript Unit Tests (Jest)
+ 
+Unit tests for `script.js` were written using [Jest](https://jestjs.io/) with the `jest-environment-jsdom` package to simulate a browser DOM environment. Tests were run from the project root using `npm test`.
+ 
+| Test | Result |
+|------|--------|
+| Shows a hidden element by setting display to block | ✓ Pass |
+| Hides a visible element by setting display to none | ✓ Pass |
+| Hides an element with no inline display style set | ✓ Pass |
+| Toggles back and forth correctly | ✓ Pass |
+| Works independently on multiple elements | ✓ Pass |
+
+![JavaScript Jest validation](./static/images/jest-validation.png)
+ 
+**Test Suites: 1 passed — Tests: 5 passed — Time: 0.472s**
+ 
+---
+
 ## Bugs Discovered
 
 This section documents bugs encountered during the development of Music Madness, including screenshots, descriptions, and how each was resolved.
@@ -747,6 +789,9 @@ To run the tests:
 ```bash
 python manage.py test
 ```
+---
+
+
 
 # Deployment
 

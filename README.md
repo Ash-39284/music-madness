@@ -790,6 +790,18 @@ All pages were also tested on the following physical devices:
 - iPad pro (Chrome,safari)
 - macbook air (Chrome, safari)
 
+### Mobile View
+ 
+On mobile the navbar collapses to a hamburger menu, the hero stacks into a single column, and the three feature cards each take the full screen width. The "Inside the Pit" album cards and "Browse by Genre" buttons also stack into a single column layout, keeping everything readable without horizontal scrolling.
+
+![Mobile home page top](./static/images/mobile-home-pge.png)
+
+Scrolling down on mobile, the genre buttons wrap into a two-per-row grid and the footer stacks its Explore and Account columns side by side, making good use of the available width.
+
+![Mobile home page bottom](./static/images/mobile-home-pge-2.png)
+
+
+
 ---
 
 ## Manual Testing

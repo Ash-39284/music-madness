@@ -35,6 +35,7 @@
 5. [Testing](#testing)
     - [Code Validation](#code-validation)
     - [Bugs Discovered](#bugs-discovered)
+    - [Responsiveness Testing](#responsiveness-testing)
     - [Manual Testing](#manual-testing)
     - [Automated Testing](#automated-testing)
     - [Lighthouse Testing](#lighthouse-testing)
@@ -769,6 +770,26 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 }
 ```
  
+---
+
+## Responsiveness Testing
+ 
+The site was tested across mobile, tablet and desktop screen widths using Chrome DevTools device emulation to confirm that layout changes at each breakpoint match the wireframes produced during the design phase.
+ 
+| Page | Mobile (375px) | Tablet (768px) | Desktop (1280px) |
+|---|---|---|---|
+| Home | Single column layout, hero stacks, hamburger nav | Two-column album grid, nav visible | Three-column album grid, full nav |
+| Explore | Single column, trending cards stack | Two-column trending section | Three-column trending, large most-discussed layout |
+| Genre | Single column album list, full-width search | Two-column album grid | Three-column album grid |
+| Album Detail | Cover art and metadata stack vertically | Side-by-side layout begins | Full cover/metadata side-by-side, wide discussion area |
+| Login / Signup | Full-width form card, comfortable padding | Centred card, visible background either side | Centred card, proportional width |
+| About | Feature cards stack vertically | Two-column feature cards | Three-column feature cards in single row |
+ 
+All pages were also tested on the following physical devices:
+- iPhone 17 pro max (Safari, Chrome)
+- iPad pro (Chrome,safari)
+- macbook air (Chrome, safari)
+
 ---
 
 ## Manual Testing

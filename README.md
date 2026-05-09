@@ -35,6 +35,7 @@
 5. [Testing](#testing)
     - [Code Validation](#code-validation)
     - [Bugs Discovered](#bugs-discovered)
+    - [Usability Testing](#usability-testing)
     - [Responsiveness Testing](#responsiveness-testing)
     - [Data Managemnt Testing](#data-management-testing)
     - [Manual Testing](#manual-testing)
@@ -771,6 +772,25 @@ Added `align-items: flex-start` to `.most-discussed__info` to prevent children f
 }
 ```
  
+---
+
+# Usability Testing
+
+Usability testing was done manually to check that the site is easy to pick up for someone using it for the first time. The focus was on whether navigation felt clear, whether interactions gave useful feedback, and whether core tasks could be completed without any friction.
+
+| Scenario | Expectation | Result |
+|---|---|---|
+| First-time visitor lands on home page | Tagline and CTAs communicate site purpose immediately | Pass |
+| Logged-out user attempts to like an album | User is shown a prompt to log in rather than a broken interaction | Pass |
+| User submits signup form with a weak password | Inline validation message shown before submission | Pass |
+| User submits login form with wrong password | Clear error message displayed, form does not reset email field | Pass |
+| User posts a comment | Comment appears in discussion immediately without page reload required | Pass |
+| User edits their own comment | Inline edit form appears without navigating away from the page | Pass |
+| User attempts to edit another user's comment | Edit/delete controls are not visible on other users' comments | Pass |
+| User navigates via genre dropdown | All six genre links are present and lead to the correct page | Pass |
+| User on mobile opens nav menu | Hamburger expands all navigation links correctly | Pass |
+| User accesses a non-existent URL | Custom 404 page is displayed with navigation intact | Pass |
+
 ---
 
 ## Responsiveness Testing

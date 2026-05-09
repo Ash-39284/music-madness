@@ -36,6 +36,7 @@
     - [Code Validation](#code-validation)
     - [Bugs Discovered](#bugs-discovered)
     - [Responsiveness Testing](#responsiveness-testing)
+    - [Data Managemnt Testing](#data-management-testing)
     - [Manual Testing](#manual-testing)
     - [Automated Testing](#automated-testing)
     - [Lighthouse Testing](#lighthouse-testing)
@@ -820,6 +821,25 @@ Scrolling down on desktop, the album cards display with full cover art and the "
 
 ![Desktop home page bottom](./static/images/desktop-home-page-2.png)
 
+---
+
+## Data Management Testing
+
+This section tests that data flows correctly through the application — from creating and deleting records in the admin panel, to enforcing the rules built into the database models, to making sure the Last.fm import process handles albums cleanly without duplicates or missing data.
+
+| Test | Expected Behaviour | Result |
+|---|---|---|
+| Create a new album via admin panel | Album saved and visible on genre page | Pass |
+| Edit an album's featured status | Homepage "Inside the Pit" updates to reflect change | Pass |
+| Delete a genre from admin | Associated albums retain their genre as `NULL` rather than being deleted (`SET_NULL`) | Pass |
+| Delete a parent comment | All child replies are also removed (`CASCADE`) | Pass |
+| User likes an album, then likes again | Reaction is removed (toggle behaviour) | Pass |
+| User likes an album, then dislikes | Original like removed, dislike applied — only one reaction per user per album enforced | Pass |
+| Two users attempt to submit identical username at signup | Second user receives a validation error | Pass |
+| `fetch_albums` command run twice | No duplicate albums created — `external_id` prevents re-import | Pass |
+| `fetch_albums` encounters a remastered album title | Entry is skipped via keyword filter (`remaster`, `deluxe`, `edition`) | Pass |
+| Community Reaction bar | Percentage reflects current total likes vs dislikes dynamically | Pass |
+| Tracklist imported from Last.fm | Track numbers and durations stored correctly on `TRACK` model | Pass |
 
 ---
 

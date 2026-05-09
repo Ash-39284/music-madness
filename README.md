@@ -800,6 +800,25 @@ Scrolling down on mobile, the genre buttons wrap into a two-per-row grid and the
 
 ![Mobile home page bottom](./static/images/mobile-home-pge-2.png)
 
+### Tablet View
+ 
+At tablet width the full navigation links are visible in the navbar. The hero, feature cards and album grid all adapt to the wider container — the three feature cards sit side by side in a single row and the "Inside the Pit" album cards form a three-column grid. The genre buttons sit in a single row across the full width of the page.
+
+![Tablet home page top](./static/images/tablet-home-pge.png)
+
+At the bottom of the tablet view, the "Browse by Genre" buttons wrap cleanly and the footer arranges its logo, Explore and Account sections across the available width.
+
+![Tablet home page bottom](./static/images/tablet-home-pge-2.png)
+
+### Desktop View
+ 
+On desktop the layout uses the full page width. The navbar is fully expanded with all links visible and the logged-in username and Logout button clearly positioned on the right. The hero card spans the full width, the three feature cards sit side by side, and the "Inside the Pit" section shows all three album cards in a three-column grid with cover art, metadata and reaction counts all visible at once.
+
+![Desktop home page top](./static/images/desktop-home-page.png)
+
+Scrolling down on desktop, the album cards display with full cover art and the "Browse by Genre" buttons sit in a single horizontal row. The footer arranges the logo, Explore and Account columns cleanly across the full width.
+
+![Desktop home page bottom](./static/images/desktop-home-page-2.png)
 
 
 ---

@@ -42,6 +42,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', 'web-production-1b9e7.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-1b9e7.up.railway.app',
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 

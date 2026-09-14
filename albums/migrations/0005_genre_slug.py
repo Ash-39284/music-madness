@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='genre',
             name='slug',
-            field=models.SlugField(blank=True, default='', unique=False),
+            field=models.SlugField(blank=True, default='', unique=False, db_index=False),
         ),
         migrations.RunPython(populate_slugs),
         migrations.AlterField(
